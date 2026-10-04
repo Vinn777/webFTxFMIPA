@@ -141,6 +141,12 @@ function setupGallery() {
   const modalCap = document.getElementById("lightbox-caption");
   const closeBtn = document.getElementById("lightbox-close");
 
+  // Pastikan seluruh video tidak autoplay saat halaman dimuat
+  document.querySelectorAll("video").forEach(v => {
+    v.removeAttribute("autoplay");
+    v.pause();
+  });
+
   const cards = document.querySelectorAll(".gallery-card");
   cards.forEach(card => {
     card.addEventListener("click", () => {
@@ -156,7 +162,7 @@ function setupGallery() {
         if (modalVideo) {
           modalVideo.style.display = "block";
           modalVideo.src = videoSrc;
-          modalVideo.play().catch(() => {});
+          modalVideo.pause(); // Jangan diputar otomatis, tunggu pengguna menekan tombol play
         }
       } else if (src) {
         if (modalVideo) {
