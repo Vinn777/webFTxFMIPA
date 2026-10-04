@@ -26,13 +26,12 @@
         </a>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#tentang" class="nav-link">Tentang</a></li>
-          <!-- <li><a href="#pancasila" class="nav-link">Materi</a></li> -->
-          <!-- <li><a href="#tim" class="nav-link">Anggota</a></li> -->
+          <li><a href="#pancasila" class="nav-link">Materi</a></li>
+          <li><a href="#tim" class="nav-link">Anggota</a></li>
           <li><a href="#perjalanan" class="nav-link">Tahapan</a></li>
           <li><a href="#galeri" class="nav-link">Galeri</a></li>
-          <!-- Kesan & Pesan disembunyikan sementara hingga kegiatan selesai -->
-          <!-- <li><a href="#testimonial" class="nav-link">Kesan &amp; Pesan</a></li> -->
-          <!-- <li><a href="#refleksi" class="nav-link">Refleksi</a></li> -->
+          <li><a href="#testimonial" class="nav-link">Kesan &amp; Pesan</a></li>
+          <li><a href="#refleksi" class="nav-link">Refleksi</a></li>
         </ul>
         <a href="#galeri" class="nav-btn">Lihat Dokumentasi</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Menu navigasi">
@@ -76,11 +75,14 @@
               <h3 data-count="1">0</h3>
               <p>Panti Asuhan Kunjungan</p>
             </div>
+            <div class="stat-item">
+              <h3 data-count="12" id="stat-members">0</h3>
+              <p>Mahasiswa Kolaborator</p>
+            </div>
           </div>
         </div>
 
         <div class="hero-card-showcase" data-reveal="fade-left" data-reveal-delay="200">
-          <!-- Floating badge dipindah ke atas agar tidak menutupi caption -->
           <div class="floating-badge" id="floating-badge">
             <div class="floating-badge-icon">&check;</div>
             <div>
@@ -90,7 +92,6 @@
           </div>
           <div class="hero-main-card">
             <div class="hero-card-img-wrap" id="hero-slideshow">
-              <!-- Slides di-render oleh script.js dari array heroSlides -->
             </div>
             <div class="hero-card-caption">
               <div>
@@ -100,7 +101,6 @@
               <span class="pill-ft" id="slide-caption-tag">Dokumentasi Terkini</span>
             </div>
           </div>
-          <!-- Slide dots indicator -->
           <div class="hero-slide-dots" id="hero-slide-dots"></div>
         </div>
       </div>
@@ -182,81 +182,115 @@
       </div>
     </section>
 
-    <!-- ========================================================
-         BAGIAN MATERI KEGIATAN & PENGAMALAN PANCASILA
-         (Dikosongkan terlebih dahulu, komentar hanya ada di kode.
-          Silakan hilangkan tanda komentar pembuka dan penutup di bawah jika materi sudah siap)
-         ======================================================== -->
-    <!--
     <section class="section-padding" id="pancasila" style="background: var(--bg-subtle);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag">Materi &amp; Nilai</span>
           <h2 class="section-title">Materi Kegiatan &amp; Pengamalan Pancasila</h2>
-          <p class="section-subtitle">Ruang materi pembahasan dan pengamalan nilai-nilai Pancasila oleh mahasiswa kolaborator.</p>
+          <p class="section-subtitle">Penerapan nyata butir-butir nilai luhur Pancasila dalam aksi sosial terpadu di Panti Asuhan Hasbi Rabbi.</p>
         </div>
 
         <div class="pancasila-container">
-          <div class="pancasila-panel">
+          <div class="pancasila-panel" data-reveal="fade-right" data-reveal-delay="100">
             <div class="pancasila-header">
               <div class="pancasila-number">01</div>
               <div class="pancasila-title-text">
-                <span>Topik / Sila Pertama</span>
-                <h3>Judul Materi 1</h3>
+                <span>Sila Kedua &bull; Kemanusiaan</span>
+                <h3>Kemanusiaan yang Adil dan Beradab</h3>
               </div>
             </div>
             <p class="pancasila-body">
-              Penjelasan ringkas materi atau kegiatan yang dilakukan...
+              Mengakui persamaan derajat, hak, dan kewajiban asasi setiap manusia tanpa membeda-bedakan. Melalui kunjungan ini, mahasiswa menumbuhkan sikap saling mencintai sesama manusia dan menjunjung tinggi nilai kemanusiaan dengan memberikan perhatian tulus kepada anak-anak panti asuhan.
             </p>
             <div class="pancasila-actions">
-              <h4>Poin Pembahasan / Penerapan:</h4>
+              <h4>Poin Penerapan Lapangan:</h4>
               <ul>
-                <li>Poin pembahasan 1...</li>
-                <li>Poin pembahasan 2...</li>
-                <li>Poin pembahasan 3...</li>
+                <li>&bull; Menjalin silaturahmi empati dengan pengurus dan adik-adik panti</li>
+                <li>&bull; Memberikan pendampingan emosional dan motivasi belajar ceria</li>
+                <li>&bull; Menghargai martabat sesama lewat kepedulian yang tulus</li>
               </ul>
             </div>
           </div>
 
-          <div class="pancasila-panel">
+          <div class="pancasila-panel" data-reveal="fade-left" data-reveal-delay="150">
             <div class="pancasila-header">
               <div class="pancasila-number">02</div>
               <div class="pancasila-title-text">
-                <span>Topik / Sila Kedua</span>
-                <h3>Judul Materi 2</h3>
+                <span>Sila Kelima &bull; Keadilan Sosial</span>
+                <h3>Keadilan Sosial bagi Seluruh Rakyat</h3>
               </div>
             </div>
             <p class="pancasila-body">
-              Penjelasan ringkas materi atau kegiatan yang dilakukan...
+              Mengembangkan perbuatan luhur yang mencerminkan sikap kekeluargaan dan gotong royong. Mahasiswa turut andil dalam meringankan beban kebutuhan pokok dan memperluas akses edukasi bagi adik-adik yang membutuhkan.
             </p>
             <div class="pancasila-actions">
-              <h4>Poin Pembahasan / Penerapan:</h4>
+              <h4>Poin Penerapan Lapangan:</h4>
               <ul>
-                <li>Poin pembahasan 1...</li>
-                <li>Poin pembahasan 2...</li>
-                <li>Poin pembahasan 3...</li>
+                <li>&bull; Penyaluran bantuan sembako dan paket donasi pokok</li>
+                <li>&bull; Edukasi literasi, numerasi dasar, dan motivasi berprestasi</li>
+                <li>&bull; Mengembangkan kepekaan sosial terhadap pemerataan kesejahteraan</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pancasila-panel" data-reveal="fade-right" data-reveal-delay="200">
+            <div class="pancasila-header">
+              <div class="pancasila-number">03</div>
+              <div class="pancasila-title-text">
+                <span>Sila Ketiga &bull; Persatuan</span>
+                <h3>Persatuan Indonesia</h3>
+              </div>
+            </div>
+            <p class="pancasila-body">
+              Menempatkan persatuan, kesatuan, serta kepentingan bangsa dan masyarakat di atas sekat keilmuan maupun golongan. Kolaborasi antara mahasiswa Informatika (FT) dan Biologi (FMIPA) merupakan bukti sinergi sains dan teknologi demi bakti sosial.
+            </p>
+            <div class="pancasila-actions">
+              <h4>Poin Penerapan Lapangan:</h4>
+              <ul>
+                <li>&bull; Kolaborasi terpadu prodi Informatika (FT) &times; Biologi (FMIPA)</li>
+                <li>&bull; Gotong royong dalam perencanaan, survei, hingga pelaksanaan</li>
+                <li>&bull; Membangun kebersamaan hangat sebagai sesama anak bangsa</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pancasila-panel" data-reveal="fade-left" data-reveal-delay="250">
+            <div class="pancasila-header">
+              <div class="pancasila-number">04</div>
+              <div class="pancasila-title-text">
+                <span>Sila Pertama &amp; Keempat &bull; Moral &amp; Musyawarah</span>
+                <h3>Ketuhanan &amp; Semangat Musyawarah</h3>
+              </div>
+            </div>
+            <p class="pancasila-body">
+              Menjalankan aksi kepedulian sebagai manifestasi rasa syukur atas karunia Tuhan Yang Maha Esa, serta mengedepankan etika musyawarah mufakat dalam perizinan dan koordinasi bersama pihak panti asuhan.
+            </p>
+            <div class="pancasila-actions">
+              <h4>Poin Penerapan Lapangan:</h4>
+              <ul>
+                <li>&bull; Koordinasi santun dan musyawarah kebutuhan bersama panti</li>
+                <li>&bull; Doa bersama memohon keberkahan dan masa depan cerah adik-adik</li>
+                <li>&bull; Memupuk keikhlasan dan integritas pengabdian mahasiswa</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    -->
 
-    <!-- BAGIAN TIM MAHASISWA (Otomatis tampil saat data diisi di script.js) -->
-    <section class="section-padding" id="tim" style="display: none;">
+    <section class="section-padding" id="tim">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag primary">Kolaborator Lapangan</span>
           <h2 class="section-title">Tim Mahasiswa FT &times; FMIPA</h2>
           <p class="section-subtitle">Sinergi mahasiswa lintas disiplin ilmu yang mendedikasikan waktu dan tenaga demi
             keberhasilan pengabdian ini.</p>
         </div>
 
-        <div class="filter-bar">
+        <div class="filter-bar" data-reveal="fade-up">
           <button class="filter-btn active" data-filter="all">Semua Mahasiswa</button>
           <button class="filter-btn" data-filter="ft">Informatika (FT)</button>
-          <button class="filter-btn" data-filter="mipa">Biologi (FMIPA)</button>
+          <button class="filter-btn" data-filter="fmipa">Biologi (FMIPA)</button>
         </div>
 
         <div class="team-grid" id="team-grid"></div>
@@ -398,10 +432,9 @@
       </div>
     </section>
 
-    <!-- BAGIAN SUARA & REFLEKSI (Otomatis tampil saat data diisi di script.js) -->
-    <section class="section-padding" id="refleksi" style="background: var(--bg-subtle); display: none;">
+    <section class="section-padding" id="refleksi" style="background: var(--bg-subtle);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag">Refleksi Kemanusiaan</span>
           <h2 class="section-title">Suara &amp; Refleksi Mahasiswa</h2>
           <p class="section-subtitle">Catatan kritis dan pembelajaran batin yang diperoleh para mahasiswa selama berada
@@ -410,7 +443,7 @@
 
         <div class="reflection-grid" id="reflection-grid"></div>
 
-        <div class="conclusion-card">
+        <div class="conclusion-card" data-reveal="fade-up">
           <h3 class="conclusion-title">Kesimpulan Kolektif Pengabdian</h3>
           <p class="conclusion-text">
             Melalui kegiatan ini, kami membuktikan bahwa Pendidikan Pancasila menemukan wujud aslinya ketika mahasiswa
@@ -422,54 +455,44 @@
       </div>
     </section>
 
-    <!-- ========================================================
-         BAGIAN UCAPAN TERIMA KASIH & PENGHARGAAN
-         (Dikosongkan terlebih dahulu, komentar hanya ada di kode.
-          Silakan hilangkan tanda komentar pembuka dan penutup di bawah jika sudah ada teks ucapan)
-         ======================================================== -->
-    <!--
     <section class="section-padding">
       <div class="container">
-        <div class="closing-card">
+        <div class="closing-card" data-reveal="fade-up">
           <h2 class="closing-title">Ucapan Terima Kasih &amp; Penghargaan</h2>
           <p class="closing-text">
-            Tuliskan ucapan terima kasih kepada pimpinan, pengasuh, dan adik-adik panti asuhan di sini...
+            Kami menyampaikan rasa terima kasih dan penghormatan yang setinggi-tingginya kepada pimpinan, segenap staf pengasuh, serta adik-adik tercinta di <strong>Panti Asuhan Hasbi Rabbi</strong> yang telah menyambut kedatangan kami dengan penuh kehangatan, keikhlasan, dan kekeluargaan.
           </p>
           <p class="closing-text">
-            Tuliskan apresiasi kepada dosen pembimbing atau pihak universitas di sini...
+            Apresiasi mendalam juga kami haturkan kepada dosen pembimbing mata kuliah Pendidikan Pancasila &amp; Kewarganegaraan serta sivitas akademika <strong>Fakultas Teknik</strong> dan <strong>Fakultas FMIPA</strong> atas bimbingan, arahan, dan dukungan penuh dalam terlaksananya kolaborasi pengabdian ini.
           </p>
           <p class="closing-prayer">
-            Tuliskan harapan atau doa penutup di sini...
+            &ldquo;Semoga setiap langkah kecil kebaikan ini menjadi benih keberkahan bagi adik-adik panti dan menuntun kita semua menjadi pribadi yang senantiasa mengamalkan nilai-nilai luhur Pancasila.&rdquo;
           </p>
         </div>
       </div>
     </section>
-    -->
   </main>
 
-    <!-- KESAN & PESAN — disembunyikan sementara hingga kegiatan selesai.
-         Aktifkan kembali dengan menghapus style="display:none" di bawah. -->
-    <section class="section-padding" id="testimonial" style="display:none;">
-      <div class="container">
-        <div class="section-head" data-reveal="fade-up">
-          <span class="badge-tag">Suara dari Lapangan</span>
-          <h2 class="section-title">Kesan &amp; Pesan Panti Asuhan</h2>
-          <p class="section-subtitle">Ungkapan tulus dari pimpinan, pengasuh, dan adik-adik Panti Asuhan Hasbi Rabbi yang menjadi kenangan abadi dari kegiatan pengabdian ini.</p>
-        </div>
+  <section class="section-padding" id="testimonial">
+    <div class="container">
+      <div class="section-head" data-reveal="fade-up">
+        <span class="badge-tag">Suara dari Lapangan</span>
+        <h2 class="section-title">Kesan &amp; Pesan Panti Asuhan</h2>
+        <p class="section-subtitle">Ungkapan tulus dari pimpinan, pengasuh, dan adik-adik Panti Asuhan Hasbi Rabbi yang menjadi kenangan abadi dari kegiatan pengabdian ini.</p>
+      </div>
 
-        <div class="testimonial-track-wrap" data-reveal="fade-up" data-reveal-delay="150">
-          <div class="testimonial-track" id="testi-track">
-            <!-- kartu testimonial di-render oleh script.js -->
-          </div>
-        </div>
-
-        <div class="testimonial-controls" id="testi-controls">
-          <button class="testi-btn" id="testi-prev" aria-label="Sebelumnya">&#8592;</button>
-          <div class="testi-dots" id="testi-dots"></div>
-          <button class="testi-btn" id="testi-next" aria-label="Berikutnya">&#8594;</button>
+      <div class="testimonial-track-wrap" data-reveal="fade-up" data-reveal-delay="150">
+        <div class="testimonial-track" id="testi-track">
         </div>
       </div>
-    </section>
+
+      <div class="testimonial-controls" id="testi-controls">
+        <button class="testi-btn" id="testi-prev" aria-label="Sebelumnya">&#8592;</button>
+        <div class="testi-dots" id="testi-dots"></div>
+        <button class="testi-btn" id="testi-next" aria-label="Berikutnya">&#8594;</button>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
@@ -486,8 +509,12 @@
           <div class="footer-col-title">Navigasi Halaman</div>
           <ul class="footer-links">
             <li><a href="#tentang">Tentang Kegiatan</a></li>
+            <li><a href="#pancasila">Materi Pancasila</a></li>
+            <li><a href="#tim">Tim Kolaborator</a></li>
             <li><a href="#perjalanan">Tahapan Kegiatan</a></li>
             <li><a href="#galeri">Galeri Foto</a></li>
+            <li><a href="#testimonial">Kesan &amp; Pesan</a></li>
+            <li><a href="#refleksi">Refleksi Mahasiswa</a></li>
           </ul>
         </div>
 

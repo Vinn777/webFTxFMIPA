@@ -4,27 +4,126 @@
 // Silakan isi data anggota kelompok pada array di bawah ini:
 // ============================================================================
 const teamMembers = [
-  /*
-  // CONTOH FORMAT PENGISIAN ANGGOTA:
   {
-    name: "Nama Mahasiswa FT",
-    faculty: "ft", // gunakan 'ft' untuk Fakultas Teknik
-    facultyName: "Fakultas Teknik",
-    prodi: "Informatika",
-    avatar: "foto/nama_foto.jpg",
-    quote: "Kutipan atau pesan singkat kegiatan.",
-    reflection: "Refleksi atau pembelajaran yang didapatkan dari kegiatan di panti asuhan."
-  },
-  {
-    name: "Nama Mahasiswa FMIPA",
-    faculty: "mipa", // gunakan 'mipa' untuk Fakultas MIPA (Warna Biru Muda)
+    name: "Karel Agreska Arlin",
+    npm: "2617021006",
+    faculty: "fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "foto/nama_foto.jpg",
-    quote: "Kutipan atau pesan singkat kegiatan.",
-    reflection: "Refleksi atau pembelajaran yang didapatkan dari kegiatan di panti asuhan."
+    avatar: "",
+    quote: "Kepedulian terhadap sesama adalah bentuk tertinggi dari keharmonisan hidup.",
+    reflection: "Melihat binar mata dan keceriaan adik-adik panti menyadarkan saya bahwa kebahagiaan sejati hadir ketika kita mau berbagi waktu dan ketulusan."
+  },
+  {
+    name: "Arta Aulia",
+    npm: "2617021030",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Berbagi bukan tentang seberapa banyak yang kita punya, melainkan ketulusan hati.",
+    reflection: "Kunjungan ini mengajarkan makna rasa syukur yang mendalam dan pentingnya merawat empati sosial di tengah kesibukan perkuliahan."
+  },
+  {
+    name: "Annisa Qania Fitri",
+    npm: "2617021039",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Setiap senyuman adik-adik panti adalah motivasi terbesar untuk terus bermanfaat.",
+    reflection: "Melalui interaksi hangat ini, nilai kemanusiaan dalam Pancasila bukan lagi teori, tetapi tindakan nyata yang menyentuh nurani."
+  },
+  {
+    name: "Clarissa Aurelia",
+    npm: "2617021021",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Menyemai kasih sayang adalah langkah awal membangun masa depan generasi bangsa.",
+    reflection: "Mendampingi adik-adik belajar dan bermain memberikan pengalaman batin yang berharga tentang arti kebersamaan dan ketulusan."
+  },
+  {
+    name: "Fina",
+    npm: "2617021050",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Kebaikan kecil yang dilakukan bersama akan melahirkan dampak yang luar biasa.",
+    reflection: "Kegiatan ini mempererat ikatan kekeluargaan lintas disiplin ilmu dan menguatkan komitmen moral kami untuk terus peduli pada sesama."
+  },
+  {
+    name: "Syabilla Aura Puffy",
+    npm: "2617021060",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Belajar memahami arti kehidupan dari ketulusan dan ketegaran anak-anak panti.",
+    reflection: "Senyum polos mereka mengajarkan arti kesabaran dan keikhlasan. Pengalaman berharga yang akan selalu membekas di hati."
+  },
+  {
+    name: "Puja Tyas Cahyani",
+    npm: "2617021070",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Sains mengajarkan kita tentang kehidupan, tetapi kemanusiaan memberi makna padanya.",
+    reflection: "Kolaborasi ini membuktikan bahwa ilmu biologi dan nurani sosial saling melengkapi dalam mengabdi kepada masyarakat."
+  },
+  {
+    name: "Aqila Salsabila Fitri",
+    npm: "2617021081",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Hadir dan mendengarkan adalah wujud sederhana dari kasih sayang yang bermakna.",
+    reflection: "Mendengarkan cita-cita adik-adik panti membuka mata saya bahwa setiap anak berhak mendapatkan kasih sayang dan ruang untuk bermimpi."
+  },
+  {
+    name: "Jeni Hestiana Dewi",
+    npm: "2617021091",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Mengabdi dengan hati, menebar benih kebaikan untuk negeri.",
+    reflection: "Pengalaman di Panti Asuhan Hasbi Rabbi menumbuhkan tekad kuat untuk terus berkontribusi aktif bagi kesejahteraan sosial."
+  },
+  {
+    name: "Chintya Nabila",
+    npm: "2657021004",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Persatuan dan gotong royong adalah kunci terciptanya kepedulian yang berkelanjutan.",
+    reflection: "Sinergi antara mahasiswa dan pengurus panti menjadi bukti nyata indahnya nilai persatuan dan keadilan sosial Pancasila."
+  },
+  {
+    name: "Syaqinata Riskia Karlin",
+    npm: "2657021013",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Cinta kasih yang tulus mampu meruntuhkan setiap jarak dan perbedaan.",
+    reflection: "Kebersamaan bersama adik-adik panti asuhan mengajarkan bahwa kebahagiaan terbesar datang saat kita mampu membuat orang lain tersenyum."
+  },
+  {
+    name: "Syahdan Abbad Zabran",
+    npm: "2657021017",
+    faculty: "fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "",
+    quote: "Jadilah pribadi yang menebar manfaat di mana pun kaki berpijak.",
+    reflection: "Aksi nyata di panti asuhan ini memperkokoh integritas dan rasa tanggung jawab sosial sebagai generasi muda harapan bangsa."
   }
-  */
 ];
 
 const galleryItems = [
@@ -42,11 +141,6 @@ const galleryItems = [
   }
 ];
 
-// ============================================================================
-// SLIDESHOW FOTO HERO
-// Tambahkan foto-foto baru di sini setelah kegiatan berlangsung.
-// Format: { src, alt, title, sub } — title & sub muncul di caption bawah kartu.
-// ============================================================================
 const heroSlides = [
   {
     src: "foto/ProsesMemintaizin.jpeg",
@@ -54,21 +148,6 @@ const heroSlides = [
     title: "Silaturahmi &amp; Proses Perizinan",
     sub: "Panti Asuhan Hasbi Rabbi &bull; Informatika &times; Biologi"
   }
-  /*
-  // Contoh menambahkan foto baru setelah kunjungan:
-  ,{
-    src: "foto/PenyerahanBantuan.jpeg",
-    alt: "Penyerahan sembako kepada panti asuhan",
-    title: "Penyerahan Bantuan Sosial",
-    sub: "Sembako &amp; Perlengkapan Sekolah"
-  },
-  {
-    src: "foto/KelasInteraktif.jpeg",
-    alt: "Kelas interaktif bersama anak-anak panti",
-    title: "Kelas Interaktif &amp; Literasi",
-    sub: "Mendampingi belajar anak-anak panti"
-  }
-  */
 ];
 
 // ============================================================================
@@ -196,7 +275,7 @@ function initTimelineProgress() {
     const viewH = window.innerHeight;
 
     const scrollStart = rect.top - viewH * 0.75;
-    const scrollEnd   = rect.bottom - viewH * 0.25;
+    const scrollEnd = rect.bottom - viewH * 0.25;
     const rawProgress = 1 - (scrollEnd - 0) / (scrollEnd - scrollStart);
     const progress = Math.max(0, Math.min(1, rawProgress));
 
@@ -245,16 +324,18 @@ function initParallax() {
 // Slider 2-per-view di desktop, 1-per-view di mobile, dengan dots & swipe.
 // ============================================================================
 function initTestimonialSlider() {
-  const track       = document.getElementById("testi-track");
-  const dotsWrap    = document.getElementById("testi-dots");
-  const prevBtn     = document.getElementById("testi-prev");
-  const nextBtn     = document.getElementById("testi-next");
+  const track = document.getElementById("testi-track");
+  const dotsWrap = document.getElementById("testi-dots");
+  const prevBtn = document.getElementById("testi-prev");
+  const nextBtn = document.getElementById("testi-next");
 
   if (!track || !testiData.length) {
     const sec = document.getElementById("testimonial");
     if (sec) sec.style.display = "none";
     return;
   }
+  const sec = document.getElementById("testimonial");
+  if (sec) sec.style.display = "";
 
   // --- Render kartu ---
   testiData.forEach(t => {
@@ -273,7 +354,7 @@ function initTestimonialSlider() {
     track.appendChild(card);
   });
 
-  const getVisible  = () => window.innerWidth <= 768 ? 1 : 2;
+  const getVisible = () => window.innerWidth <= 768 ? 1 : 2;
   const totalSlides = () => Math.ceil(testiData.length / getVisible());
   let current = 0;
 
@@ -342,9 +423,9 @@ function initTestimonialSlider() {
 // ============================================================================
 function initHeroSlideshow() {
   const container = document.getElementById("hero-slideshow");
-  const dotsWrap  = document.getElementById("hero-slide-dots");
-  const titleEl   = document.getElementById("slide-caption-title");
-  const subEl     = document.getElementById("slide-caption-sub");
+  const dotsWrap = document.getElementById("hero-slide-dots");
+  const titleEl = document.getElementById("slide-caption-title");
+  const subEl = document.getElementById("slide-caption-sub");
 
   if (!container || !heroSlides.length) return;
 
@@ -369,7 +450,7 @@ function initHeroSlideshow() {
 
   let current = 0;
   const slides = container.querySelectorAll(".hero-slide");
-  const dots   = dotsWrap ? dotsWrap.querySelectorAll(".hero-slide-dot") : [];
+  const dots = dotsWrap ? dotsWrap.querySelectorAll(".hero-slide-dot") : [];
 
   function goToSlide(index) {
     slides[current].classList.remove("active");
@@ -383,16 +464,16 @@ function initHeroSlideshow() {
     // Fade caption saat ganti slide
     if (titleEl && subEl) {
       titleEl.style.transition = "opacity 0.2s ease";
-      subEl.style.transition   = "opacity 0.2s ease";
+      subEl.style.transition = "opacity 0.2s ease";
       titleEl.style.opacity = "0";
-      subEl.style.opacity   = "0";
+      subEl.style.opacity = "0";
       setTimeout(() => {
         titleEl.innerHTML = heroSlides[current].title;
-        subEl.innerHTML   = heroSlides[current].sub;
+        subEl.innerHTML = heroSlides[current].sub;
         titleEl.style.transition = "opacity 0.4s ease";
-        subEl.style.transition   = "opacity 0.4s ease";
+        subEl.style.transition = "opacity 0.4s ease";
         titleEl.style.opacity = "1";
-        subEl.style.opacity   = "1";
+        subEl.style.opacity = "1";
       }, 220);
     }
   }
@@ -417,7 +498,9 @@ function initHeroSlideshow() {
 function updateMemberCount() {
   const statEl = document.getElementById("stat-members");
   if (statEl) {
-    statEl.textContent = teamMembers.length > 0 ? teamMembers.length : "-";
+    const count = teamMembers.length;
+    statEl.setAttribute("data-count", count);
+    statEl.textContent = count > 0 ? count : "-";
   }
 }
 
@@ -434,21 +517,43 @@ function renderTeam(filter) {
 
   if (section) section.style.display = "";
 
-  const filtered = filter === "all" ? teamMembers : teamMembers.filter(m => m.faculty === filter);
+  const filtered = filter === "all" ? teamMembers : teamMembers.filter(m => m.faculty.toLowerCase() === filter.toLowerCase() || (filter === "mipa" && m.faculty.toLowerCase() === "fmipa") || (filter === "fmipa" && m.faculty.toLowerCase() === "mipa"));
+
+  if (filtered.length === 0) {
+    const emptyNotice = document.createElement("div");
+    emptyNotice.className = "placeholder-box";
+    emptyNotice.style.gridColumn = "1 / -1";
+    emptyNotice.innerHTML = `
+      <div class="placeholder-icon-wrap">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <h3 class="placeholder-title">Data Anggota Belum Tersedia</h3>
+      <p class="placeholder-desc">Data mahasiswa untuk kategori ini dapat ditambahkan di <code>script.js</code> pada variabel <code>teamMembers</code>.</p>
+    `;
+    container.appendChild(emptyNotice);
+    return;
+  }
 
   filtered.forEach(m => {
     const card = document.createElement("div");
     card.className = `member-card ${m.faculty}`;
-    const avatarSrc = m.avatar && m.avatar.trim() !== "" ? m.avatar : "foto/placeholder_avatar.jpg";
+    const fallbackAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=0284c7&color=fff&size=128&bold=true`;
+    const avatarSrc = m.avatar && m.avatar.trim() !== "" ? m.avatar : fallbackAvatar;
     card.innerHTML = `
       <div class="member-card-top">
-        <img class="member-avatar" src="${avatarSrc}" alt="${m.name}" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=0284c7&color=fff'">
+        <img class="member-avatar" src="${avatarSrc}" alt="${m.name}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackAvatar}'">
         <div class="member-meta">
           <div class="member-name">${m.name}</div>
           <span class="member-faculty-badge">${m.faculty.toUpperCase()}</span>
         </div>
       </div>
       <div class="member-prodi">${m.prodi} &bull; ${m.facultyName}</div>
+      ${(m.npm || m.nim) ? `<div class="member-nim"><span class="nim-label">NPM</span><code>${m.npm || m.nim}</code></div>` : ''}
       <div class="member-quote">&ldquo;${m.quote || 'Mengabdi untuk masyarakat.'}&rdquo;</div>
     `;
     container.appendChild(card);
@@ -480,7 +585,7 @@ function renderReflections() {
 
   if (section) section.style.display = "";
 
-  teamMembers.slice(0, 6).forEach(m => {
+  teamMembers.forEach(m => {
     const item = document.createElement("div");
     item.className = "reflection-item";
     item.innerHTML = `
@@ -488,7 +593,7 @@ function renderReflections() {
       <div class="reflection-author">
         <div>
           <div class="reflection-author-name">${m.name}</div>
-          <div class="reflection-author-prodi">${m.prodi} &bull; ${m.facultyName}</div>
+          <div class="reflection-author-prodi">${m.prodi} &bull; ${m.facultyName}${(m.npm || m.nim) ? ` (NPM: ${m.npm || m.nim})` : ''}</div>
         </div>
       </div>
     `;
@@ -497,7 +602,7 @@ function renderReflections() {
 }
 
 function setupGallery() {
-  const modal    = document.getElementById("lightbox-modal");
+  const modal = document.getElementById("lightbox-modal");
   const modalImg = document.getElementById("lightbox-img");
   const modalVid = document.getElementById("lightbox-video");
   const modalCap = document.getElementById("lightbox-caption");
@@ -512,8 +617,8 @@ function setupGallery() {
   document.querySelectorAll(".gallery-card").forEach(card => {
     card.addEventListener("click", () => {
       const videoSrc = card.getAttribute("data-video");
-      const src      = card.getAttribute("data-src");
-      const title    = card.getAttribute("data-title");
+      const src = card.getAttribute("data-src");
+      const title = card.getAttribute("data-title");
 
       if (!modal || !modalCap) return;
       modalCap.textContent = title || "";
@@ -548,9 +653,9 @@ function setupGallery() {
 }
 
 function setupNavigation() {
-  const navbar    = document.getElementById("navbar");
-  const toggle    = document.getElementById("nav-toggle");
-  const menu      = document.getElementById("nav-menu");
+  const navbar = document.getElementById("navbar");
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
   const backToTop = document.getElementById("back-to-top");
 
   if (toggle && menu) {
@@ -562,7 +667,7 @@ function setupNavigation() {
 
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    if (navbar)    navbar.classList.toggle("scrolled", y > 40);
+    if (navbar) navbar.classList.toggle("scrolled", y > 40);
     if (backToTop) backToTop.classList.toggle("visible", y > 400);
   });
 
@@ -578,7 +683,7 @@ function initCanvasVisualization() {
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  const scene  = new THREE.Scene();
+  const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
   camera.position.set(0, 0, 12);
 
@@ -596,14 +701,14 @@ function initCanvasVisualization() {
   scene.add(group);
 
   const particleCount = 45;
-  const geometry      = new THREE.BufferGeometry();
-  const positions     = new Float32Array(particleCount * 3);
-  const colors        = new Float32Array(particleCount * 3);
-  const ftColor       = new THREE.Color(0x1D4ED8);
-  const mipaColor     = new THREE.Color(0x38BDF8);
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(particleCount * 3);
+  const colors = new Float32Array(particleCount * 3);
+  const ftColor = new THREE.Color(0x1D4ED8);
+  const mipaColor = new THREE.Color(0x38BDF8);
 
   for (let i = 0; i < particleCount; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * 18;
+    positions[i * 3] = (Math.random() - 0.5) * 18;
     positions[i * 3 + 1] = (Math.random() - 0.5) * 12;
     positions[i * 3 + 2] = (Math.random() - 0.5) * 8;
 
@@ -612,7 +717,7 @@ function initCanvasVisualization() {
   }
 
   geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute("color",    new THREE.BufferAttribute(colors, 3));
+  geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
   group.add(new THREE.Points(geometry, new THREE.PointsMaterial({
     size: 0.18, vertexColors: true, transparent: true, opacity: 0.75
@@ -621,9 +726,9 @@ function initCanvasVisualization() {
   const linePositions = [];
   for (let i = 0; i < particleCount; i++) {
     for (let j = i + 1; j < particleCount; j++) {
-      const dx = positions[i*3]-positions[j*3], dy = positions[i*3+1]-positions[j*3+1], dz = positions[i*3+2]-positions[j*3+2];
-      if (Math.sqrt(dx*dx+dy*dy+dz*dz) < 4.2) {
-        linePositions.push(positions[i*3],positions[i*3+1],positions[i*3+2],positions[j*3],positions[j*3+1],positions[j*3+2]);
+      const dx = positions[i * 3] - positions[j * 3], dy = positions[i * 3 + 1] - positions[j * 3 + 1], dz = positions[i * 3 + 2] - positions[j * 3 + 2];
+      if (Math.sqrt(dx * dx + dy * dy + dz * dz) < 4.2) {
+        linePositions.push(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2], positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2]);
       }
     }
   }
@@ -642,7 +747,7 @@ function initCanvasVisualization() {
     targetX += (mouseX - targetX) * 0.03;
     targetY += (mouseY - targetY) * 0.03;
     group.rotation.y += 0.0018 + targetX * 0.02;
-    group.rotation.x  = targetY * 0.4;
+    group.rotation.x = targetY * 0.4;
     renderer.render(scene, camera);
   })();
 }

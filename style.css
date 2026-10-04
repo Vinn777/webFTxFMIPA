@@ -394,7 +394,7 @@ button {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 1.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-light);
@@ -755,21 +755,56 @@ button {
   color: var(--ft-blue);
 }
 
-.member-card.mipa .member-faculty-badge {
+.member-card.mipa .member-faculty-badge,
+.member-card.fmipa .member-faculty-badge {
   background: var(--mipa-light);
   color: var(--mipa-blue);
   border: 1px solid var(--mipa-border);
 }
 
-.member-card.mipa:hover {
+.member-card.mipa:hover,
+.member-card.fmipa:hover {
   border-color: var(--mipa-border);
 }
 
 .member-prodi {
   font-size: 0.82rem;
   color: var(--text-light);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
   font-weight: 500;
+}
+
+.member-nim {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.member-nim .nim-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.member-nim code {
+  background: var(--mipa-light);
+  border: 1px solid var(--mipa-border);
+  padding: 0.12rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: var(--mipa-blue);
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .member-quote {
