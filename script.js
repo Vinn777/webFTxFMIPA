@@ -29,24 +29,16 @@ const teamMembers = [
 
 const galleryItems = [
   {
-    src: "foto/foto_bersama.jpg",
-    title: "Dokumentasi Bersama",
-    sub: "Seluruh mahasiswa FT x FMIPA bersama pengurus dan anak panti"
+    src: "foto/Survei Lokasi.mp4",
+    type: "video",
+    title: "Dokumentasi Survei Lokasi",
+    sub: "Peninjauan langsung kondisi lapangan dan fasilitas Panti Asuhan Hasbi Rabbi"
   },
   {
-    src: "foto/kegiatan_belajar.jpg",
-    title: "Sesi Belajar & Menggambar",
-    sub: "Pendampingan literasi membaca buku cerita dan menggambar kreatif"
-  },
-  {
-    src: "foto/penyerahan_donasi.jpg",
-    title: "Penyerahan Bantuan Sosial",
-    sub: "Pemberian paket sembako, buku bacaan, serta perlengkapan sekolah"
-  },
-  {
-    src: "foto/kegiatan_1.jpg",
-    title: "Kegiatan Ramah Tamah",
-    sub: "Interaksi hangat dan permainan edukatif bersama anak-anak"
+    src: "foto/ProsesMemintaizin.jpeg",
+    type: "image",
+    title: "Proses Meminta Izin & Silaturahmi",
+    sub: "Pertemuan awal dan permohonan izin resmi bersama pimpinan panti asuhan"
   }
 ];
 
