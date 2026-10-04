@@ -31,7 +31,7 @@ const galleryItems = [
   {
     src: "foto/foto_bersama.jpg",
     title: "Dokumentasi Bersama",
-    sub: "Seluruh mahasiswa FT x MIPA bersama pengurus dan anak panti"
+    sub: "Seluruh mahasiswa FT x FMIPA bersama pengurus dan anak panti"
   },
   {
     src: "foto/kegiatan_belajar.jpg",
