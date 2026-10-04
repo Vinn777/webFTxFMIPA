@@ -30,6 +30,7 @@
           <!-- <li><a href="#tim" class="nav-link">Anggota</a></li> -->
           <li><a href="#perjalanan" class="nav-link">Tahapan</a></li>
           <li><a href="#galeri" class="nav-link">Galeri</a></li>
+          <li><a href="#testimonial" class="nav-link">Kesan &amp; Pesan</a></li>
           <!-- <li><a href="#refleksi" class="nav-link">Refleksi</a></li> -->
         </ul>
         <a href="#galeri" class="nav-btn">Lihat Dokumentasi</a>
@@ -47,37 +48,37 @@
       <canvas id="hero-canvas"></canvas>
       <div class="container hero-inner">
         <div class="hero-text-col">
-          <div class="hero-meta-strip">
+          <div class="hero-meta-strip" data-reveal="fade-up">
             <span class="hero-meta-dot"></span>
             <span class="hero-meta-text">Pendidikan Pancasila &amp; Kewarganegaraan &bull; 2026/2027</span>
           </div>
-          <h1 class="hero-title">Berbagi Kasih, <br><span class="title-accent">Mengamalkan Pancasila</span></h1>
-          <p class="hero-desc">
+          <h1 class="hero-title" data-reveal="fade-up" data-reveal-delay="100">Berbagi Kasih, <br><span class="title-accent">Mengamalkan Pancasila</span></h1>
+          <p class="hero-desc" data-reveal="fade-up" data-reveal-delay="200">
             Dokumentasi komprehensif kegiatan aksi sosial terpadu kolaborasi mahasiswa <strong>Program Studi Informatika
               (Fakultas Teknik)</strong> dan <strong>Program Studi Biologi (Fakultas FMIPA)</strong>. Menyatukan nalar
             rekayasa teknologi dan sains hayati dalam pengabdian nyata kepada masyarakat di panti asuhan.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions" data-reveal="fade-up" data-reveal-delay="300">
             <a href="#tentang" class="btn-primary">Pelajari Kegiatan &darr;</a>
             <a href="#perjalanan" class="btn-secondary">Tahapan Kegiatan</a>
           </div>
-          <div class="hero-stats">
+          <div class="hero-stats" data-reveal="fade-up" data-reveal-delay="400">
             <div class="stat-item">
-              <h3>2</h3>
+              <h3 data-count="2">0</h3>
               <p>Fakultas Kolaborator (FT &amp; FMIPA)</p>
             </div>
             <div class="stat-item">
-              <h3>2</h3>
+              <h3 data-count="2">0</h3>
               <p>Program Studi (Informatika &amp; Biologi)</p>
             </div>
             <div class="stat-item">
-              <h3>1</h3>
+              <h3 data-count="1">0</h3>
               <p>Panti Asuhan Kunjungan</p>
             </div>
           </div>
         </div>
 
-        <div class="hero-card-showcase">
+        <div class="hero-card-showcase" data-reveal="fade-left" data-reveal-delay="200">
           <div class="hero-main-card">
             <div class="hero-card-img-wrap">
               <img src="foto/ProsesMemintaizin.jpeg" alt="Proses perizinan dan silaturahmi di panti asuhan">
@@ -90,7 +91,7 @@
               <span class="pill-ft">Dokumentasi Terkini</span>
             </div>
           </div>
-          <div class="floating-badge">
+          <div class="floating-badge" id="floating-badge">
             <div class="floating-badge-icon">&check;</div>
             <div>
               <div class="floating-badge-title">Pengabdian Masyarakat</div>
@@ -103,7 +104,7 @@
 
     <section class="section-padding" id="tentang">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag primary">Latar Belakang &amp; Tujuan</span>
           <h2 class="section-title">Dedikasi Ilmiah untuk Kesejahteraan Bersama</h2>
           <p class="section-subtitle">Menghubungkan ruang kuliah dengan realitas sosial melalui aksi nyata yang
@@ -111,7 +112,7 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-content">
+          <div class="about-content" data-reveal="fade-right">
             <p>
               Pendidikan Pancasila dan Kewarganegaraan bukan sekadar pemahaman teoritis di dalam ruang kelas, melainkan
               panggilan moral untuk berpartisipasi aktif dalam merespons kebutuhan lingkungan sekitar. Melalui inisiatif
@@ -128,7 +129,7 @@
             </p>
           </div>
 
-          <div class="fact-list">
+          <div class="fact-list" data-reveal="fade-left" data-reveal-delay="150">
             <div class="fact-card">
               <div class="fact-header">
                 <span class="fact-label">Mata Kuliah</span>
@@ -260,17 +261,17 @@
 
     <section class="section-padding" id="perjalanan" style="background: var(--bg-subtle);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag">Rundown Pelaksanaan</span>
           <h2 class="section-title">Tahapan Alur Kegiatan</h2>
           <p class="section-subtitle">Rangkaian proses kerja mulai dari perencanaan hingga evaluasi akhir
             kunjungan sosial pada <strong>Sabtu, 10 Oktober 2026</strong>.</p>
         </div>
 
-        <div class="timeline-stream">
+        <div class="timeline-stream" id="timeline-stream">
           <div class="timeline-row">
-            <div class="timeline-node">01</div>
-            <div class="timeline-box">
+            <div class="timeline-node" data-node="0">01</div>
+            <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="100">
               <div class="timeline-time-tag">Fase Persiapan &bull; 2 - 9 Oktober 2026 (H-7)</div>
               <h3 class="timeline-title">Penyusunan Proposal, Perizinan, Survei &amp; Belanja Kebutuhan</h3>
               <p class="timeline-desc">
@@ -311,8 +312,8 @@
           </div>
 
           <div class="timeline-row">
-            <div class="timeline-node">02</div>
-            <div class="timeline-box">
+            <div class="timeline-node" data-node="1">02</div>
+            <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="150">
               <div class="timeline-time-tag">Sabtu, 10 Oktober 2026 &bull; 08.00 WIB</div>
               <h3 class="timeline-title">Penyambutan &amp; Penyerahan Bantuan Sosial</h3>
               <p class="timeline-desc">
@@ -323,8 +324,8 @@
           </div>
 
           <div class="timeline-row">
-            <div class="timeline-node">03</div>
-            <div class="timeline-box">
+            <div class="timeline-node" data-node="2">03</div>
+            <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="200">
               <div class="timeline-time-tag">Sabtu, 10 Oktober 2026 &bull; 10.00 - 13.00 WIB</div>
               <h3 class="timeline-title">Kelas Interaktif, Literasi, &amp; Permainan Edukatif</h3>
               <p class="timeline-desc">
@@ -335,8 +336,8 @@
           </div>
 
           <div class="timeline-row">
-            <div class="timeline-node">04</div>
-            <div class="timeline-box">
+            <div class="timeline-node" data-node="3">04</div>
+            <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="250">
               <div class="timeline-time-tag">Sabtu, 10 Oktober 2026 &bull; 14.30 WIB</div>
               <h3 class="timeline-title">Doa Bersama, Refleksi, &amp; Foto Dokumentasi</h3>
               <p class="timeline-desc">
@@ -351,7 +352,7 @@
 
     <section class="section-padding" id="galeri">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag primary">Dokumentasi Visual</span>
           <h2 class="section-title">Galeri Rekam Jejak Kegiatan</h2>
           <p class="section-subtitle">Potret kebersamaan yang merekam kehangatan, ketulusan senyum, dan kebersamaan di
@@ -360,7 +361,8 @@
 
         <div class="gallery-grid">
           <div class="gallery-card video-card" data-video="foto/Survei Lokasi.mp4"
-            data-title="Video Dokumentasi: Survei Lokasi Panti Asuhan Hasbi Rabbi">
+            data-title="Video Dokumentasi: Survei Lokasi Panti Asuhan Hasbi Rabbi"
+            data-reveal="zoom-in" data-reveal-delay="100">
             <video class="gallery-preview-video" muted playsinline preload="metadata">
               <source src="foto/Survei Lokasi.mp4" type="video/mp4">
             </video>
@@ -380,7 +382,8 @@
           </div>
 
           <div class="gallery-card" data-src="foto/ProsesMemintaizin.jpeg"
-            data-title="Proses Meminta Izin &amp; Silaturahmi Bersama Pengurus Panti Asuhan">
+            data-title="Proses Meminta Izin &amp; Silaturahmi Bersama Pengurus Panti Asuhan"
+            data-reveal="zoom-in" data-reveal-delay="200">
             <img src="foto/ProsesMemintaizin.jpeg" alt="Proses meminta izin kepada pihak panti asuhan" loading="lazy">
             <div class="gallery-overlay">
               <div class="gallery-caption">Proses Meminta Izin &amp; Silaturahmi</div>
@@ -439,6 +442,32 @@
     </section>
     -->
   </main>
+
+    <!-- =========================================================
+         BAGIAN KESAN & PESAN — PANTI ASUHAN
+         Isi data testimonial di script.js pada array testiData
+         ========================================================= -->
+    <section class="section-padding" id="testimonial">
+      <div class="container">
+        <div class="section-head" data-reveal="fade-up">
+          <span class="badge-tag">Suara dari Lapangan</span>
+          <h2 class="section-title">Kesan &amp; Pesan Panti Asuhan</h2>
+          <p class="section-subtitle">Ungkapan tulus dari pimpinan, pengasuh, dan adik-adik Panti Asuhan Hasbi Rabbi yang menjadi kenangan abadi dari kegiatan pengabdian ini.</p>
+        </div>
+
+        <div class="testimonial-track-wrap" data-reveal="fade-up" data-reveal-delay="150">
+          <div class="testimonial-track" id="testi-track">
+            <!-- kartu testimonial di-render oleh script.js -->
+          </div>
+        </div>
+
+        <div class="testimonial-controls" id="testi-controls">
+          <button class="testi-btn" id="testi-prev" aria-label="Sebelumnya">&#8592;</button>
+          <div class="testi-dots" id="testi-dots"></div>
+          <button class="testi-btn" id="testi-next" aria-label="Berikutnya">&#8594;</button>
+        </div>
+      </div>
+    </section>
 
   <footer>
     <div class="container">

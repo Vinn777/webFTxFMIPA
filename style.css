@@ -1083,16 +1083,33 @@ button {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(24, 24, 27, 0.8) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(24, 24, 27, 0.85) 0%, rgba(24, 24, 27, 0.2) 55%, transparent 80%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 1.25rem;
   opacity: 0;
-  transition: var(--transition);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-overlay .gallery-caption,
+.gallery-overlay .gallery-meta {
+  transform: translateY(12px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  opacity: 0;
+}
+
+.gallery-overlay .gallery-meta {
+  transition-delay: 0.04s;
 }
 
 .gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-card:hover .gallery-overlay .gallery-caption,
+.gallery-card:hover .gallery-overlay .gallery-meta {
+  transform: translateY(0);
   opacity: 1;
 }
 
@@ -1601,5 +1618,310 @@ footer {
     flex-direction: column;
     gap: 0.75rem;
     text-align: center;
+  }
+}
+
+/* =============================================
+   SCROLL REVEAL — 3D PERSPECTIVE ENTRANCE
+   ============================================= */
+[data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal="fade-up"] {
+  transform: perspective(900px) translateY(52px) translateZ(-30px) rotateX(6deg);
+}
+
+[data-reveal="fade-left"] {
+  transform: perspective(900px) translateX(-50px) translateZ(-20px) rotateY(8deg);
+}
+
+[data-reveal="fade-right"] {
+  transform: perspective(900px) translateX(50px) translateZ(-20px) rotateY(-8deg);
+}
+
+[data-reveal="zoom-in"] {
+  transform: perspective(900px) scale(0.88) translateZ(-50px);
+}
+
+[data-reveal="flip-up"] {
+  transform: perspective(1200px) rotateX(20deg) translateY(40px);
+  transform-origin: bottom center;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: perspective(900px) translateY(0) translateX(0) translateZ(0) rotateX(0deg) rotateY(0deg) scale(1);
+}
+
+[data-reveal-delay="100"] { transition-delay: 0.1s; }
+[data-reveal-delay="150"] { transition-delay: 0.15s; }
+[data-reveal-delay="200"] { transition-delay: 0.2s; }
+[data-reveal-delay="250"] { transition-delay: 0.25s; }
+[data-reveal-delay="300"] { transition-delay: 0.3s; }
+[data-reveal-delay="350"] { transition-delay: 0.35s; }
+[data-reveal-delay="400"] { transition-delay: 0.4s; }
+[data-reveal-delay="500"] { transition-delay: 0.5s; }
+
+/* =============================================
+   TIMELINE — ANIMATED PROGRESS FILL
+   ============================================= */
+.timeline-stream {
+  --timeline-progress: 0%;
+}
+
+.timeline-stream::before {
+  background: var(--border-light);
+}
+
+.timeline-stream::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 2px;
+  height: var(--timeline-progress);
+  background: linear-gradient(to bottom, var(--ft-blue), var(--mipa-blue));
+  transition: height 0.1s linear;
+  z-index: 1;
+}
+
+.timeline-node {
+  transition: border-color 0.4s ease, background 0.4s ease, color 0.4s ease,
+              box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-node.node-active {
+  border-color: var(--ft-blue);
+  background: var(--ft-blue);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 6px rgba(29, 78, 216, 0.15), var(--shadow-sm);
+  transform: scale(1.08);
+}
+
+/* =============================================
+   HERO — COUNTER ANIMATION
+   ============================================= */
+.stat-item h3 {
+  display: inline-block;
+}
+
+.stat-item h3.counting {
+  color: var(--ft-blue);
+}
+
+/* =============================================
+   HERO — PARALLAX FLOATING BADGE
+   ============================================= */
+.floating-badge {
+  transition: transform 0.08s linear;
+  will-change: transform;
+}
+
+/* =============================================
+   TESTIMONIAL SLIDER — PANTI ASUHAN
+   ============================================= */
+#testimonial {
+  background: linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0c1628 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#testimonial::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#testimonial::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#testimonial .section-title {
+  color: #FFFFFF;
+}
+
+#testimonial .section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#testimonial .badge-tag {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.testimonial-track-wrap {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 1rem 0 2rem;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.testimonial-card {
+  flex: 0 0 calc(50% - 0.75rem);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem 1.75rem;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.25rem;
+  left: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  select: none;
+}
+
+.testimonial-body {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.25rem;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ft-blue), var(--mipa-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.testimonial-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.1rem;
+}
+
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.testi-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 1.1rem;
+  font-family: inherit;
+  backdrop-filter: blur(6px);
+}
+
+.testi-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+.testi-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.testi-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 calc(100% - 3rem);
+  }
+
+  [data-reveal="fade-left"],
+  [data-reveal="fade-right"] {
+    transform: perspective(900px) translateY(40px) translateZ(-20px);
   }
 }
