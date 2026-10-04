@@ -807,6 +807,46 @@ button {
   letter-spacing: 0.03em;
 }
 
+/* ── NPM (alias identik dengan NIM, dipakai setelah rename) ── */
+.member-npm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.member-npm .npm-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.member-npm code {
+  background: var(--mipa-light);
+  border: 1px solid var(--mipa-border);
+  padding: 0.12rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: var(--mipa-blue);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.member-card.ft .member-npm code {
+  background: rgba(29, 78, 216, 0.08);
+  border-color: rgba(29, 78, 216, 0.2);
+  color: #1D4ED8;
+}
+
 .member-quote {
   font-size: 0.86rem;
   color: var(--text-muted);
