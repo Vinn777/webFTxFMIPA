@@ -7,120 +7,120 @@ const teamMembers = [
   {
     name: "Karel Agreska Arlin",
     npm: "2617021006",
-    faculty: "fmipa",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "karel.jpeg",
     quote: "Kepedulian terhadap sesama adalah bentuk tertinggi dari keharmonisan hidup.",
     reflection: "Melihat binar mata dan keceriaan adik-adik panti menyadarkan saya bahwa kebahagiaan sejati hadir ketika kita mau berbagi waktu dan ketulusan."
   },
   {
     name: "Arta Aulia",
     npm: "2617021030",
-    faculty: "fmipa",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "Artha.jpeg",
     quote: "Berbagi bukan tentang seberapa banyak yang kita punya, melainkan ketulusan hati.",
     reflection: "Kunjungan ini mengajarkan makna rasa syukur yang mendalam dan pentingnya merawat empati sosial di tengah kesibukan perkuliahan."
   },
   {
     name: "Annisa Qania Fitri",
-    npm: "2617021039",
-    faculty: "fmipa",
+    nim: "2617021039",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "anisa.jpeg",
     quote: "Setiap senyuman adik-adik panti adalah motivasi terbesar untuk terus bermanfaat.",
     reflection: "Melalui interaksi hangat ini, nilai kemanusiaan dalam Pancasila bukan lagi teori, tetapi tindakan nyata yang menyentuh nurani."
   },
   {
     name: "Clarissa Aurelia",
-    npm: "2617021021",
-    faculty: "fmipa",
+    nim: "2617021021",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "clarisa.jpeg",
     quote: "Menyemai kasih sayang adalah langkah awal membangun masa depan generasi bangsa.",
     reflection: "Mendampingi adik-adik belajar dan bermain memberikan pengalaman batin yang berharga tentang arti kebersamaan dan ketulusan."
   },
   {
-    name: "Fina",
-    npm: "2617021050",
-    faculty: "fmipa",
+    name: "Saifina Izza Aulia",
+    nim: "2617021050",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "fina.jpeg",
     quote: "Kebaikan kecil yang dilakukan bersama akan melahirkan dampak yang luar biasa.",
     reflection: "Kegiatan ini mempererat ikatan kekeluargaan lintas disiplin ilmu dan menguatkan komitmen moral kami untuk terus peduli pada sesama."
   },
   {
     name: "Syabilla Aura Puffy",
-    npm: "2617021060",
-    faculty: "fmipa",
+    nim: "2617021060",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "bila.jpeg",
     quote: "Belajar memahami arti kehidupan dari ketulusan dan ketegaran anak-anak panti.",
     reflection: "Senyum polos mereka mengajarkan arti kesabaran dan keikhlasan. Pengalaman berharga yang akan selalu membekas di hati."
   },
   {
     name: "Puja Tyas Cahyani",
-    npm: "2617021070",
-    faculty: "fmipa",
+    nim: "2617021070",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "ayas.jpeg",
     quote: "Sains mengajarkan kita tentang kehidupan, tetapi kemanusiaan memberi makna padanya.",
     reflection: "Kolaborasi ini membuktikan bahwa ilmu biologi dan nurani sosial saling melengkapi dalam mengabdi kepada masyarakat."
   },
   {
     name: "Aqila Salsabila Fitri",
-    npm: "2617021081",
-    faculty: "fmipa",
+    nim: "2617021081",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "aqila.jpeg",
     quote: "Hadir dan mendengarkan adalah wujud sederhana dari kasih sayang yang bermakna.",
     reflection: "Mendengarkan cita-cita adik-adik panti membuka mata saya bahwa setiap anak berhak mendapatkan kasih sayang dan ruang untuk bermimpi."
   },
   {
     name: "Jeni Hestiana Dewi",
-    npm: "2617021091",
-    faculty: "fmipa",
+    nim: "2617021091",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "jeni.jpeg",
     quote: "Mengabdi dengan hati, menebar benih kebaikan untuk negeri.",
     reflection: "Pengalaman di Panti Asuhan Hasbi Rabbi menumbuhkan tekad kuat untuk terus berkontribusi aktif bagi kesejahteraan sosial."
   },
   {
     name: "Chintya Nabila",
-    npm: "2657021004",
-    faculty: "fmipa",
+    nim: "2657021004",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "cynta.jpeg",
     quote: "Persatuan dan gotong royong adalah kunci terciptanya kepedulian yang berkelanjutan.",
     reflection: "Sinergi antara mahasiswa dan pengurus panti menjadi bukti nyata indahnya nilai persatuan dan keadilan sosial Pancasila."
   },
   {
     name: "Syaqinata Riskia Karlin",
-    npm: "2657021013",
-    faculty: "fmipa",
+    nim: "2657021013",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "nata.jpeg",
     quote: "Cinta kasih yang tulus mampu meruntuhkan setiap jarak dan perbedaan.",
     reflection: "Kebersamaan bersama adik-adik panti asuhan mengajarkan bahwa kebahagiaan terbesar datang saat kita mampu membuat orang lain tersenyum."
   },
   {
     name: "Syahdan Abbad Zabran",
-    npm: "2657021017",
-    faculty: "fmipa",
+    nim: "2657021017",
+    faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "",
+    avatar: "zabran.jpeg",
     quote: "Jadilah pribadi yang menebar manfaat di mana pun kaki berpijak.",
     reflection: "Aksi nyata di panti asuhan ini memperkokoh integritas dan rasa tanggung jawab sosial sebagai generasi muda harapan bangsa."
   }
@@ -517,7 +517,7 @@ function renderTeam(filter) {
 
   if (section) section.style.display = "";
 
-  const filtered = filter === "all" ? teamMembers : teamMembers.filter(m => m.faculty.toLowerCase() === filter.toLowerCase() || (filter === "mipa" && m.faculty.toLowerCase() === "fmipa") || (filter === "fmipa" && m.faculty.toLowerCase() === "mipa"));
+  const filtered = filter === "all" ? teamMembers : teamMembers.filter(m => m.faculty === filter);
 
   if (filtered.length === 0) {
     const emptyNotice = document.createElement("div");
@@ -553,7 +553,7 @@ function renderTeam(filter) {
         </div>
       </div>
       <div class="member-prodi">${m.prodi} &bull; ${m.facultyName}</div>
-      ${(m.npm || m.nim) ? `<div class="member-nim"><span class="nim-label">NPM</span><code>${m.npm || m.nim}</code></div>` : ''}
+      ${m.nim ? `<div class="member-nim"><span class="nim-label">NIM</span><code>${m.nim}</code></div>` : ''}
       <div class="member-quote">&ldquo;${m.quote || 'Mengabdi untuk masyarakat.'}&rdquo;</div>
     `;
     container.appendChild(card);
@@ -593,7 +593,7 @@ function renderReflections() {
       <div class="reflection-author">
         <div>
           <div class="reflection-author-name">${m.name}</div>
-          <div class="reflection-author-prodi">${m.prodi} &bull; ${m.facultyName}${(m.npm || m.nim) ? ` (NPM: ${m.npm || m.nim})` : ''}</div>
+          <div class="reflection-author-prodi">${m.prodi} &bull; ${m.facultyName}${m.nim ? ` (NIM: ${m.nim})` : ''}</div>
         </div>
       </div>
     `;
