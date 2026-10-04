@@ -11,7 +11,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "citet.jpeg",
     quote: "Teknologi bermakna ketika ia digunakan untuk mengangkat derajat sesama.",
     reflection: "Kunjungan ke panti asuhan mengajarkan saya bahwa ilmu tanpa kepedulian adalah kosong. Saya pulang dengan hati yang lebih penuh dan tekad untuk terus bermanfaat."
   },
@@ -21,7 +21,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "ul.jpeg",
     quote: "Kebaikan yang tulus selalu menemukan jalannya ke hati yang tepat.",
     reflection: "Berinteraksi langsung dengan adik-adik panti menumbuhkan rasa syukur yang dalam. Setiap senyum mereka adalah pengingat bahwa empati adalah bekal hidup yang sesungguhnya."
   },
@@ -31,7 +31,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "zar.jpeg",
     quote: "Berbagi waktu dan perhatian adalah investasi kemanusiaan terbaik.",
     reflection: "Pengalaman ini membuka mata saya bahwa pengabdian nyata jauh lebih berdampak daripada sekadar teori. Nilai Pancasila benar-benar hidup dalam setiap interaksi di panti."
   },
@@ -51,8 +51,8 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
-    quote: "Kolaborasi lintas ilmu adalah kunci untuk menjawab tantangan nyata.",
+    avatar: "nay.jpg",
+    quote: "pada akhirnya, kita akan sampai pada tempat yang selama ini kita doakan.",
     reflection: "Sinergi antara mahasiswa FT dan FMIPA membuktikan bahwa perbedaan disiplin ilmu bukan hambatan, melainkan kekuatan untuk menciptakan dampak sosial yang lebih besar."
   },
   {
@@ -61,7 +61,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "nial.jpeg",
     quote: "Inovasi terhebat adalah yang mampu menyentuh kehidupan orang banyak.",
     reflection: "Kegiatan ini menyadarkan saya bahwa sebagai insan teknologi, tanggung jawab sosial harus selalu berjalan seiring dengan kemampuan teknis yang kami kembangkan."
   },
@@ -71,7 +71,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "luk.png",
     quote: "Keberuntungan sejati adalah ketika kita bisa membuat orang lain bahagia.",
     reflection: "Mendampingi adik-adik panti belajar dan bermain adalah pengalaman yang tidak ternilai. Mereka mengajarkan saya arti ketulusan dan keberanian dalam menghadapi hidup."
   },
@@ -81,7 +81,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "ren.jpeg",
     quote: "Setiap langkah kecil menuju kebaikan adalah kontribusi nyata bagi bangsa.",
     reflection: "Momen berbagi bersama adik-adik di Panti Asuhan Hasbi Rabbi adalah pengingat bahwa di balik layar teknologi, ada jiwa-jiwa manusia yang perlu kita jaga dan perhatikan."
   },
@@ -101,7 +101,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "koko.png",
     quote: "Ketika hati dan pikiran bersatu, tidak ada kebaikan yang terlalu kecil.",
     reflection: "Kunjungan ini mengajarkan saya bahwa nilai Pancasila bukan sekadar hapalan, melainkan panduan hidup yang harus diwujudkan dalam tindakan nyata setiap harinya."
   },
@@ -111,7 +111,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "syah.jpeg",
     quote: "Generasi muda yang peduli adalah fondasi bangsa yang kuat.",
     reflection: "Berinteraksi dengan penghuni panti asuhan memperdalam pemahaman saya tentang pentingnya keadilan sosial. Ini adalah pelajaran yang tidak akan saya temukan di bangku kuliah."
   },
@@ -131,7 +131,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "pau.jpeg",
     quote: "Hasanah sejati lahir dari niat tulus untuk berbagi tanpa pamrih.",
     reflection: "Kegiatan pengabdian ini menguatkan tekad saya untuk menjadi pribadi yang tidak hanya cerdas secara akademis, tetapi juga peka dan responsif terhadap kebutuhan sosial."
   },
@@ -141,7 +141,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "fid.jpeg",
     quote: "Seperti matahari, jadilah sumber cahaya dan kehangatan bagi sekitar.",
     reflection: "Pengalaman di panti asuhan mengajarkan bahwa keberhasilan sejati bukan diukur dari nilai IPK, melainkan dari seberapa besar dampak positif yang kita berikan kepada orang lain."
   },
@@ -151,7 +151,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "sal.jpeg",
     quote: "Kepedulian sosial adalah kompas moral seorang intelektual sejati.",
     reflection: "Kolaborasi dalam kegiatan ini memperkuat rasa persatuan saya dengan rekan-rekan dari berbagai latar belakang. Kami membuktikan bahwa perbedaan bisa menjadi kekuatan luar biasa."
   },
@@ -161,7 +161,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "faa.jpeg",
     quote: "Setiap baris kode yang baik dimulai dari hati yang ikhlas melayani.",
     reflection: "Momen berbagi ilmu dan kegembiraan bersama adik-adik panti adalah pengalaman yang mengubah perspektif saya tentang makna hidup sebagai mahasiswa dan sebagai manusia."
   },
@@ -181,7 +181,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "bon.jpeg",
     quote: "Hasian berarti kasih sayang — dan kasih sayang adalah modal terbesar pengabdian.",
     reflection: "Interaksi hangat di panti asuhan mengingatkan saya bahwa di balik setiap angka data dan algoritma, ada manusia nyata yang membutuhkan perhatian dan empati kita."
   },
@@ -191,7 +191,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "riiq.jpeg",
     quote: "Kecerdasan tanpa nurani adalah pisau tanpa gagang — berbahaya bagi diri sendiri.",
     reflection: "Bergabung dalam kegiatan ini memperkaya saya bukan hanya secara sosial, tetapi juga spiritualitas. Nilai-nilai Pancasila terasa hidup dan nyata dalam setiap kegiatan yang kami lakukan bersama."
   },
@@ -802,14 +802,19 @@ function setupGallery() {
   const modalCap = document.getElementById("lightbox-caption");
   const closeBtn = document.getElementById("lightbox-close");
 
-  // Pastikan seluruh video tidak autoplay saat halaman dimuat
+  // Pastikan seluruh video preview tidak autoplay dan tidak bisa diklik langsung
   document.querySelectorAll("video").forEach(v => {
     v.removeAttribute("autoplay");
     v.pause();
+    // Cegah klik pada elemen video preview membuka file di browser
+    v.addEventListener("click", e => e.preventDefault());
   });
 
   document.querySelectorAll(".gallery-card").forEach(card => {
-    card.addEventListener("click", () => {
+    card.addEventListener("click", e => {
+      // Cegah klik pada video preview mentrigger default browser
+      e.preventDefault();
+
       const videoSrc = card.getAttribute("data-video");
       const src = card.getAttribute("data-src");
       const title = card.getAttribute("data-title");
@@ -818,11 +823,22 @@ function setupGallery() {
       modalCap.textContent = title || "";
 
       if (videoSrc) {
+        // Tampilkan video di lightbox
         if (modalImg) modalImg.style.display = "none";
         if (modalVid) {
           modalVid.style.display = "block";
+          modalVid.style.width = "100%";
+          modalVid.style.maxHeight = "70vh";
+          modalVid.style.borderRadius = "0.75rem";
           modalVid.src = videoSrc;
-          modalVid.pause();
+          // Autoplay setelah modal terbuka
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+          modalVid.load();
+          modalVid.play().catch(() => {
+            // Jika autoplay diblokir browser, biarkan user tekan play manual
+          });
+          return; // sudah tambahkan active, langsung return
         }
       } else if (src) {
         if (modalVid) { modalVid.pause(); modalVid.src = ""; modalVid.style.display = "none"; }
@@ -838,7 +854,11 @@ function setupGallery() {
     if (!modal) return;
     modal.classList.remove("active");
     document.body.style.overflow = "";
-    if (modalVid) { modalVid.pause(); modalVid.src = ""; modalVid.style.display = "none"; }
+    if (modalVid) {
+      modalVid.pause();
+      modalVid.src = "";
+      modalVid.style.display = "none";
+    }
   };
 
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
