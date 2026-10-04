@@ -517,7 +517,7 @@ function renderTeam(filter) {
 
   if (section) section.style.display = "";
 
-  const filtered = filter === "all" ? teamMembers : teamMembers.filter(m => m.faculty === filter);
+  const filtered = filter === "all" ? teamMembers : teamMembers.filter(m => m.faculty.toLowerCase() === filter.toLowerCase());
 
   if (filtered.length === 0) {
     const emptyNotice = document.createElement("div");
@@ -543,7 +543,9 @@ function renderTeam(filter) {
     const card = document.createElement("div");
     card.className = `member-card ${m.faculty}`;
     const fallbackAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=0284c7&color=fff&size=128&bold=true`;
-    const avatarSrc = m.avatar && m.avatar.trim() !== "" ? m.avatar : fallbackAvatar;
+    const avatarSrc = m.avatar && m.avatar.trim() !== ""
+      ? (m.avatar.startsWith("http") || m.avatar.startsWith("foto/") ? m.avatar : `foto/${m.avatar}`)
+      : fallbackAvatar;
     card.innerHTML = `
       <div class="member-card-top">
         <img class="member-avatar" src="${avatarSrc}" alt="${m.name}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackAvatar}'">
