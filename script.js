@@ -7,7 +7,7 @@ const teamMembers = [
   // ── FAKULTAS TEKNIK — INFORMATIKA ──────────────────────────────────────────
   {
     name: "Airin Citra Kirana",
-    nim: "2615061001",
+    npm: "2615061001",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -17,7 +17,7 @@ const teamMembers = [
   },
   {
     name: "Syifa Uljanah",
-    nim: "2615061017",
+    npm: "2615061017",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -27,7 +27,7 @@ const teamMembers = [
   },
   {
     name: "Zahra Salsabilla",
-    nim: "2615061019",
+    npm: "2615061019",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -37,7 +37,7 @@ const teamMembers = [
   },
   {
     name: "Erin Chelsia Sabila",
-    nim: "2615061024",
+    npm: "2615061024",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -47,7 +47,7 @@ const teamMembers = [
   },
   {
     name: "Dinayira Fransiska Sitinjak",
-    nim: "2615061035",
+    npm: "2615061035",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -57,7 +57,7 @@ const teamMembers = [
   },
   {
     name: "Genial Ang Djenar",
-    nim: "2615061060",
+    npm: "2615061060",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -67,7 +67,7 @@ const teamMembers = [
   },
   {
     name: "Lucky Dharma Putra",
-    nim: "2615061063",
+    npm: "2615061063",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -77,7 +77,7 @@ const teamMembers = [
   },
   {
     name: "Renatha Hany Yuztika",
-    nim: "2615061066",
+    npm: "2615061066",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -87,7 +87,7 @@ const teamMembers = [
   },
   {
     name: "Shofi Gholi Alwan Azzaki",
-    nim: "2615061067",
+    npm: "2615061067",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -97,7 +97,7 @@ const teamMembers = [
   },
   {
     name: "Khodijah Bintu H.Wardono",
-    nim: "2615061072",
+    npm: "2615061072",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -107,7 +107,7 @@ const teamMembers = [
   },
   {
     name: "Syahrul Muhammad Farel",
-    nim: "2615061076",
+    npm: "2615061076",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -117,7 +117,7 @@ const teamMembers = [
   },
   {
     name: "Fathiyah Izza Ramadani",
-    nim: "2615061082",
+    npm: "2615061082",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -127,7 +127,7 @@ const teamMembers = [
   },
   {
     name: "Fauziyah Nur Hasanah",
-    nim: "2615061095",
+    npm: "2615061095",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -137,7 +137,7 @@ const teamMembers = [
   },
   {
     name: "Hafid Surya",
-    nim: "2615061096",
+    npm: "2615061096",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -147,7 +147,7 @@ const teamMembers = [
   },
   {
     name: "Amsal Fritzie Siregar",
-    nim: "2615061105",
+    npm: "2615061105",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -157,7 +157,7 @@ const teamMembers = [
   },
   {
     name: "Daffa Choirul Shihab",
-    nim: "2615061106",
+    npm: "2615061106",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -167,7 +167,7 @@ const teamMembers = [
   },
   {
     name: "Rafa Fairuz Athaya",
-    nim: "2615061124",
+    npm: "2615061124",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -177,7 +177,7 @@ const teamMembers = [
   },
   {
     name: "Bona Hasian Sitohang",
-    nim: "2615061140",
+    npm: "2615061140",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -187,7 +187,7 @@ const teamMembers = [
   },
   {
     name: "Ariiq Nawfal Aqilla",
-    nim: "2655061005",
+    npm: "2655061005",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
@@ -218,7 +218,7 @@ const teamMembers = [
   },
   {
     name: "Annisa Qania Fitri",
-    nim: "2617021039",
+    npm: "2617021039",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -228,7 +228,7 @@ const teamMembers = [
   },
   {
     name: "Clarissa Aurelia",
-    nim: "2617021021",
+    npm: "2617021021",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -238,7 +238,7 @@ const teamMembers = [
   },
   {
     name: "Saifina Izza Aulia",
-    nim: "2617021050",
+    npm: "2617021050",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -248,7 +248,7 @@ const teamMembers = [
   },
   {
     name: "Syabilla Aura Puffy",
-    nim: "2617021060",
+    npm: "2617021060",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -258,7 +258,7 @@ const teamMembers = [
   },
   {
     name: "Puja Tyas Cahyani",
-    nim: "2617021070",
+    npm: "2617021070",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -268,7 +268,7 @@ const teamMembers = [
   },
   {
     name: "Aqila Salsabila Fitri",
-    nim: "2617021081",
+    npm: "2617021081",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -278,7 +278,7 @@ const teamMembers = [
   },
   {
     name: "Jeni Hestiana Dewi",
-    nim: "2617021091",
+    npm: "2617021091",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -288,7 +288,7 @@ const teamMembers = [
   },
   {
     name: "Chintya Nabila",
-    nim: "2657021004",
+    npm: "2657021004",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -298,7 +298,7 @@ const teamMembers = [
   },
   {
     name: "Syaqinata Riskia Karlin",
-    nim: "2657021013",
+    npm: "2657021013",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -308,7 +308,7 @@ const teamMembers = [
   },
   {
     name: "Syahdan Abbad Zabran",
-    nim: "2657021017",
+    npm: "2657021017",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
@@ -747,7 +747,7 @@ function renderTeam(filter) {
         </div>
       </div>
       <div class="member-prodi">${m.prodi} &bull; ${m.facultyName}</div>
-      ${m.nim ? `<div class="member-nim"><span class="nim-label">NIM</span><code>${m.nim}</code></div>` : ''}
+      ${m.npm ? `<div class="member-npm"><span class="npm-label">NPM</span><code>${m.npm}</code></div>` : ''}
       <div class="member-quote">&ldquo;${m.quote || 'Mengabdi untuk masyarakat.'}&rdquo;</div>
     `;
     container.appendChild(card);
@@ -787,7 +787,7 @@ function renderReflections() {
       <div class="reflection-author">
         <div>
           <div class="reflection-author-name">${m.name}</div>
-          <div class="reflection-author-prodi">${m.prodi} &bull; ${m.facultyName}${m.nim ? ` (NIM: ${m.nim})` : ''}</div>
+          <div class="reflection-author-prodi">${m.prodi} &bull; ${m.facultyName}${m.npm ? ` (NPM: ${m.npm})` : ''}</div>
         </div>
       </div>
     `;
