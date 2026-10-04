@@ -43,6 +43,35 @@ const galleryItems = [
 ];
 
 // ============================================================================
+// SLIDESHOW FOTO HERO
+// Tambahkan foto-foto baru di sini setelah kegiatan berlangsung.
+// Format: { src, alt, title, sub } — title & sub muncul di caption bawah kartu.
+// ============================================================================
+const heroSlides = [
+  {
+    src: "foto/ProsesMemintaizin.jpeg",
+    alt: "Proses perizinan dan silaturahmi di panti asuhan",
+    title: "Silaturahmi &amp; Proses Perizinan",
+    sub: "Panti Asuhan Hasbi Rabbi &bull; Informatika &times; Biologi"
+  }
+  /*
+  // Contoh menambahkan foto baru setelah kunjungan:
+  ,{
+    src: "foto/PenyerahanBantuan.jpeg",
+    alt: "Penyerahan sembako kepada panti asuhan",
+    title: "Penyerahan Bantuan Sosial",
+    sub: "Sembako &amp; Perlengkapan Sekolah"
+  },
+  {
+    src: "foto/KelasInteraktif.jpeg",
+    alt: "Kelas interaktif bersama anak-anak panti",
+    title: "Kelas Interaktif &amp; Literasi",
+    sub: "Mendampingi belajar anak-anak panti"
+  }
+  */
+];
+
+// ============================================================================
 // KESAN & PESAN PANTI ASUHAN
 // Isi dengan ungkapan nyata dari pimpinan, pengasuh, atau anak-anak panti.
 // Hapus contoh di bawah dan ganti dengan ucapan asli setelah kegiatan selesai.
@@ -89,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTimelineProgress();
   initParallax();
   initTestimonialSlider();
+  initHeroSlideshow();
 });
 
 // ============================================================================
@@ -305,6 +335,79 @@ function initTestimonialSlider() {
     renderDots();
     goTo(0);
   });
+}
+
+// ============================================================================
+// HERO SLIDESHOW — CROSSFADE AUTO-ADVANCE
+// ============================================================================
+function initHeroSlideshow() {
+  const container = document.getElementById("hero-slideshow");
+  const dotsWrap  = document.getElementById("hero-slide-dots");
+  const titleEl   = document.getElementById("slide-caption-title");
+  const subEl     = document.getElementById("slide-caption-sub");
+
+  if (!container || !heroSlides.length) return;
+
+  // Render semua slide (absolut bertumpuk, crossfade)
+  heroSlides.forEach((slide, i) => {
+    const el = document.createElement("div");
+    el.className = "hero-slide" + (i === 0 ? " active" : "");
+    el.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" loading="${i === 0 ? 'eager' : 'lazy'}">`;
+    container.appendChild(el);
+  });
+
+  // Render dots hanya jika ada > 1 slide
+  if (heroSlides.length > 1 && dotsWrap) {
+    heroSlides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "hero-slide-dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", `Foto ${i + 1}`);
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  let current = 0;
+  const slides = container.querySelectorAll(".hero-slide");
+  const dots   = dotsWrap ? dotsWrap.querySelectorAll(".hero-slide-dot") : [];
+
+  function goToSlide(index) {
+    slides[current].classList.remove("active");
+    if (dots[current]) dots[current].classList.remove("active");
+
+    current = ((index % heroSlides.length) + heroSlides.length) % heroSlides.length;
+
+    slides[current].classList.add("active");
+    if (dots[current]) dots[current].classList.add("active");
+
+    // Fade caption saat ganti slide
+    if (titleEl && subEl) {
+      titleEl.style.transition = "opacity 0.2s ease";
+      subEl.style.transition   = "opacity 0.2s ease";
+      titleEl.style.opacity = "0";
+      subEl.style.opacity   = "0";
+      setTimeout(() => {
+        titleEl.innerHTML = heroSlides[current].title;
+        subEl.innerHTML   = heroSlides[current].sub;
+        titleEl.style.transition = "opacity 0.4s ease";
+        subEl.style.transition   = "opacity 0.4s ease";
+        titleEl.style.opacity = "1";
+        subEl.style.opacity   = "1";
+      }, 220);
+    }
+  }
+
+  // Auto-advance tiap 4 detik, pause saat hover
+  if (heroSlides.length > 1) {
+    let timer = setInterval(() => goToSlide(current + 1), 4000);
+    const card = container.closest(".hero-main-card");
+    if (card) {
+      card.addEventListener("mouseenter", () => clearInterval(timer));
+      card.addEventListener("mouseleave", () => {
+        timer = setInterval(() => goToSlide(current + 1), 4000);
+      });
+    }
+  }
 }
 
 // ============================================================================

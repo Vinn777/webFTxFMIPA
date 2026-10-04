@@ -30,7 +30,8 @@
           <!-- <li><a href="#tim" class="nav-link">Anggota</a></li> -->
           <li><a href="#perjalanan" class="nav-link">Tahapan</a></li>
           <li><a href="#galeri" class="nav-link">Galeri</a></li>
-          <li><a href="#testimonial" class="nav-link">Kesan &amp; Pesan</a></li>
+          <!-- Kesan & Pesan disembunyikan sementara hingga kegiatan selesai -->
+          <!-- <li><a href="#testimonial" class="nav-link">Kesan &amp; Pesan</a></li> -->
           <!-- <li><a href="#refleksi" class="nav-link">Refleksi</a></li> -->
         </ul>
         <a href="#galeri" class="nav-btn">Lihat Dokumentasi</a>
@@ -79,18 +80,7 @@
         </div>
 
         <div class="hero-card-showcase" data-reveal="fade-left" data-reveal-delay="200">
-          <div class="hero-main-card">
-            <div class="hero-card-img-wrap">
-              <img src="foto/ProsesMemintaizin.jpeg" alt="Proses perizinan dan silaturahmi di panti asuhan">
-            </div>
-            <div class="hero-card-caption">
-              <div>
-                <div class="hero-caption-title">Silaturahmi &amp; Proses Perizinan</div>
-                <div class="hero-caption-sub">Panti Asuhan Hasbi Rabbi &bull; Informatika &times; Biologi</div>
-              </div>
-              <span class="pill-ft">Dokumentasi Terkini</span>
-            </div>
-          </div>
+          <!-- Floating badge dipindah ke atas agar tidak menutupi caption -->
           <div class="floating-badge" id="floating-badge">
             <div class="floating-badge-icon">&check;</div>
             <div>
@@ -98,6 +88,20 @@
               <div class="floating-badge-sub">Realisasi Nilai Kemanusiaan</div>
             </div>
           </div>
+          <div class="hero-main-card">
+            <div class="hero-card-img-wrap" id="hero-slideshow">
+              <!-- Slides di-render oleh script.js dari array heroSlides -->
+            </div>
+            <div class="hero-card-caption">
+              <div>
+                <div class="hero-caption-title" id="slide-caption-title">Silaturahmi &amp; Proses Perizinan</div>
+                <div class="hero-caption-sub" id="slide-caption-sub">Panti Asuhan Hasbi Rabbi &bull; Informatika &times; Biologi</div>
+              </div>
+              <span class="pill-ft" id="slide-caption-tag">Dokumentasi Terkini</span>
+            </div>
+          </div>
+          <!-- Slide dots indicator -->
+          <div class="hero-slide-dots" id="hero-slide-dots"></div>
         </div>
       </div>
     </section>
@@ -443,11 +447,9 @@
     -->
   </main>
 
-    <!-- =========================================================
-         BAGIAN KESAN & PESAN — PANTI ASUHAN
-         Isi data testimonial di script.js pada array testiData
-         ========================================================= -->
-    <section class="section-padding" id="testimonial">
+    <!-- KESAN & PESAN — disembunyikan sementara hingga kegiatan selesai.
+         Aktifkan kembali dengan menghapus style="display:none" di bawah. -->
+    <section class="section-padding" id="testimonial" style="display:none;">
       <div class="container">
         <div class="section-head" data-reveal="fade-up">
           <span class="badge-tag">Suara dari Lapangan</span>
