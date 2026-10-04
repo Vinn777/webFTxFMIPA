@@ -819,7 +819,36 @@ button {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.timeline-prep-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  list-style: none;
   margin-bottom: 1.25rem;
+  padding: 0;
+}
+
+.timeline-prep-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-prep-list li span {
+  color: #16A34A;
+  font-weight: 800;
+  font-size: 0.85rem;
 }
 
 .timeline-photo {
@@ -833,6 +862,85 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.timeline-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.timeline-media-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: var(--transition);
+}
+
+.timeline-media-card:hover {
+  border-color: var(--ft-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-media-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.media-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.media-badge.photo {
+  background: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+.media-badge.video {
+  background: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FECACA;
+}
+
+.timeline-video-container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0B0F19;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000000;
+  display: block;
 }
 
 .pancasila-container {
@@ -997,6 +1105,73 @@ button {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.78rem;
   margin-top: 0.2rem;
+}
+
+.gallery-card.video-card {
+  position: relative;
+  background: #000000;
+}
+
+.gallery-card.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.gallery-card.video-card:hover video {
+  transform: scale(1.05);
+}
+
+.gallery-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.9);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
+  z-index: 3;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.gallery-card:hover .gallery-play-btn {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: #DC2626;
+  box-shadow: 0 6px 25px rgba(220, 38, 38, 0.7);
+}
+
+.gallery-video-pill {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-video-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #EF4444;
 }
 
 .reflection-grid {
@@ -1220,10 +1395,13 @@ footer {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.lightbox-image-wrap img {
+.lightbox-image-wrap img,
+.lightbox-image-wrap video {
   max-height: 78vh;
+  max-width: 100%;
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
 .lightbox-caption-text {

@@ -145,20 +145,41 @@ function renderReflections() {
 function setupGallery() {
   const modal = document.getElementById("lightbox-modal");
   const modalImg = document.getElementById("lightbox-img");
+  const modalVideo = document.getElementById("lightbox-video");
   const modalCap = document.getElementById("lightbox-caption");
   const closeBtn = document.getElementById("lightbox-close");
 
   const cards = document.querySelectorAll(".gallery-card");
   cards.forEach(card => {
     card.addEventListener("click", () => {
+      const videoSrc = card.getAttribute("data-video");
       const src = card.getAttribute("data-src");
       const title = card.getAttribute("data-title");
-      if (modal && modalImg && modalCap) {
-        modalImg.src = src;
-        modalCap.textContent = title;
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
+
+      if (!modal || !modalCap) return;
+      modalCap.textContent = title || "";
+
+      if (videoSrc) {
+        if (modalImg) modalImg.style.display = "none";
+        if (modalVideo) {
+          modalVideo.style.display = "block";
+          modalVideo.src = videoSrc;
+          modalVideo.play().catch(() => {});
+        }
+      } else if (src) {
+        if (modalVideo) {
+          modalVideo.pause();
+          modalVideo.src = "";
+          modalVideo.style.display = "none";
+        }
+        if (modalImg) {
+          modalImg.style.display = "block";
+          modalImg.src = src;
+        }
       }
+
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
   });
 
@@ -166,6 +187,11 @@ function setupGallery() {
     if (modal) {
       modal.classList.remove("active");
       document.body.style.overflow = "";
+      if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.src = "";
+        modalVideo.style.display = "none";
+      }
     }
   };
 
