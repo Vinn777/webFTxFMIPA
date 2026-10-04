@@ -10,7 +10,7 @@ const teamMembers = [
     name: "Nama Mahasiswa FT",
     faculty: "ft", // gunakan 'ft' untuk Fakultas Teknik
     facultyName: "Fakultas Teknik",
-    prodi: "Teknik Informatika",
+    prodi: "Informatika",
     avatar: "foto/nama_foto.jpg",
     quote: "Kutipan atau pesan singkat kegiatan.",
     reflection: "Refleksi atau pembelajaran yang didapatkan dari kegiatan di panti asuhan."
@@ -19,7 +19,7 @@ const teamMembers = [
     name: "Nama Mahasiswa FMIPA",
     faculty: "mipa", // gunakan 'mipa' untuk Fakultas MIPA (Warna Biru Muda)
     facultyName: "Fakultas MIPA",
-    prodi: "Matematika",
+    prodi: "Biologi",
     avatar: "foto/nama_foto.jpg",
     quote: "Kutipan atau pesan singkat kegiatan.",
     reflection: "Refleksi atau pembelajaran yang didapatkan dari kegiatan di panti asuhan."
