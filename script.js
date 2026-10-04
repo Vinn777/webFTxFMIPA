@@ -10,7 +10,7 @@ const teamMembers = [
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
     prodi: "Biologi",
-    avatar: "karel.jpeg",
+    avatar: "Karel.jpeg",
     quote: "Kepedulian terhadap sesama adalah bentuk tertinggi dari keharmonisan hidup.",
     reflection: "Melihat binar mata dan keceriaan adik-adik panti menyadarkan saya bahwa kebahagiaan sejati hadir ketika kita mau berbagi waktu dan ketulusan."
   },
