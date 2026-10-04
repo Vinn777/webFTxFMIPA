@@ -4,6 +4,198 @@
 // Silakan isi data anggota kelompok pada array di bawah ini:
 // ============================================================================
 const teamMembers = [
+  // ── FAKULTAS TEKNIK — INFORMATIKA ──────────────────────────────────────────
+  {
+    name: "Airin Citra Kirana",
+    nim: "2615061001",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Teknologi bermakna ketika ia digunakan untuk mengangkat derajat sesama.",
+    reflection: "Kunjungan ke panti asuhan mengajarkan saya bahwa ilmu tanpa kepedulian adalah kosong. Saya pulang dengan hati yang lebih penuh dan tekad untuk terus bermanfaat."
+  },
+  {
+    name: "Syifa Uljanah",
+    nim: "2615061017",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Kebaikan yang tulus selalu menemukan jalannya ke hati yang tepat.",
+    reflection: "Berinteraksi langsung dengan adik-adik panti menumbuhkan rasa syukur yang dalam. Setiap senyum mereka adalah pengingat bahwa empati adalah bekal hidup yang sesungguhnya."
+  },
+  {
+    name: "Zahra Salsabilla",
+    nim: "2615061019",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Berbagi waktu dan perhatian adalah investasi kemanusiaan terbaik.",
+    reflection: "Pengalaman ini membuka mata saya bahwa pengabdian nyata jauh lebih berdampak daripada sekadar teori. Nilai Pancasila benar-benar hidup dalam setiap interaksi di panti."
+  },
+  {
+    name: "Erin Chelsia Sabila",
+    nim: "2615061024",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Kepedulian adalah kode sumber dari peradaban yang bermartabat.",
+    reflection: "Melihat semangat belajar adik-adik panti yang tak pernah padam meski di tengah keterbatasan menjadi motivasi terkuat saya untuk terus berkontribusi bagi masyarakat."
+  },
+  {
+    name: "Dinayira Fransiska Sitinjak",
+    nim: "2615061035",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Kolaborasi lintas ilmu adalah kunci untuk menjawab tantangan nyata.",
+    reflection: "Sinergi antara mahasiswa FT dan FMIPA membuktikan bahwa perbedaan disiplin ilmu bukan hambatan, melainkan kekuatan untuk menciptakan dampak sosial yang lebih besar."
+  },
+  {
+    name: "Genial Ang Djenar",
+    nim: "2615061060",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Inovasi terhebat adalah yang mampu menyentuh kehidupan orang banyak.",
+    reflection: "Kegiatan ini menyadarkan saya bahwa sebagai insan teknologi, tanggung jawab sosial harus selalu berjalan seiring dengan kemampuan teknis yang kami kembangkan."
+  },
+  {
+    name: "Lucky Dharma Putra",
+    nim: "2615061063",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Keberuntungan sejati adalah ketika kita bisa membuat orang lain bahagia.",
+    reflection: "Mendampingi adik-adik panti belajar dan bermain adalah pengalaman yang tidak ternilai. Mereka mengajarkan saya arti ketulusan dan keberanian dalam menghadapi hidup."
+  },
+  {
+    name: "Renatha Hany Yuztika",
+    nim: "2615061066",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Setiap langkah kecil menuju kebaikan adalah kontribusi nyata bagi bangsa.",
+    reflection: "Momen berbagi bersama adik-adik di Panti Asuhan Hasbi Rabbi adalah pengingat bahwa di balik layar teknologi, ada jiwa-jiwa manusia yang perlu kita jaga dan perhatikan."
+  },
+  {
+    name: "Shofi Gholi Alwan Azzaki",
+    nim: "2615061067",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Pengabdian adalah ekspresi tertinggi dari ilmu yang dimiliki.",
+    reflection: "Kegiatan sosial ini memperkuat keyakinan saya bahwa mahasiswa teknik bukan hanya membangun sistem, tetapi juga harus turut membangun karakter dan kesejahteraan masyarakat."
+  },
+  {
+    name: "Khodijah Bintu H.Wardono",
+    nim: "2615061072",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Ketika hati dan pikiran bersatu, tidak ada kebaikan yang terlalu kecil.",
+    reflection: "Kunjungan ini mengajarkan saya bahwa nilai Pancasila bukan sekadar hapalan, melainkan panduan hidup yang harus diwujudkan dalam tindakan nyata setiap harinya."
+  },
+  {
+    name: "Syahrul Muhammad Farel",
+    nim: "2615061076",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Generasi muda yang peduli adalah fondasi bangsa yang kuat.",
+    reflection: "Berinteraksi dengan penghuni panti asuhan memperdalam pemahaman saya tentang pentingnya keadilan sosial. Ini adalah pelajaran yang tidak akan saya temukan di bangku kuliah."
+  },
+  {
+    name: "Fathiyah Izza Ramadani",
+    nim: "2615061082",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Dedikasi dan keikhlasan adalah dua sayap pengabdian yang sesungguhnya.",
+    reflection: "Melihat adik-adik panti begitu antusias dan bersemangat meski dalam keterbatasan memberikan pelajaran berharga tentang rasa syukur dan ketangguhan jiwa."
+  },
+  {
+    name: "Fauziyah Nur Hasanah",
+    nim: "2615061095",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Hasanah sejati lahir dari niat tulus untuk berbagi tanpa pamrih.",
+    reflection: "Kegiatan pengabdian ini menguatkan tekad saya untuk menjadi pribadi yang tidak hanya cerdas secara akademis, tetapi juga peka dan responsif terhadap kebutuhan sosial."
+  },
+  {
+    name: "Hafid Surya",
+    nim: "2615061096",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Seperti matahari, jadilah sumber cahaya dan kehangatan bagi sekitar.",
+    reflection: "Pengalaman di panti asuhan mengajarkan bahwa keberhasilan sejati bukan diukur dari nilai IPK, melainkan dari seberapa besar dampak positif yang kita berikan kepada orang lain."
+  },
+  {
+    name: "Amsal Fritzie Siregar",
+    nim: "2615061105",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Kepedulian sosial adalah kompas moral seorang intelektual sejati.",
+    reflection: "Kolaborasi dalam kegiatan ini memperkuat rasa persatuan saya dengan rekan-rekan dari berbagai latar belakang. Kami membuktikan bahwa perbedaan bisa menjadi kekuatan luar biasa."
+  },
+  {
+    name: "Daffa Choirul Shihab",
+    nim: "2615061106",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Setiap baris kode yang baik dimulai dari hati yang ikhlas melayani.",
+    reflection: "Momen berbagi ilmu dan kegembiraan bersama adik-adik panti adalah pengalaman yang mengubah perspektif saya tentang makna hidup sebagai mahasiswa dan sebagai manusia."
+  },
+  {
+    name: "Rafa Fairuz Athaya",
+    nim: "2615061124",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Kejernihan hati melahirkan tindakan yang bermakna bagi sesama.",
+    reflection: "Kegiatan pengabdian ini adalah salah satu momen paling bermakna dalam perjalanan perkuliahan saya. Senyum adik-adik panti adalah hadiah yang tidak ternilai harganya."
+  },
+  {
+    name: "Bona Hasian Sitohang",
+    nim: "2615061140",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Hasian berarti kasih sayang — dan kasih sayang adalah modal terbesar pengabdian.",
+    reflection: "Interaksi hangat di panti asuhan mengingatkan saya bahwa di balik setiap angka data dan algoritma, ada manusia nyata yang membutuhkan perhatian dan empati kita."
+  },
+  {
+    name: "Ariiq Nawfal Aqilla",
+    nim: "2655061005",
+    faculty: "FT",
+    facultyName: "Fakultas Teknik",
+    prodi: "Informatika",
+    avatar: "",
+    quote: "Kecerdasan tanpa nurani adalah pisau tanpa gagang — berbahaya bagi diri sendiri.",
+    reflection: "Bergabung dalam kegiatan ini memperkaya saya bukan hanya secara sosial, tetapi juga spiritualitas. Nilai-nilai Pancasila terasa hidup dan nyata dalam setiap kegiatan yang kami lakukan bersama."
+  },
+
   {
     name: "Karel Agreska Arlin",
     npm: "2617021006",
