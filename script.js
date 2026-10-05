@@ -330,6 +330,30 @@ const galleryItems = [
     type: "image",
     title: "Proses Meminta Izin & Silaturahmi",
     sub: "Pertemuan awal dan permohonan izin resmi bersama pimpinan panti asuhan"
+  },
+  {
+    src: "foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg",
+    type: "image",
+    title: "Survei Pendopo Utama & Diskusi Tempat",
+    sub: "Observasi pendopo terbuka untuk penempatan sesi mentoring dan kelas belajar"
+  },
+  {
+    src: "foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg",
+    type: "image",
+    title: "Observasi Halaman & Ruang Terbuka",
+    sub: "Pengamatan kondisi halaman untuk kegiatan games interaktif anak-anak panti"
+  },
+  {
+    src: "foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg",
+    type: "image",
+    title: "Koordinasi Teknis Lapangan FT × FMIPA",
+    sub: "Sinkronisasi pembagian tugas mahasiswa Informatika dan Biologi di lokasi"
+  },
+  {
+    src: "foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4",
+    type: "video",
+    title: "Video Dokumentasi Lapangan",
+    sub: "Observasi suasana riil dan dinamika lingkungan panti asuhan"
   }
 ];
 
@@ -339,6 +363,24 @@ const heroSlides = [
     alt: "Proses perizinan dan silaturahmi di panti asuhan",
     title: "Silaturahmi &amp; Proses Perizinan",
     sub: "Panti Asuhan Hasbi Rabbi &bull; Informatika &times; Biologi"
+  },
+  {
+    src: "foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg",
+    alt: "Survei dan koordinasi di pendopo panti asuhan",
+    title: "Survei Lapangan &amp; Pendopo Kegiatan",
+    sub: "Panti Asuhan Hasbi Rabbi &bull; Persiapan H-7"
+  },
+  {
+    src: "foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg",
+    alt: "Peninjauan area terbuka panti asuhan",
+    title: "Peninjauan Area &amp; Fasilitas Terbuka",
+    sub: "Kolaborasi Tim FT &times; FMIPA"
+  },
+  {
+    src: "foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg",
+    alt: "Koordinasi teknis tim mahasiswa",
+    title: "Koordinasi &amp; Pemetaan Teknis Lapangan",
+    sub: "Penyusunan Rangkaian Acara Edukatif"
   }
 ];
 
@@ -381,8 +423,11 @@ document.addEventListener("DOMContentLoaded", () => {
   renderReflections();
   setupFilter();
   setupGallery();
+  setupPrepFilters();
   setupNavigation();
   initCanvasVisualization();
+  initInteractive3DLab();
+  initDocCarousel();
 
   // Sistem animasi baru
   initScrollReveal();
@@ -806,24 +851,22 @@ function setupGallery() {
   document.querySelectorAll("video").forEach(v => {
     v.removeAttribute("autoplay");
     v.pause();
-    // Cegah klik pada elemen video preview membuka file di browser
     v.addEventListener("click", e => e.preventDefault());
   });
 
-  document.querySelectorAll(".gallery-card").forEach(card => {
+  // Sambungkan semua elemen yang memiliki kelas lightbox-trigger atau gallery-card
+  document.querySelectorAll(".gallery-card, .lightbox-trigger").forEach(card => {
     card.addEventListener("click", e => {
-      // Cegah klik pada video preview mentrigger default browser
       e.preventDefault();
 
       const videoSrc = card.getAttribute("data-video");
-      const src = card.getAttribute("data-src");
-      const title = card.getAttribute("data-title");
+      const src = card.getAttribute("data-src") || card.querySelector("img")?.src;
+      const title = card.getAttribute("data-title") || card.querySelector(".timeline-media-label")?.textContent?.trim() || "";
 
       if (!modal || !modalCap) return;
       modalCap.textContent = title || "";
 
       if (videoSrc) {
-        // Tampilkan video di lightbox
         if (modalImg) modalImg.style.display = "none";
         if (modalVid) {
           modalVid.style.display = "block";
@@ -831,14 +874,11 @@ function setupGallery() {
           modalVid.style.maxHeight = "70vh";
           modalVid.style.borderRadius = "0.75rem";
           modalVid.src = videoSrc;
-          // Autoplay setelah modal terbuka
           modal.classList.add("active");
           document.body.style.overflow = "hidden";
           modalVid.load();
-          modalVid.play().catch(() => {
-            // Jika autoplay diblokir browser, biarkan user tekan play manual
-          });
-          return; // sudah tambahkan active, langsung return
+          modalVid.play().catch(() => {});
+          return;
         }
       } else if (src) {
         if (modalVid) { modalVid.pause(); modalVid.src = ""; modalVid.style.display = "none"; }
@@ -866,6 +906,31 @@ function setupGallery() {
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 }
 
+// ============================================================================
+// FILTER MEDIA KEGIATAN PERSIAPAN (ALL / FOTO / VIDEO)
+// ============================================================================
+function setupPrepFilters() {
+  const filterBtns = document.querySelectorAll(".prep-filter-btn");
+  const mediaCards = document.querySelectorAll("#prep-media-grid .timeline-media-card");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const filter = btn.getAttribute("data-prep-filter");
+
+      mediaCards.forEach(card => {
+        const type = card.getAttribute("data-type");
+        if (filter === "all" || type === filter) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+}
+
 function setupNavigation() {
   const navbar = document.getElementById("navbar");
   const toggle = document.getElementById("nav-toggle");
@@ -890,6 +955,9 @@ function setupNavigation() {
   }
 }
 
+// ============================================================================
+// VISUALISASI 3D HERO CANVAS — UNSUR BIOLOGI (DNA) & INFORMATIKA (CYBER CUBE)
+// ============================================================================
 function initCanvasVisualization() {
   const canvas = document.getElementById("hero-canvas");
   if (!canvas || typeof THREE === "undefined") return;
@@ -899,9 +967,10 @@ function initCanvasVisualization() {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
-  camera.position.set(0, 0, 12);
+  camera.position.set(0, 0, 14);
 
   function resize() {
+    if (!canvas.parentElement) return;
     const w = canvas.parentElement.clientWidth;
     const h = canvas.parentElement.clientHeight;
     renderer.setSize(w, h, false);
@@ -911,44 +980,114 @@ function initCanvasVisualization() {
   resize();
   window.addEventListener("resize", resize);
 
-  const group = new THREE.Group();
-  scene.add(group);
+  const mainGroup = new THREE.Group();
+  scene.add(mainGroup);
 
-  const particleCount = 45;
-  const geometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
-  const ftColor = new THREE.Color(0x1D4ED8);
-  const mipaColor = new THREE.Color(0x38BDF8);
+  // 1. Unsur Biologi: 3D DNA Double Helix di sisi kiri/latar
+  const dnaGroup = new THREE.Group();
+  const dnaSteps = 28;
+  const dnaRadius = 2.2;
+  const dnaPitch = 0.42;
+
+  const sphereGeo = new THREE.SphereGeometry(0.12, 8, 8);
+  const mipaMat = new THREE.MeshBasicMaterial({ color: 0x10B981, transparent: true, opacity: 0.85 });
+  const cyanMat = new THREE.MeshBasicMaterial({ color: 0x0EA5E9, transparent: true, opacity: 0.85 });
+  const rungLineMat = new THREE.LineBasicMaterial({ color: 0x38BDF8, transparent: true, opacity: 0.35 });
+
+  for (let i = 0; i < dnaSteps; i++) {
+    const angle = i * 0.4;
+    const y = (i - dnaSteps / 2) * dnaPitch;
+    const x1 = Math.cos(angle) * dnaRadius;
+    const z1 = Math.sin(angle) * dnaRadius;
+    const x2 = Math.cos(angle + Math.PI) * dnaRadius;
+    const z2 = Math.sin(angle + Math.PI) * dnaRadius;
+
+    // Node untaian 1
+    const s1 = new THREE.Mesh(sphereGeo, mipaMat);
+    s1.position.set(x1, y, z1);
+    dnaGroup.add(s1);
+
+    // Node untaian 2
+    const s2 = new THREE.Mesh(sphereGeo, cyanMat);
+    s2.position.set(x2, y, z2);
+    dnaGroup.add(s2);
+
+    // Penghubung pasangan basa (rung)
+    const rungGeo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(x1, y, z1),
+      new THREE.Vector3(x2, y, z2)
+    ]);
+    dnaGroup.add(new THREE.Line(rungGeo, rungLineMat));
+  }
+  dnaGroup.position.set(-6.5, 0.5, -2);
+  dnaGroup.rotation.z = 0.25;
+  mainGroup.add(dnaGroup);
+
+  // 2. Unsur Informatika: 3D Cyber Data Cube & Gimbal Rings di sisi kanan/latar
+  const cyberGroup = new THREE.Group();
+  const boxGeo = new THREE.BoxGeometry(3.2, 3.2, 3.2);
+  const edgesGeo = new THREE.EdgesGeometry(boxGeo);
+  const boxLines = new THREE.LineSegments(edgesGeo, new THREE.LineBasicMaterial({ color: 0x2563EB, transparent: true, opacity: 0.6 }));
+  cyberGroup.add(boxLines);
+
+  const ringGeo1 = new THREE.TorusGeometry(2.5, 0.04, 8, 36);
+  const ring1 = new THREE.Mesh(ringGeo1, new THREE.MeshBasicMaterial({ color: 0x38BDF8, transparent: true, opacity: 0.5 }));
+  cyberGroup.add(ring1);
+
+  const ringGeo2 = new THREE.TorusGeometry(3.0, 0.04, 8, 36);
+  const ring2 = new THREE.Mesh(ringGeo2, new THREE.MeshBasicMaterial({ color: 0x60A5FA, transparent: true, opacity: 0.4 }));
+  ring2.rotation.x = Math.PI / 2;
+  cyberGroup.add(ring2);
+
+  // Inti kristal dalam
+  const coreMesh = new THREE.Mesh(new THREE.OctahedronGeometry(0.9, 0), new THREE.MeshBasicMaterial({ color: 0x0EA5E9, wireframe: true, transparent: true, opacity: 0.7 }));
+  cyberGroup.add(coreMesh);
+
+  cyberGroup.position.set(7.2, -0.2, -2.5);
+  mainGroup.add(cyberGroup);
+
+  // 3. Jaringan Partikel Penghubung (Sinergi FT & FMIPA)
+  const particleCount = 55;
+  const particlePositions = new Float32Array(particleCount * 3);
+  const particleColors = new Float32Array(particleCount * 3);
+  const cFt = new THREE.Color(0x1D4ED8);
+  const cMipa = new THREE.Color(0x10B981);
 
   for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 18;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 12;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 8;
+    particlePositions[i * 3] = (Math.random() - 0.5) * 22;
+    particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 14;
+    particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 8 - 1;
 
-    const c = Math.random() > 0.5 ? ftColor : mipaColor;
-    colors[i * 3] = c.r; colors[i * 3 + 1] = c.g; colors[i * 3 + 2] = c.b;
+    const c = Math.random() > 0.5 ? cFt : cMipa;
+    particleColors[i * 3] = c.r;
+    particleColors[i * 3 + 1] = c.g;
+    particleColors[i * 3 + 2] = c.b;
   }
 
-  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
+  pGeo.setAttribute("color", new THREE.BufferAttribute(particleColors, 3));
+  const pMat = new THREE.PointsMaterial({ size: 0.16, vertexColors: true, transparent: true, opacity: 0.7 });
+  mainGroup.add(new THREE.Points(pGeo, pMat));
 
-  group.add(new THREE.Points(geometry, new THREE.PointsMaterial({
-    size: 0.18, vertexColors: true, transparent: true, opacity: 0.75
-  })));
-
-  const linePositions = [];
+  // Garis interkoneksi antarpartikel
+  const connectLines = [];
   for (let i = 0; i < particleCount; i++) {
     for (let j = i + 1; j < particleCount; j++) {
-      const dx = positions[i * 3] - positions[j * 3], dy = positions[i * 3 + 1] - positions[j * 3 + 1], dz = positions[i * 3 + 2] - positions[j * 3 + 2];
-      if (Math.sqrt(dx * dx + dy * dy + dz * dz) < 4.2) {
-        linePositions.push(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2], positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2]);
+      const dx = particlePositions[i * 3] - particlePositions[j * 3];
+      const dy = particlePositions[i * 3 + 1] - particlePositions[j * 3 + 1];
+      const dz = particlePositions[i * 3 + 2] - particlePositions[j * 3 + 2];
+      if (Math.sqrt(dx * dx + dy * dy + dz * dz) < 3.8) {
+        connectLines.push(
+          particlePositions[i * 3], particlePositions[i * 3 + 1], particlePositions[i * 3 + 2],
+          particlePositions[j * 3], particlePositions[j * 3 + 1], particlePositions[j * 3 + 2]
+        );
       }
     }
   }
-  const lineGeo = new THREE.BufferGeometry();
-  lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(linePositions, 3));
-  group.add(new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({ color: 0x94A3B8, transparent: true, opacity: 0.25 })));
+  const connGeo = new THREE.BufferGeometry();
+  connGeo.setAttribute("position", new THREE.Float32BufferAttribute(connectLines, 3));
+  mainGroup.add(new THREE.LineSegments(connGeo, new THREE.LineBasicMaterial({ color: 0x94A3B8, transparent: true, opacity: 0.18 })));
 
   let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
   window.addEventListener("mousemove", e => {
@@ -960,8 +1099,587 @@ function initCanvasVisualization() {
     requestAnimationFrame(animate);
     targetX += (mouseX - targetX) * 0.03;
     targetY += (mouseY - targetY) * 0.03;
-    group.rotation.y += 0.0018 + targetX * 0.02;
-    group.rotation.x = targetY * 0.4;
+
+    // Rotasi mandiri unsur biologi & informatika
+    dnaGroup.rotation.y += 0.012;
+    cyberGroup.rotation.x += 0.009;
+    cyberGroup.rotation.y += 0.014;
+    ring1.rotation.z += 0.018;
+    ring2.rotation.y -= 0.015;
+    coreMesh.rotation.y += 0.025;
+
+    // Parallaks responsif mouse
+    mainGroup.rotation.y = targetX * 0.25;
+    mainGroup.rotation.x = targetY * 0.2;
+
     renderer.render(scene, camera);
   })();
+}
+
+// ============================================================================
+// SEKSI 3D INTERAKTIF LAB — EKSPLORASI MANDIRI UNSUR BIOLOGI & INFORMATIKA
+// ============================================================================
+function initInteractive3DLab() {
+  const canvas = document.getElementById("interactive-3d-canvas");
+  if (!canvas || typeof THREE === "undefined") return;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+  camera.position.set(0, 0, 15);
+
+  function resize() {
+    if (!canvas.parentElement) return;
+    const w = canvas.parentElement.clientWidth;
+    const h = canvas.parentElement.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  // Pencahayaan
+  scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+  const dirLight = new THREE.DirectionalLight(0x38BDF8, 1.2);
+  dirLight.position.set(10, 20, 15);
+  scene.add(dirLight);
+
+  const greenLight = new THREE.PointLight(0x10B981, 1.5, 30);
+  greenLight.position.set(-6, 4, 6);
+  scene.add(greenLight);
+
+  const blueLight = new THREE.PointLight(0x2563EB, 1.5, 30);
+  blueLight.position.set(6, 4, 6);
+  scene.add(blueLight);
+
+  // Group Induk Visualisasi
+  const worldGroup = new THREE.Group();
+  scene.add(worldGroup);
+
+  // ─────────────────────────────────────────────────────────────
+  // A. UNSUR BIOLOGI (DNA DOUBLE HELIX & MOLEKUL HAYATI)
+  // ─────────────────────────────────────────────────────────────
+  const bioGroup = new THREE.Group();
+  const helixSteps = 36;
+  const helixRadius = 1.9;
+  const helixPitch = 0.38;
+
+  const nucleotideColors = [
+    new THREE.Color(0x10B981), // Adenin (Hijau Zamrud)
+    new THREE.Color(0x06B6D4), // Timin (Sian Laut)
+    new THREE.Color(0x2563EB), // Guanin (Biru Terang)
+    new THREE.Color(0xF59E0B)  // Sitosin (Kuning Emas)
+  ];
+
+  const nodeGeo = new THREE.SphereGeometry(0.18, 16, 16);
+  const baseCenterGeo = new THREE.SphereGeometry(0.1, 12, 12);
+  const baseCenterMat = new THREE.MeshBasicMaterial({ color: 0xFFFFFF, transparent: true, opacity: 0.9 });
+
+  for (let i = 0; i < helixSteps; i++) {
+    const angle = i * 0.38;
+    const y = (i - helixSteps / 2) * helixPitch;
+    const x1 = Math.cos(angle) * helixRadius;
+    const z1 = Math.sin(angle) * helixRadius;
+    const x2 = Math.cos(angle + Math.PI) * helixRadius;
+    const z2 = Math.sin(angle + Math.PI) * helixRadius;
+
+    const c1 = nucleotideColors[i % 4];
+    const c2 = nucleotideColors[(i + 2) % 4];
+
+    const mat1 = new THREE.MeshStandardMaterial({ color: c1, roughness: 0.3, metalness: 0.2 });
+    const mat2 = new THREE.MeshStandardMaterial({ color: c2, roughness: 0.3, metalness: 0.2 });
+
+    // Node tulang punggung DNA
+    const n1 = new THREE.Mesh(nodeGeo, mat1);
+    n1.position.set(x1, y, z1);
+    bioGroup.add(n1);
+
+    const n2 = new THREE.Mesh(nodeGeo, mat2);
+    n2.position.set(x2, y, z2);
+    bioGroup.add(n2);
+
+    // Titik tengah ikatan hidrogen
+    const midX = (x1 + x2) / 2;
+    const midZ = (z1 + z2) / 2;
+    const midNode = new THREE.Mesh(baseCenterGeo, baseCenterMat);
+    midNode.position.set(midX, y, midZ);
+    bioGroup.add(midNode);
+
+    // Rung (batang penghubung dua warna)
+    const lineGeo1 = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(x1, y, z1),
+      new THREE.Vector3(midX, y, midZ)
+    ]);
+    const lineGeo2 = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(midX, y, midZ),
+      new THREE.Vector3(x2, y, z2)
+    ]);
+    bioGroup.add(new THREE.Line(lineGeo1, new THREE.LineBasicMaterial({ color: c1, linewidth: 2 })));
+    bioGroup.add(new THREE.Line(lineGeo2, new THREE.LineBasicMaterial({ color: c2, linewidth: 2 })));
+  }
+
+  // Floating biomolecule clusters (cincin organik)
+  for (let b = 0; b < 6; b++) {
+    const bioMol = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(0.35 + Math.random() * 0.2, 0),
+      new THREE.MeshStandardMaterial({ color: 0x34D399, wireframe: true, transparent: true, opacity: 0.65 })
+    );
+    const theta = (b / 6) * Math.PI * 2;
+    bioMol.position.set(Math.cos(theta) * 3.5, (b - 2.5) * 1.8, Math.sin(theta) * 3.5);
+    bioGroup.add(bioMol);
+  }
+
+  bioGroup.position.set(-4.5, 0, 0);
+  worldGroup.add(bioGroup);
+
+  // ─────────────────────────────────────────────────────────────
+  // B. UNSUR INFORMATIKA (CYBER DATA CORE, GIMBAL & MATRIX)
+  // ─────────────────────────────────────────────────────────────
+  const infoGroup = new THREE.Group();
+
+  // 1. Kubus data matriks utama dengan kisi kawat
+  const cyberCubeGeo = new THREE.BoxGeometry(3.6, 3.6, 3.6);
+  const cubeWire = new THREE.LineSegments(
+    new THREE.EdgesGeometry(cyberCubeGeo),
+    new THREE.LineBasicMaterial({ color: 0x38BDF8, linewidth: 2 })
+  );
+  infoGroup.add(cubeWire);
+
+  // Simpul sudut kubus (data vertices)
+  const cornerGeo = new THREE.BoxGeometry(0.28, 0.28, 0.28);
+  const cornerMat = new THREE.MeshStandardMaterial({ color: 0x60A5FA, roughness: 0.2, metalness: 0.8 });
+  const half = 1.8;
+  const signs = [-1, 1];
+  signs.forEach(sx => {
+    signs.forEach(sy => {
+      signs.forEach(sz => {
+        const corner = new THREE.Mesh(cornerGeo, cornerMat);
+        corner.position.set(sx * half, sy * half, sz * half);
+        infoGroup.add(corner);
+      });
+    });
+  });
+
+  // 2. Gimbal Orbital Rings (3 cincin ortogonal konsentris)
+  const gimbalRing1 = new THREE.Mesh(
+    new THREE.TorusGeometry(3.0, 0.05, 12, 64),
+    new THREE.MeshStandardMaterial({ color: 0x0EA5E9, roughness: 0.2, metalness: 0.7 })
+  );
+  infoGroup.add(gimbalRing1);
+
+  const gimbalRing2 = new THREE.Mesh(
+    new THREE.TorusGeometry(3.6, 0.05, 12, 64),
+    new THREE.MeshStandardMaterial({ color: 0x3B82F6, roughness: 0.2, metalness: 0.7 })
+  );
+  gimbalRing2.rotation.x = Math.PI / 2;
+  infoGroup.add(gimbalRing2);
+
+  const gimbalRing3 = new THREE.Mesh(
+    new THREE.TorusGeometry(4.2, 0.05, 12, 64),
+    new THREE.MeshStandardMaterial({ color: 0x818CF8, roughness: 0.2, metalness: 0.7 })
+  );
+  gimbalRing3.rotation.y = Math.PI / 2;
+  infoGroup.add(gimbalRing3);
+
+  // 3. Inti Kristal Komputasi (Octahedron Inti)
+  const coreOcta = new THREE.Mesh(
+    new THREE.OctahedronGeometry(1.2, 0),
+    new THREE.MeshStandardMaterial({ color: 0x0284C7, roughness: 0.1, metalness: 0.9, transparent: true, opacity: 0.85 })
+  );
+  infoGroup.add(coreOcta);
+
+  // Titik partikel matriks biner
+  const matrixPoints = [];
+  for (let ix = -1; ix <= 1; ix++) {
+    for (let iy = -1; iy <= 1; iy++) {
+      for (let iz = -1; iz <= 1; iz++) {
+        matrixPoints.push(ix * 1.1, iy * 1.1, iz * 1.1);
+      }
+    }
+  }
+  const mGeo = new THREE.BufferGeometry();
+  mGeo.setAttribute("position", new THREE.Float32BufferAttribute(matrixPoints, 3));
+  infoGroup.add(new THREE.Points(mGeo, new THREE.PointsMaterial({ size: 0.15, color: 0x38BDF8 })));
+
+  infoGroup.position.set(4.5, 0, 0);
+  worldGroup.add(infoGroup);
+
+  // ─────────────────────────────────────────────────────────────
+  // C. SINERGI BRIDGING FILAMENT (ALIRAN DATA BIO-KOMPUTASI)
+  // ─────────────────────────────────────────────────────────────
+  const synergyGroup = new THREE.Group();
+  const bridgeLineCount = 6;
+  const bridgeLines = [];
+
+  for (let k = 0; k < bridgeLineCount; k++) {
+    const curvePoints = [];
+    const yStart = (k - 2.5) * 1.2;
+    const yMid = yStart + Math.sin(k) * 1.5;
+    const curve = new THREE.QuadraticBezierCurve3(
+      new THREE.Vector3(-2.6, yStart, 0),
+      new THREE.Vector3(0, yMid, Math.cos(k) * 2.5),
+      new THREE.Vector3(2.6, yStart, 0)
+    );
+    const cPoints = curve.getPoints(24);
+    const cGeo = new THREE.BufferGeometry().setFromPoints(cPoints);
+    const cLine = new THREE.Line(cGeo, new THREE.LineBasicMaterial({
+      color: k % 2 === 0 ? 0x10B981 : 0x0EA5E9,
+      transparent: true,
+      opacity: 0.45
+    }));
+    synergyGroup.add(cLine);
+    bridgeLines.push({ curve, cLine, tOffset: k * 0.15 });
+  }
+
+  // Floating data packets di jembatan sinergi
+  const packetGeo = new THREE.SphereGeometry(0.12, 10, 10);
+  const packetMat = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
+  const packets = [];
+  for (let p = 0; p < 8; p++) {
+    const pMesh = new THREE.Mesh(packetGeo, packetMat);
+    synergyGroup.add(pMesh);
+    packets.push({ mesh: pMesh, progress: p / 8, curveIdx: p % bridgeLineCount });
+  }
+
+  worldGroup.add(synergyGroup);
+
+  // ─────────────────────────────────────────────────────────────
+  // D. KONTROL INTERAKSI MOUSE / TOUCH / MODE SWITCHER
+  // ─────────────────────────────────────────────────────────────
+  let isDragging = false;
+  let prevMouseX = 0;
+  let prevMouseY = 0;
+  let rotationVelocityX = 0;
+  let rotationVelocityY = 0;
+  let isAutoRotating = true;
+  let currentMode = "synergy"; // 'synergy' | 'bio' | 'info'
+
+  let targetBioPos = new THREE.Vector3(-4.5, 0, 0);
+  let targetInfoPos = new THREE.Vector3(4.5, 0, 0);
+  let targetBioScale = 1.0;
+  let targetInfoScale = 1.0;
+  let targetCamZ = 15;
+
+  // Drag interaction
+  const viewport = canvas.parentElement;
+  if (viewport) {
+    viewport.addEventListener("mousedown", e => {
+      isDragging = true;
+      prevMouseX = e.clientX;
+      prevMouseY = e.clientY;
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+
+    window.addEventListener("mousemove", e => {
+      if (!isDragging) return;
+      const dx = e.clientX - prevMouseX;
+      const dy = e.clientY - prevMouseY;
+      rotationVelocityY = dx * 0.005;
+      rotationVelocityX = dy * 0.005;
+      prevMouseX = e.clientX;
+      prevMouseY = e.clientY;
+    });
+
+    // Touch support untuk HP / Tablet
+    viewport.addEventListener("touchstart", e => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        prevMouseX = e.touches[0].clientX;
+        prevMouseY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener("touchend", () => {
+      isDragging = false;
+    });
+
+    window.addEventListener("touchmove", e => {
+      if (!isDragging || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - prevMouseX;
+      const dy = e.touches[0].clientY - prevMouseY;
+      rotationVelocityY = dx * 0.006;
+      rotationVelocityX = dy * 0.006;
+      prevMouseX = e.touches[0].clientX;
+      prevMouseY = e.touches[0].clientY;
+    }, { passive: true });
+
+    // Scroll zoom
+    viewport.addEventListener("wheel", e => {
+      e.preventDefault();
+      targetCamZ += e.deltaY * 0.015;
+      targetCamZ = Math.max(8, Math.min(26, targetCamZ));
+    }, { passive: false });
+  }
+
+  // Tombol Toggle Rotasi
+  const btnRotate = document.getElementById("btn-toggle-rotate");
+  const rotateIcon = document.getElementById("rotate-icon");
+  if (btnRotate) {
+    btnRotate.addEventListener("click", () => {
+      isAutoRotating = !isAutoRotating;
+      if (rotateIcon) {
+        rotateIcon.innerHTML = isAutoRotating ? "&#10074;&#10074;" : "&#9658;";
+      }
+    });
+  }
+
+  // Tombol Reset Tampilan
+  const btnReset = document.getElementById("btn-reset-view");
+  if (btnReset) {
+    btnReset.addEventListener("click", () => {
+      worldGroup.rotation.set(0, 0, 0);
+      rotationVelocityX = 0;
+      rotationVelocityY = 0;
+      targetCamZ = 15;
+      camera.position.set(0, 0, 15);
+      switchMode("synergy");
+    });
+  }
+
+  // Mode Switcher Tabs
+  const modeLabel = document.getElementById("three-mode-label");
+  const modeBtns = document.querySelectorAll(".three-mode-btn");
+
+  function switchMode(mode) {
+    currentMode = mode;
+    modeBtns.forEach(btn => {
+      btn.classList.toggle("active", btn.getAttribute("data-mode") === mode);
+    });
+
+    if (mode === "synergy") {
+      targetBioPos.set(-4.5, 0, 0);
+      targetInfoPos.set(4.5, 0, 0);
+      targetBioScale = 1.0;
+      targetInfoScale = 1.0;
+      synergyGroup.visible = true;
+      if (modeLabel) modeLabel.textContent = "Mode: Sinergi FT × FMIPA";
+    } else if (mode === "info") {
+      targetInfoPos.set(0, 0, 0);
+      targetBioPos.set(-16, 0, -10);
+      targetInfoScale = 1.35;
+      targetBioScale = 0.3;
+      synergyGroup.visible = false;
+      if (modeLabel) modeLabel.textContent = "Mode: 3D Unsur Informatika (Cyber Matrix & Data Core)";
+    }
+  }
+
+  modeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      switchMode(btn.getAttribute("data-mode"));
+    });
+  });
+
+  // IntersectionObserver agar animasi hanya render saat terlihat di layar
+  let isVisible = true;
+  const observer = new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+  }, { threshold: 0.05 });
+  if (viewport) observer.observe(viewport);
+
+  // Animation Loop 60 FPS
+  let clock = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+
+    clock += 0.015;
+
+    // Smooth inertia rotasi
+    worldGroup.rotation.y += rotationVelocityY;
+    worldGroup.rotation.x += rotationVelocityX;
+    rotationVelocityY *= 0.92;
+    rotationVelocityX *= 0.92;
+
+    if (isAutoRotating) {
+      worldGroup.rotation.y += 0.005;
+    }
+
+    // Rotasi lokal masing-masing model
+    bioGroup.rotation.y += 0.015;
+    infoGroup.rotation.x += 0.008;
+    infoGroup.rotation.y += 0.012;
+    gimbalRing1.rotation.z += 0.018;
+    gimbalRing2.rotation.y -= 0.014;
+    gimbalRing3.rotation.x += 0.016;
+    coreOcta.rotation.y -= 0.025;
+
+    // Animasi paket data sinergi
+    if (synergyGroup.visible) {
+      packets.forEach(p => {
+        p.progress += 0.006;
+        if (p.progress > 1) p.progress = 0;
+        const cObj = bridgeLines[p.curveIdx];
+        if (cObj && cObj.curve) {
+          const pt = cObj.curve.getPoint(p.progress);
+          p.mesh.position.copy(pt);
+        }
+      });
+    }
+
+    // Lerp posisi & skala untuk transisi mode yang mulus
+    bioGroup.position.lerp(targetBioPos, 0.08);
+    infoGroup.position.lerp(targetInfoPos, 0.08);
+
+    const curBioScale = bioGroup.scale.x;
+    const nextBioScale = curBioScale + (targetBioScale - curBioScale) * 0.08;
+    bioGroup.scale.set(nextBioScale, nextBioScale, nextBioScale);
+
+    const curInfoScale = infoGroup.scale.x;
+    const nextInfoScale = curInfoScale + (targetInfoScale - curInfoScale) * 0.08;
+    infoGroup.scale.set(nextInfoScale, nextInfoScale, nextInfoScale);
+
+    // Lerp camera zoom
+    camera.position.z += (targetCamZ - camera.position.z) * 0.08;
+
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+// ============================================================================
+// DOC CAROUSEL — GALERI DOKUMENTASI TERKINI
+// Swipe: HP (touch), Laptop (touchpad drag / mouse drag) — Pointer Events API
+// ============================================================================
+function initDocCarousel() {
+  const track    = document.getElementById("doc-carousel-track");
+  const dotsWrap = document.getElementById("doc-dots");
+  const prevBtn  = document.getElementById("doc-prev");
+  const nextBtn  = document.getElementById("doc-next");
+  const progBar  = document.getElementById("doc-progress-bar");
+
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll(".doc-slide"));
+  const total  = slides.length;
+  if (total === 0) return;
+
+  let current      = 0;
+  let autoTimer    = null;
+  const INTERVAL   = 4000;
+
+  // ── Dots ────────────────────────────────────────────────────────────────────
+  function renderDots() {
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = "";
+    slides.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.className = "doc-dot" + (i === 0 ? " active" : "");
+      d.setAttribute("aria-label", `Slide ${i + 1}`);
+      d.addEventListener("click", () => { goTo(i); resetAutoplay(); });
+      dotsWrap.appendChild(d);
+    });
+  }
+
+  function updateDots() {
+    if (!dotsWrap) return;
+    dotsWrap.querySelectorAll(".doc-dot").forEach((d, i) =>
+      d.classList.toggle("active", i === current)
+    );
+  }
+
+  // ── Go to slide ─────────────────────────────────────────────────────────────
+  function goTo(index) {
+    current = ((index % total) + total) % total;
+    track.style.transform = `translateX(-${current * slides[0].offsetWidth}px)`;
+    updateDots();
+  }
+
+  // ── Progress bar ────────────────────────────────────────────────────────────
+  function startProgress() {
+    if (!progBar) return;
+    progBar.style.transition = "none";
+    progBar.style.width = "0%";
+    requestAnimationFrame(() => {
+      progBar.style.transition = `width ${INTERVAL}ms linear`;
+      progBar.style.width = "100%";
+    });
+  }
+
+  // ── Autoplay ────────────────────────────────────────────────────────────────
+  function startAutoplay() {
+    clearInterval(autoTimer);
+    startProgress();
+    autoTimer = setInterval(() => { goTo(current + 1); startProgress(); }, INTERVAL);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoTimer);
+    if (progBar) { progBar.style.transition = "none"; progBar.style.width = "0%"; }
+  }
+
+  function resetAutoplay() { stopAutoplay(); startAutoplay(); }
+
+  // ── Arrow buttons ───────────────────────────────────────────────────────────
+  if (prevBtn) prevBtn.addEventListener("click", () => { goTo(current - 1); resetAutoplay(); });
+  if (nextBtn) nextBtn.addEventListener("click", () => { goTo(current + 1); resetAutoplay(); });
+
+  // ── SWIPE / DRAG — Pointer Events (tanpa setPointerCapture agar click child tetap jalan)
+  // touch-action: pan-y di CSS sudah mencegah scroll vertikal saat swipe horizontal.
+  let pointerStartX    = 0;
+  let pointerStartY    = 0;
+  let pointerActive    = false;
+  let isDrag           = false;
+  const SWIPE_MIN      = 40; // px minimum untuk pindah slide
+
+  track.addEventListener("pointerdown", e => {
+    if (!e.isPrimary) return;
+    pointerStartX = e.clientX;
+    pointerStartY = e.clientY;
+    pointerActive = true;
+    isDrag        = false;
+    track.style.cursor = "grabbing";
+    stopAutoplay();
+    // TIDAK pakai setPointerCapture — supaya click event tetap sampai ke child (gallery-card / video)
+  });
+
+  // Pantau gerakan di document agar drag tetap terdeteksi walau pointer keluar area track
+  document.addEventListener("pointermove", e => {
+    if (!pointerActive || !e.isPrimary) return;
+    const dx = Math.abs(e.clientX - pointerStartX);
+    const dy = Math.abs(e.clientY - pointerStartY);
+    if (!isDrag && (dx > 8 || dy > 8)) {
+      isDrag = dx >= dy; // horizontal lebih dominan = swipe carousel
+    }
+  }, { passive: true });
+
+  document.addEventListener("pointerup", e => {
+    if (!pointerActive || !e.isPrimary) return;
+    const wasSwipe = isDrag;
+    const dx = e.clientX - pointerStartX;
+    pointerActive = false;
+    track.style.cursor = "grab";
+
+    if (wasSwipe && Math.abs(dx) > SWIPE_MIN) {
+      goTo(dx < 0 ? current + 1 : current - 1);
+    }
+    resetAutoplay();
+  });
+
+  document.addEventListener("pointercancel", e => {
+    if (!e.isPrimary) return;
+    pointerActive = false;
+    track.style.cursor = "grab";
+    resetAutoplay();
+  });
+
+  // ── Pause on hover (desktop only — fine to keep) ────────────────────────────
+  const wrap = track.closest(".doc-carousel-wrap");
+  if (wrap) {
+    wrap.addEventListener("mouseenter", stopAutoplay);
+    wrap.addEventListener("mouseleave", () => { if (!pointerActive) startAutoplay(); });
+  }
+
+  // ── Resize snap ─────────────────────────────────────────────────────────────
+  window.addEventListener("resize", () => goTo(current));
+
+  // ── Init ────────────────────────────────────────────────────────────────────
+  renderDots();
+  goTo(0);
+  startAutoplay();
 }

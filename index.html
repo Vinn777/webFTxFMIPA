@@ -33,7 +33,7 @@
           <li><a href="#testimonial" class="nav-link">Kesan &amp; Pesan</a></li>
           <li><a href="#refleksi" class="nav-link">Refleksi</a></li>
         </ul>
-        <a href="#galeri" class="nav-btn">Lihat Dokumentasi</a>
+        <a href="#perjalanan" class="nav-btn">Lihat Dokumentasi</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Menu navigasi">
           <span></span>
           <span></span>
@@ -333,28 +333,211 @@
                 <li><span>&check;</span> Belanja Sembako &amp; Snack Donasi</li>
                 <li><span>&check;</span> Persiapan Alat &amp; Perlengkapan Acara</li>
               </ul>
-              <div class="timeline-media-grid">
-                <div class="timeline-media-card">
-                  <div class="timeline-media-label">
-                    <span class="media-badge photo">Foto</span>
-                    <span>Proses Meminta Izin</span>
-                  </div>
-                  <div class="timeline-photo">
-                    <img src="foto/ProsesMemintaizin.jpeg"
-                      alt="Dokumentasi proses meminta izin kepada pimpinan Panti Asuhan Hasbi Rabbi">
-                  </div>
+              <div class="prep-media-wrapper">
+                <div class="prep-filter-bar">
+                  <span class="prep-filter-label">Filter Media Persiapan:</span>
+                  <button class="prep-filter-btn active" data-prep-filter="all">Semua Media (12)</button>
+                  <button class="prep-filter-btn" data-prep-filter="photo">Foto Survei &amp; Izin (9)</button>
+                  <button class="prep-filter-btn" data-prep-filter="video">Video Lapangan (3)</button>
                 </div>
 
-                <div class="timeline-media-card">
-                  <div class="timeline-media-label">
-                    <span class="media-badge video">Video</span>
-                    <span>Dokumentasi Survei Lokasi</span>
+                <div class="timeline-media-grid" id="prep-media-grid">
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/ProsesMemintaizin.jpeg"
+                    data-title="Silaturahmi &amp; Permohonan Izin Resmi Bersama Pimpinan Panti Asuhan">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto</span>
+                      <span>Proses Meminta Izin</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/ProsesMemintaizin.jpeg"
+                        alt="Dokumentasi proses meminta izin kepada pimpinan Panti Asuhan Hasbi Rabbi" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Pertemuan resmi pengajuan proposal dan silaturahmi bersama
+                      pimpinan panti asuhan.</div>
                   </div>
-                  <div class="timeline-video-container">
-                    <video class="timeline-video" controls playsinline preload="auto">
-                      <source src="foto/Survei Lokasi.mp4" type="video/mp4">
-                      Browser Anda tidak mendukung pemutar video HTML5.
-                    </video>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg"
+                    data-title="Peninjauan Pendopo Utama &amp; Koordinasi Tempat Kegiatan Bersama Tim">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Survei Pendopo Utama</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg"
+                        alt="Peninjauan pendopo utama Panti Asuhan Hasbi Rabbi" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Observasi pendopo terbuka panti asuhan untuk penempatan sesi
+                      mentoring dan kelas belajar.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg"
+                    data-title="Observasi Area Lapangan Luar &amp; Rute Kegiatan Interaktif">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Peninjauan Halaman Luar</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg"
+                        alt="Observasi area luar dan halaman panti asuhan" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Pengamatan kondisi halaman untuk kegiatan games interaktif dan
+                      dinamika kelompok anak-anak.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
+                    data-title="Koordinasi Teknis Lapangan Mahasiswa FT (Informatika) &times; FMIPA (Biologi)">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Koordinasi Lapangan</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
+                        alt="Koordinasi teknis tim mahasiswa kolaborator di lokasi" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Diskusi sinkronisasi alur acara antara tim Informatika dan
+                      Biologi di pelataran panti.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (1).jpeg"
+                    data-title="Pemeriksaan Kondisi Gazebo Belajar &amp; Ketersediaan Titik Duduk">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Kesiapan Gazebo Belajar</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (1).jpeg"
+                        alt="Pemeriksaan gazebo belajar di panti asuhan" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Pengecekan fasilitas gazebo untuk memastikan kenyamanan belajar
+                      dan sirkulasi udara yang baik.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53 (1).jpeg"
+                    data-title="Survei Fasilitas Lingkungan &amp; Tata Letak Ruangan Panti Asuhan">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Survei Fasilitas Panti</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53 (1).jpeg"
+                        alt="Survei fasilitas lingkungan panti asuhan" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Peninjauan tata ruang dan fasilitas panti guna kelancaran
+                      mobilitas seluruh peserta.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54 (1).jpeg"
+                    data-title="Briefing Rencana Teknis &amp; Pembagian Tugas Pelaksana Acara">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Briefing Pelaksanaan</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54 (1).jpeg"
+                        alt="Briefing rencana teknis dan pembagian peran mahasiswa" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Konsolidasi tugas per divisi meliputi perlengkapan, konsumsi
+                      donasi, dan materi pengajaran.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52.jpeg"
+                    data-title="Pengecekan Akses Keluar-Masuk Rombongan Mahasiswa &amp; Paket Donasi">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Pengecekan Akses Jalur</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52.jpeg"
+                        alt="Pengecekan akses jalur masuk ke area panti asuhan" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Memastikan jalur kedatangan aman, tertib, dan tidak mengganggu
+                      aktivitas harian warga panti.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
+                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (2).jpeg"
+                    data-title="Observasi Titik Kumpul &amp; Diskusi Tim Mahasiswa di Area Panti">
+                    <div class="timeline-media-label">
+                      <span class="media-badge photo">Foto Baru</span>
+                      <span>Observasi Titik Kumpul</span>
+                    </div>
+                    <div class="timeline-photo">
+                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (2).jpeg"
+                        alt="Observasi titik kumpul mahasiswa di area panti" loading="lazy">
+                    </div>
+                    <div class="timeline-photo-caption">Finalisasi area kumpul panitia sebelum memasuki sesi perkenalan
+                      bersama adik-adik panti.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="video"
+                    data-video="foto/Survei Lokasi.mp4"
+                    data-title="Video Peninjauan Lapangan Menyeluruh di Panti Asuhan Hasbi Rabbi">
+                    <div class="timeline-media-label">
+                      <span class="media-badge video">Video</span>
+                      <span>Survei Lokasi Utama</span>
+                    </div>
+                    <div class="timeline-video-container">
+                      <video class="timeline-video" muted playsinline preload="metadata">
+                        <source src="foto/Survei Lokasi.mp4" type="video/mp4">
+                      </video>
+                      <div class="timeline-video-play-hint">&#9658; Putar Video</div>
+                    </div>
+                    <div class="timeline-photo-caption">Dokumentasi video peninjauan kondisi lapangan, halaman, dan
+                      pendopo utama panti asuhan.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="video"
+                    data-video="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4"
+                    data-title="Video Dokumentasi Suasana Diskusi Persiapan &amp; Peninjauan Lapangan (01)">
+                    <div class="timeline-media-label">
+                      <span class="media-badge video">Video Baru</span>
+                      <span>Suasana Survei 01</span>
+                    </div>
+                    <div class="timeline-video-container">
+                      <video class="timeline-video" muted playsinline preload="metadata">
+                        <source src="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4" type="video/mp4">
+                      </video>
+                      <div class="timeline-video-play-hint">&#9658; Putar Video</div>
+                    </div>
+                    <div class="timeline-photo-caption">Rekaman video aktivitas tim mahasiswa saat mengecek sudut
+                      pendopo dan gazebo panti asuhan.</div>
+                  </div>
+
+
+                  <div class="timeline-media-card lightbox-trigger" data-type="video"
+                    data-video="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4"
+                    data-title="Video Dokumentasi Dinamika Lapangan &amp; Pemetaan Tempat Acara (02)">
+                    <div class="timeline-media-label">
+                      <span class="media-badge video">Video Baru</span>
+                      <span>Suasana Survei 02</span>
+                    </div>
+                    <div class="timeline-video-container">
+                      <video class="timeline-video" muted playsinline preload="metadata">
+                        <source src="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" type="video/mp4">
+                      </video>
+                      <div class="timeline-video-play-hint">&#9658; Putar Video</div>
+                    </div>
+                    <div class="timeline-photo-caption">Rekaman video interaksi diskusi mahasiswa merumuskan rencana
+                      kegiatan di panti asuhan.</div>
                   </div>
                 </div>
               </div>
@@ -406,39 +589,110 @@
           <span class="badge-tag primary">Dokumentasi Visual</span>
           <h2 class="section-title">Galeri Rekam Jejak Kegiatan</h2>
           <p class="section-subtitle">Potret kebersamaan yang merekam kehangatan, ketulusan senyum, dan kebersamaan di
-            panti asuhan.</p>
+            panti asuhan. Geser atau tunggu untuk melihat semua momen.</p>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-card video-card" data-video="foto/Survei Lokasi.mp4"
-            data-title="Video Dokumentasi: Survei Lokasi Panti Asuhan Hasbi Rabbi" data-reveal="zoom-in"
-            data-reveal-delay="100">
-            <video class="gallery-preview-video" muted playsinline preload="metadata">
-              <source src="foto/Survei Lokasi.mp4" type="video/mp4">
-            </video>
-            <div class="gallery-video-pill">
-              <span class="gallery-video-pill-dot"></span>
-              <span>VIDEO DOKUMENTASI</span>
+
+        <div class="doc-carousel-wrap" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="doc-carousel-track" id="doc-carousel-track">
+
+
+            <div class="doc-slide gallery-card video-card" data-video="foto/Survei Lokasi.mp4"
+              data-title="Video Dokumentasi: Survei Lokasi Panti Asuhan Hasbi Rabbi">
+              <video class="gallery-preview-video" muted playsinline preload="metadata">
+                <source src="foto/Survei Lokasi.mp4" type="video/mp4">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO SURVEI</span>
+              </div>
+              <div class="gallery-play-btn" aria-label="Putar Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Dokumentasi Survei Lokasi</div>
+                <div class="gallery-meta">Peninjauan Fasilitas Panti Asuhan (Klik untuk putar)</div>
+              </div>
             </div>
-            <div class="gallery-play-btn" aria-label="Putar Video">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="6 4 20 12 6 20 6 4"></polygon>
-              </svg>
+
+
+            <div class="doc-slide gallery-card" data-src="foto/ProsesMemintaizin.jpeg"
+              data-title="Proses Meminta Izin &amp; Silaturahmi Bersama Pengurus Panti Asuhan">
+              <img src="foto/ProsesMemintaizin.jpeg" alt="Proses meminta izin kepada pihak panti asuhan" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Proses Meminta Izin &amp; Silaturahmi</div>
+                <div class="gallery-meta">Pertemuan Awal Bersama Pimpinan Panti</div>
+              </div>
             </div>
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Dokumentasi Survei Lokasi</div>
-              <div class="gallery-meta">Video Peninjauan Lapangan (Klik untuk putar)</div>
+
+
+            <div class="doc-slide gallery-card" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg"
+              data-title="Peninjauan Pendopo Utama &amp; Koordinasi Lapangan Bersama Tim Mahasiswa">
+              <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg" alt="Peninjauan pendopo utama panti asuhan"
+                loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Survei Pendopo Utama</div>
+                <div class="gallery-meta">Diskusi Lokasi Kegiatan Sesi Belajar &amp; Interaktif</div>
+              </div>
             </div>
+
+
+            <div class="doc-slide gallery-card" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg"
+              data-title="Observasi Area Lapangan Luar Panti Asuhan Hasbi Rabbi">
+              <img src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg" alt="Observasi area luar panti asuhan"
+                loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Observasi Halaman &amp; Ruang Terbuka</div>
+                <div class="gallery-meta">Pemetaan Area Dinamika Kelompok dan Senam Sehat</div>
+              </div>
+            </div>
+
+
+            <div class="doc-slide gallery-card" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
+              data-title="Sinergi Kolaborasi Mahasiswa Informatika &times; Biologi di Lapangan">
+              <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
+                alt="Koordinasi tim mahasiswa di pelataran panti" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Koordinasi Tim FT &times; FMIPA</div>
+                <div class="gallery-meta">Sinkronisasi Pelaksanaan Teknis Pengabdian</div>
+              </div>
+            </div>
+
+
+            <div class="doc-slide gallery-card video-card" data-video="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4"
+              data-title="Video Dokumentasi Lapangan: Observasi Suasana Panti Asuhan">
+              <video class="gallery-preview-video" muted playsinline preload="metadata">
+                <source src="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" type="video/mp4">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO DOKUMENTASI</span>
+              </div>
+              <div class="gallery-play-btn" aria-label="Putar Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Dinamika Survei Lapangan</div>
+                <div class="gallery-meta">Peninjauan Suasana Riil Panti Asuhan</div>
+              </div>
+            </div>
+
           </div>
 
-          <div class="gallery-card" data-src="foto/ProsesMemintaizin.jpeg"
-            data-title="Proses Meminta Izin &amp; Silaturahmi Bersama Pengurus Panti Asuhan" data-reveal="zoom-in"
-            data-reveal-delay="200">
-            <img src="foto/ProsesMemintaizin.jpeg" alt="Proses meminta izin kepada pihak panti asuhan" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Proses Meminta Izin &amp; Silaturahmi</div>
-              <div class="gallery-meta">Pertemuan Awal Bersama Pimpinan Panti</div>
-            </div>
+
+          <button class="doc-carousel-arrow doc-carousel-prev" id="doc-prev" aria-label="Sebelumnya">&#8592;</button>
+          <button class="doc-carousel-arrow doc-carousel-next" id="doc-next" aria-label="Berikutnya">&#8594;</button>
+
+
+          <div class="doc-carousel-dots" id="doc-dots"></div>
+
+
+          <div class="doc-carousel-progress">
+            <div class="doc-carousel-progress-bar" id="doc-progress-bar"></div>
           </div>
         </div>
       </div>
