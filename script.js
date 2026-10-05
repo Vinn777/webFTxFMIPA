@@ -41,7 +41,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "erin.jpeg",
     quote: "Kepedulian adalah kode sumber dari peradaban yang bermartabat.",
     reflection: "Melihat semangat belajar adik-adik panti yang tak pernah padam meski di tengah keterbatasan menjadi motivasi terkuat saya untuk terus berkontribusi bagi masyarakat."
   },
@@ -91,7 +91,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "sofi.jpeg",
     quote: "Pengabdian adalah ekspresi tertinggi dari ilmu yang dimiliki.",
     reflection: "Kegiatan sosial ini memperkuat keyakinan saya bahwa mahasiswa teknik bukan hanya membangun sistem, tetapi juga harus turut membangun karakter dan kesejahteraan masyarakat."
   },
@@ -121,7 +121,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "izaa.jpeg",
     quote: "Dedikasi dan keikhlasan adalah dua sayap pengabdian yang sesungguhnya.",
     reflection: "Melihat adik-adik panti begitu antusias dan bersemangat meski dalam keterbatasan memberikan pelajaran berharga tentang rasa syukur dan ketangguhan jiwa."
   },
@@ -171,7 +171,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "",
+    avatar: "rafa.jpeg",
     quote: "Kejernihan hati melahirkan tindakan yang bermakna bagi sesama.",
     reflection: "Kegiatan pengabdian ini adalah salah satu momen paling bermakna dalam perjalanan perkuliahan saya. Senyum adik-adik panti adalah hadiah yang tidak ternilai harganya."
   },
