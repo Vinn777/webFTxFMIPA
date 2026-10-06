@@ -207,6 +207,16 @@ const teamMembers = [
     reflection: "Melihat binar mata dan keceriaan adik-adik panti menyadarkan saya bahwa kebahagiaan sejati hadir ketika kita mau berbagi waktu dan ketulusan."
   },
   {
+    name: "Clarissa Aurelia",
+    npm: "2617021021",
+    faculty: "Fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "clarisa.jpeg",
+    quote: "Menyemai kasih sayang adalah langkah awal membangun masa depan generasi bangsa.",
+    reflection: "Mendampingi adik-adik belajar dan bermain memberikan pengalaman batin yang berharga tentang arti kebersamaan dan ketulusan."
+  },
+  {
     name: "Arta Aulia",
     npm: "2617021030",
     faculty: "Fmipa",
@@ -225,16 +235,6 @@ const teamMembers = [
     avatar: "anisa.jpeg",
     quote: "Setiap senyuman adik-adik panti adalah motivasi terbesar untuk terus bermanfaat.",
     reflection: "Melalui interaksi hangat ini, nilai kemanusiaan dalam Pancasila bukan lagi teori, tetapi tindakan nyata yang menyentuh nurani."
-  },
-  {
-    name: "Clarissa Aurelia",
-    npm: "2617021021",
-    faculty: "Fmipa",
-    facultyName: "Fakultas MIPA",
-    prodi: "Biologi",
-    avatar: "clarisa.jpeg",
-    quote: "Menyemai kasih sayang adalah langkah awal membangun masa depan generasi bangsa.",
-    reflection: "Mendampingi adik-adik belajar dan bermain memberikan pengalaman batin yang berharga tentang arti kebersamaan dan ketulusan."
   },
   {
     name: "Saifina Izza Aulia",
@@ -264,6 +264,16 @@ const teamMembers = [
     prodi: "Biologi",
     avatar: "ayas.jpeg",
     quote: "Sains mengajarkan kita tentang kehidupan, tetapi kemanusiaan memberi makna padanya.",
+    reflection: "Kolaborasi ini membuktikan bahwa ilmu biologi dan nurani sosial saling melengkapi dalam mengabdi kepada masyarakat."
+  },
+  {
+    name: "Rahmat Fajar Maulana",
+    npm: "2617021079",
+    faculty: "Fmipa",
+    facultyName: "Fakultas MIPA",
+    prodi: "Biologi",
+    avatar: "fjr.jpeg",
+    quote: "Sains mengajarkan kita tentang kehidupan, dan pengabdian memberi makna nyata bagi sesama.",
     reflection: "Kolaborasi ini membuktikan bahwa ilmu biologi dan nurani sosial saling melengkapi dalam mengabdi kepada masyarakat."
   },
   {
@@ -996,7 +1006,7 @@ function setupGallery() {
           modal.classList.add("active");
           document.body.style.overflow = "hidden";
           modalVid.load();
-          modalVid.play().catch(() => {});
+          modalVid.play().catch(() => { });
           return;
         }
       } else if (src) {
@@ -1753,21 +1763,21 @@ function initInteractive3DLab() {
 // Swipe: HP (touch), Laptop (touchpad drag / mouse drag) — Pointer Events API
 // ============================================================================
 function initDocCarousel() {
-  const track    = document.getElementById("doc-carousel-track");
+  const track = document.getElementById("doc-carousel-track");
   const dotsWrap = document.getElementById("doc-dots");
-  const prevBtn  = document.getElementById("doc-prev");
-  const nextBtn  = document.getElementById("doc-next");
-  const progBar  = document.getElementById("doc-progress-bar");
+  const prevBtn = document.getElementById("doc-prev");
+  const nextBtn = document.getElementById("doc-next");
+  const progBar = document.getElementById("doc-progress-bar");
 
   if (!track) return;
 
   const slides = Array.from(track.querySelectorAll(".doc-slide"));
-  const total  = slides.length;
+  const total = slides.length;
   if (total === 0) return;
 
-  let current      = 0;
-  let autoTimer    = null;
-  const INTERVAL   = 4000;
+  let current = 0;
+  let autoTimer = null;
+  const INTERVAL = 4000;
 
   // ── Dots ────────────────────────────────────────────────────────────────────
   function renderDots() {
@@ -1827,18 +1837,18 @@ function initDocCarousel() {
 
   // ── SWIPE / DRAG — Pointer Events (tanpa setPointerCapture agar click child tetap jalan)
   // touch-action: pan-y di CSS sudah mencegah scroll vertikal saat swipe horizontal.
-  let pointerStartX    = 0;
-  let pointerStartY    = 0;
-  let pointerActive    = false;
-  let isDrag           = false;
-  const SWIPE_MIN      = 40; // px minimum untuk pindah slide
+  let pointerStartX = 0;
+  let pointerStartY = 0;
+  let pointerActive = false;
+  let isDrag = false;
+  const SWIPE_MIN = 40; // px minimum untuk pindah slide
 
   track.addEventListener("pointerdown", e => {
     if (!e.isPrimary) return;
     pointerStartX = e.clientX;
     pointerStartY = e.clientY;
     pointerActive = true;
-    isDrag        = false;
+    isDrag = false;
     track.style.cursor = "grabbing";
     stopAutoplay();
     // TIDAK pakai setPointerCapture — supaya click event tetap sampai ke child (gallery-card / video)
