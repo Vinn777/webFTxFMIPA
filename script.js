@@ -7,6 +7,7 @@ const teamMembers = [
   // ── FAKULTAS TEKNIK — INFORMATIKA ──────────────────────────────────────────
   {
     name: "Airin Citra Kirana",
+    role: "PDD",
     npm: "2615061001",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -17,6 +18,7 @@ const teamMembers = [
   },
   {
     name: "Syifa Uljanah",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2615061017",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -27,6 +29,7 @@ const teamMembers = [
   },
   {
     name: "Zahra Salsabilla",
+    role: "PDD",
     npm: "2615061019",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -37,6 +40,7 @@ const teamMembers = [
   },
   {
     name: "Erin Chelsia Sabila",
+    role: "PDD",
     npm: "2615061024",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -47,6 +51,7 @@ const teamMembers = [
   },
   {
     name: "Dinayira Fransiska Sitinjak",
+    role: "Koordinator Umum",
     npm: "2615061035",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -57,6 +62,7 @@ const teamMembers = [
   },
   {
     name: "Genial Ang Djenar",
+    role: "Ketua Projek",
     npm: "2615061060",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -67,6 +73,7 @@ const teamMembers = [
   },
   {
     name: "Lucky Dharma Putra",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2615061063",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -77,6 +84,7 @@ const teamMembers = [
   },
   {
     name: "Renatha Hany Yuztika",
+    role: "Bendahara",
     npm: "2615061066",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -87,6 +95,7 @@ const teamMembers = [
   },
   {
     name: "Shofi Gholi Alwan Azzaki",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2615061067",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -97,6 +106,7 @@ const teamMembers = [
   },
   {
     name: "Khodijah Bintu H.Wardono",
+    role: "PDD",
     npm: "2615061072",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -107,6 +117,7 @@ const teamMembers = [
   },
   {
     name: "Syahrul Muhammad Farel",
+    role: "Sekretaris",
     npm: "2615061076",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -117,6 +128,7 @@ const teamMembers = [
   },
   {
     name: "Fathiyah Izza Ramadani",
+    role: "Pembawa Acara (MC)",
     npm: "2615061082",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -127,6 +139,7 @@ const teamMembers = [
   },
   {
     name: "Fauziyah Nur Hasanah",
+    role: "Notulensi",
     npm: "2615061095",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -137,6 +150,7 @@ const teamMembers = [
   },
   {
     name: "Hafid Surya",
+    role: "Perlengkapan dan Konsumsi",
     npm: "2615061096",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -147,6 +161,7 @@ const teamMembers = [
   },
   {
     name: "Amsal Fritzie Siregar",
+    role: "Perlengkapan dan Konsumsi",
     npm: "2615061105",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -157,6 +172,7 @@ const teamMembers = [
   },
   {
     name: "Daffa Choirul Shihab",
+    role: "Koordinator Konsumsi dan Perlengkapan",
     npm: "2615061106",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -167,6 +183,7 @@ const teamMembers = [
   },
   {
     name: "Rafa Fairuz Athaya",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2615061124",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -177,6 +194,7 @@ const teamMembers = [
   },
   {
     name: "Bona Hasian Sitohang",
+    role: "Perlengkapan dan Konsumsi",
     npm: "2615061140",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -187,6 +205,7 @@ const teamMembers = [
   },
   {
     name: "Ariiq Nawfal Aqilla",
+    role: "Koordinator PDD",
     npm: "2655061005",
     faculty: "FT",
     facultyName: "Fakultas Teknik",
@@ -198,6 +217,7 @@ const teamMembers = [
 
   {
     name: "Karel Agreska Arlin",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2617021006",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -208,6 +228,7 @@ const teamMembers = [
   },
   {
     name: "Clarissa Aurelia",
+    role: "Bendahara",
     npm: "2617021021",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -218,6 +239,7 @@ const teamMembers = [
   },
   {
     name: "Arta Aulia",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2617021030",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -228,6 +250,7 @@ const teamMembers = [
   },
   {
     name: "Annisa Qania Fitri",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2617021039",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -238,6 +261,7 @@ const teamMembers = [
   },
   {
     name: "Saifina Izza Aulia",
+    role: "Sekretaris",
     npm: "2617021050",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -248,6 +272,7 @@ const teamMembers = [
   },
   {
     name: "Syabilla Aura Puffy",
+    role: "Anggota",
     npm: "2617021060",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -258,6 +283,7 @@ const teamMembers = [
   },
   {
     name: "Puja Tyas Cahyani",
+    role: "Anggota",
     npm: "2617021070",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -268,6 +294,7 @@ const teamMembers = [
   },
   {
     name: "Rahmat Fajar Maulana",
+    role: "Anggota",
     npm: "2617021079",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -278,6 +305,7 @@ const teamMembers = [
   },
   {
     name: "Aqila Salsabila Fitri",
+    role: "Kakak Asuh (Kasuh)",
     npm: "2617021081",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -288,6 +316,7 @@ const teamMembers = [
   },
   {
     name: "Jeni Hestiana Dewi",
+    role: "Pembawa Acara (MC)",
     npm: "2617021091",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -298,6 +327,7 @@ const teamMembers = [
   },
   {
     name: "Chintya Nabila",
+    role: "Anggota",
     npm: "2657021004",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -308,6 +338,7 @@ const teamMembers = [
   },
   {
     name: "Syaqinata Riskia Karlin",
+    role: "Koordinator Umum",
     npm: "2657021013",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -318,6 +349,7 @@ const teamMembers = [
   },
   {
     name: "Syahdan Abbad Zabran",
+    role: "Ketua Projek & PDD",
     npm: "2657021017",
     faculty: "Fmipa",
     facultyName: "Fakultas MIPA",
@@ -404,24 +436,28 @@ const testiData = [
   {
     body: "Kami sangat bersyukur dengan kehadiran adik-adik mahasiswa yang membawa begitu banyak kebaikan. Anak-anak kami merasa sangat senang dan terhibur. Semoga ilmu yang kalian bagi menjadi bekal berharga bagi mereka.",
     name: "Pimpinan Panti Asuhan",
+    role: "Anggota",
     role: "Panti Asuhan Hasbi Rabbi",
     initial: "P"
   },
   {
     body: "Kak-kak mahasiswanya baik banget! Saya belajar matematika dan menggambar bersama mereka. Rasanya seperti punya kakak baru yang peduli. Semoga bisa datang lagi ya, Kak!",
     name: "Anak Panti (Usia 10 Tahun)",
+    role: "Anggota",
     role: "Adik Panti Asuhan Hasbi Rabbi",
     initial: "A"
   },
   {
     body: "Kegiatan ini luar biasa. Para mahasiswa tidak hanya membawa bantuan materi, tetapi juga kehangatan dan semangat yang menginspirasi anak-anak kami untuk terus belajar dan bermimpi besar.",
     name: "Pengasuh Panti",
+    role: "Anggota",
     role: "Staf Pengasuh Panti Asuhan Hasbi Rabbi",
     initial: "Pe"
   },
   {
     body: "Momen bersama kak-kak dari FT dan FMIPA adalah yang paling berkesan tahun ini. Kami merasa tidak sendirian. Terima kasih sudah datang dan berbagi dari hati.",
     name: "Koordinator Anak Panti",
+    role: "Anggota",
     role: "Perwakilan Anak-anak Panti",
     initial: "K"
   }
@@ -429,6 +465,7 @@ const testiData = [
 
 document.addEventListener("DOMContentLoaded", () => {
   updateMemberCount();
+  initScrollReveal(); // harus pertama agar observer siap
   renderTeam("all");
   renderReflections();
   setupFilter();
@@ -439,8 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initInteractive3DLab();
   initDocCarousel();
 
-  // Sistem animasi baru
-  initScrollReveal();
+  // Sistem animasi lanjutan
   initTimelineProgress();
   initParallax();
   initTestimonialSlider();
@@ -450,32 +486,68 @@ document.addEventListener("DOMContentLoaded", () => {
 // ============================================================================
 // SCROLL REVEAL — 3D PERSPECTIVE ENTRANCE ANIMATION
 // ============================================================================
+
+// Observer global agar bisa dipakai elemen yang dibuat dinamis (kartu anggota, refleksi)
+let _revealObserver = null;
+let _revealCounterFired = false;
+
 function initScrollReveal() {
-  const elements = document.querySelectorAll("[data-reveal]");
-  if (!elements.length) return;
+  _revealCounterFired = false;
 
-  let counterFired = false;
-
-  const observer = new IntersectionObserver((entries) => {
+  _revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("revealed");
+        entry.target.classList.remove("reveal-init");
 
         // Trigger counter saat blok hero-stats mulai terlihat
-        if (!counterFired && entry.target.closest(".hero-stats")) {
-          counterFired = true;
+        if (!_revealCounterFired && entry.target.closest(".hero-stats")) {
+          _revealCounterFired = true;
           animateCounters();
         }
 
-        observer.unobserve(entry.target);
+        _revealObserver.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: "0px 0px -60px 0px"
+    threshold: 0.10,
+    rootMargin: "0px 0px -40px 0px"
   });
 
-  elements.forEach(el => observer.observe(el));
+  // Tandai dan observe elemen statis di HTML
+  const elements = document.querySelectorAll("[data-reveal]");
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    // Elemen yang sudah terlihat di viewport — langsung revealed tanpa animasi
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("revealed");
+    } else {
+      // Elemen di bawah fold — tandai reveal-init (hidden) lalu observe
+      el.classList.add("reveal-init");
+      _revealObserver.observe(el);
+    }
+  });
+}
+
+// Helper: observe elemen baru yang dibuat secara dinamis setelah DOMContentLoaded
+function observeNewElements(container) {
+  if (!container) return;
+  const els = container.querySelectorAll("[data-reveal]");
+  els.forEach(el => {
+    if (el.classList.contains("revealed")) return;
+    if (!_revealObserver) {
+      el.classList.add("revealed");
+      return;
+    }
+    // Cek apakah elemen sudah visible di viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("revealed");
+    } else {
+      el.classList.add("reveal-init");
+      _revealObserver.observe(el);
+    }
+  });
 }
 
 // ============================================================================
@@ -905,9 +977,14 @@ function renderTeam(filter) {
     return;
   }
 
-  filtered.forEach(m => {
+  filtered.forEach((m, idx) => {
     const card = document.createElement("div");
     card.className = `member-card ${m.faculty}`;
+    // Tambahkan animasi reveal bertahap per kartu
+    card.setAttribute("data-reveal", "fade-up");
+    const delays = [0, 100, 200];
+    const delayVal = delays[idx % 3];
+    if (delayVal > 0) card.setAttribute("data-reveal-delay", String(delayVal));
     const fallbackAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=0284c7&color=fff&size=128&bold=true`;
     const avatarSrc = m.avatar && m.avatar.trim() !== ""
       ? (m.avatar.startsWith("http") || m.avatar.startsWith("foto/") ? m.avatar : `foto/${m.avatar}`)
@@ -926,6 +1003,9 @@ function renderTeam(filter) {
     `;
     container.appendChild(card);
   });
+
+  // Re-observe kartu baru agar animasi scroll reveal aktif
+  observeNewElements(container);
 }
 
 function setupFilter() {
@@ -953,9 +1033,13 @@ function renderReflections() {
 
   if (section) section.style.display = "";
 
-  teamMembers.forEach(m => {
+  teamMembers.forEach((m, idx) => {
     const item = document.createElement("div");
     item.className = "reflection-item";
+    item.setAttribute("data-reveal", "fade-up");
+    const delays = [0, 100, 200];
+    const delayVal = delays[idx % 3];
+    if (delayVal > 0) item.setAttribute("data-reveal-delay", String(delayVal));
     item.innerHTML = `
       <div class="reflection-quote">&ldquo;${m.reflection}&rdquo;</div>
       <div class="reflection-author">
@@ -967,6 +1051,9 @@ function renderReflections() {
     `;
     container.appendChild(item);
   });
+
+  // Re-observe item refleksi baru
+  observeNewElements(container);
 }
 
 function setupGallery() {

@@ -32,6 +32,57 @@
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ============================================================================
+   SCROLL REVEAL ANIMATION SYSTEM
+   Hanya elemen dengan class 'reveal-init' yang disembunyikan (ditandai JS).
+   Elemen yang langsung terlihat di viewport tidak pernah diberi class ini.
+   ============================================================================ */
+
+/* State awal — hanya elemen yang menunggu animasi */
+[data-reveal].reveal-init {
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="fade-up"].reveal-init    { transform: translateY(28px); }
+[data-reveal="fade-down"].reveal-init  { transform: translateY(-28px); }
+[data-reveal="fade-left"].reveal-init  { transform: translateX(32px); }
+[data-reveal="fade-right"].reveal-init { transform: translateX(-32px); }
+
+/* Delay helpers — berlaku saat reveal-init masih ada (sebelum & selama transisi) */
+[data-reveal].reveal-init[data-reveal-delay="100"],
+[data-reveal].revealed[data-reveal-delay="100"]  { transition-delay: 0.10s; }
+[data-reveal].reveal-init[data-reveal-delay="150"],
+[data-reveal].revealed[data-reveal-delay="150"]  { transition-delay: 0.15s; }
+[data-reveal].reveal-init[data-reveal-delay="200"],
+[data-reveal].revealed[data-reveal-delay="200"]  { transition-delay: 0.20s; }
+[data-reveal].reveal-init[data-reveal-delay="250"],
+[data-reveal].revealed[data-reveal-delay="250"]  { transition-delay: 0.25s; }
+[data-reveal].reveal-init[data-reveal-delay="300"],
+[data-reveal].revealed[data-reveal-delay="300"]  { transition-delay: 0.30s; }
+[data-reveal].reveal-init[data-reveal-delay="400"],
+[data-reveal].revealed[data-reveal-delay="400"]  { transition-delay: 0.40s; }
+[data-reveal].reveal-init[data-reveal-delay="500"],
+[data-reveal].revealed[data-reveal-delay="500"]  { transition-delay: 0.50s; }
+
+/* State REVEALED — animasi selesai, tampil penuh */
+[data-reveal].revealed {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].reveal-init.revealed {
+  transition-delay: inherit;
+}
+
+/* ============================================================================
+   END SCROLL REVEAL
+   ============================================================================ */
+
 *,
 *::before,
 *::after {
@@ -1268,6 +1319,412 @@ button {
 
 .timeline-media-card:hover .timeline-video-play-hint {
   background: rgba(220, 38, 38, 0.7);
+}
+
+/* ── RUNDOWN ACARA HARI-H (TABEL & TIMELINE) ── */
+.rundown-wrapper {
+  margin-top: 1.5rem;
+}
+
+.rundown-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(229, 115, 47, 0.08) 0%, rgba(29, 78, 216, 0.05) 100%);
+  border: 1px solid rgba(229, 115, 47, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.rundown-stats-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.rundown-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--bg-surface);
+  border: 1px solid rgba(229, 115, 47, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.rundown-stat-pill svg {
+  color: #E5732F;
+}
+
+.rundown-stat-pill strong {
+  color: #C2410C;
+}
+
+.rundown-view-toggle {
+  display: inline-flex;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 3px;
+  box-shadow: var(--shadow-sm);
+}
+
+.rundown-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rundown-toggle-btn.active {
+  background: #E5732F;
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(229, 115, 47, 0.3);
+}
+
+.rundown-filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.rundown-filter-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.rundown-filter-btn {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rundown-filter-btn:hover {
+  color: var(--text-main);
+  background: #E2E8F0;
+}
+
+.rundown-filter-btn.active {
+  background: #E5732F;
+  color: #FFFFFF;
+  border-color: #E5732F;
+  box-shadow: 0 2px 6px rgba(229, 115, 47, 0.28);
+}
+
+/* ── TABLE VIEW (MATCHING THE ORIGINAL DOCUMENT WITH ELEVATED UI) ── */
+.rundown-table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 2px solid #E5732F;
+  box-shadow: 0 6px 20px rgba(229, 115, 47, 0.12);
+  background: #FFFFFF;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rundown-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.rundown-table thead {
+  background: linear-gradient(135deg, #E5732F 0%, #D4621E 100%);
+  color: #FFFFFF;
+}
+
+.rundown-table th {
+  padding: 1.05rem 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #B44A0B;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  vertical-align: middle;
+}
+
+.rundown-table th:last-child {
+  border-right: none;
+}
+
+.rundown-table th.col-waktu {
+  width: 175px;
+  text-align: center;
+}
+
+.rundown-table th.col-acara {
+  text-align: left;
+}
+
+.rundown-table th.col-pj {
+  width: 220px;
+  text-align: center;
+}
+
+.rundown-table tbody tr {
+  border-bottom: 1px solid #FED7AA;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.rundown-table tbody tr:nth-child(even) {
+  background-color: #FFF7ED;
+}
+
+.rundown-table tbody tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+.rundown-table tbody tr:hover {
+  background-color: #FFEDD5;
+}
+
+/* Highlight row terakhir sesi dokumentasi (sesuai dokumen asli) */
+.rundown-table tbody tr.row-highlight-final {
+  background: #E5732F !important;
+  color: #FFFFFF;
+}
+
+.rundown-table tbody tr.row-highlight-final:hover {
+  background: #D4621E !important;
+}
+
+.rundown-table td {
+  padding: 0.95rem 1.25rem;
+  vertical-align: middle;
+  border-right: 1px solid #FED7AA;
+  color: #292524;
+}
+
+.rundown-table td:last-child {
+  border-right: none;
+}
+
+.rundown-table td.cell-waktu {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rundown-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFEDD5;
+  color: #9A3412;
+  border: 1px solid #FDBA74;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.rundown-table tbody tr.row-highlight-final .rundown-time-badge {
+  background: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.rundown-event-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1C1917;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rundown-event-desc {
+  font-size: 0.82rem;
+  color: #57534E;
+  margin-top: 0.2rem;
+  line-height: 1.45;
+}
+
+.rundown-table tbody tr.row-highlight-final .rundown-event-title {
+  color: #FFFFFF;
+}
+
+.rundown-table tbody tr.row-highlight-final .rundown-event-desc {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.rundown-table td.cell-pj {
+  text-align: center;
+}
+
+/* ── PJ BADGES (CHIPS) ── */
+.pj-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.pj-chip.panitia {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+}
+
+.pj-chip.mc {
+  background: #FAF5FF;
+  color: #7E22CE;
+  border: 1px solid #E9D5FF;
+}
+
+.pj-chip.ketua {
+  background: #ECFDF5;
+  color: #047857;
+  border: 1px solid #A7F3D0;
+}
+
+.pj-chip.pdd {
+  background: #FFF7ED;
+  color: #C2410C;
+  border: 1px solid #FED7AA;
+}
+
+.rundown-table tbody tr.row-highlight-final .pj-chip {
+  background: #FFFFFF;
+  color: #C2410C;
+  border-color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ── TIMELINE CARD VIEW ── */
+.rundown-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.rundown-card-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-left: 5px solid #E5732F;
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.rundown-card-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: #FDBA74;
+}
+
+.rundown-card-item.is-final {
+  background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+  border-left: 5px solid #C2410C;
+}
+
+.rundown-card-time {
+  min-width: 140px;
+}
+
+.rundown-card-content {
+  flex: 1;
+}
+
+.rundown-card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rundown-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+.rundown-card-pj {
+  flex-shrink: 0;
+}
+
+.rundown-empty-hint {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-light);
+}
+
+@media (max-width: 768px) {
+  .rundown-meta-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rundown-view-toggle {
+    align-self: flex-start;
+  }
+  .rundown-card-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .rundown-card-pj {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .rundown-table th, .rundown-table td {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* ── 3D LAB INTERAKTIF: UNSUR BIOLOGI & UNSUR INFORMATIKA ── */
