@@ -493,8 +493,13 @@ function initScrollReveal() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("revealed");
-        entry.target.classList.remove("reveal-init");
 
+        // Bersihkan reveal-init dan will-change setelah transisi selesai
+        // agar GPU tetap ringan dan efek hover berjalan mulus tanpa hambatan
+        setTimeout(() => {
+          entry.target.classList.remove("reveal-init");
+          entry.target.style.willChange = "auto";
+        }, 700);
 
         if (!_revealCounterFired && entry.target.closest(".hero-stats")) {
           _revealCounterFired = true;
@@ -505,8 +510,8 @@ function initScrollReveal() {
       }
     });
   }, {
-    threshold: 0.10,
-    rootMargin: "0px 0px -40px 0px"
+    threshold: 0.05,
+    rootMargin: "0px 0px -20px 0px"
   });
 
   const elements = document.querySelectorAll("[data-reveal]");
@@ -516,7 +521,6 @@ function initScrollReveal() {
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       el.classList.add("revealed");
     } else {
-
       el.classList.add("reveal-init");
       _revealObserver.observe(el);
     }
@@ -527,7 +531,7 @@ function initScrollReveal() {
 function observeNewElements(container) {
   if (!container) return;
   const els = container.querySelectorAll("[data-reveal]");
-  els.forEach(el => {
+  els.forEach((el, idx) => {
     if (el.classList.contains("revealed")) return;
     if (!_revealObserver) {
       el.classList.add("revealed");
@@ -536,7 +540,14 @@ function observeNewElements(container) {
     // Cek apakah elemen sudah visible di viewport
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("card-animate-in");
       el.classList.add("revealed");
+      el.style.animationDelay = `${(idx % 6) * 55}ms`;
+      el.addEventListener("animationend", () => {
+        el.classList.remove("card-animate-in");
+        el.style.animationDelay = "";
+        el.style.willChange = "auto";
+      }, { once: true });
     } else {
       el.classList.add("reveal-init");
       _revealObserver.observe(el);
@@ -962,9 +973,19 @@ function renderTeam(filter) {
     card.className = `member-card ${m.faculty}`;
 
     card.setAttribute("data-reveal", "fade-up");
-    const delays = [0, 100, 200];
+    const delays = [0, 80, 160];
     const delayVal = delays[idx % 3];
     if (delayVal > 0) card.setAttribute("data-reveal-delay", String(delayVal));
+
+    // Animasi masuk kartu yang mulus dan bertingkat (staggered)
+    card.classList.add("card-animate-in");
+    card.style.animationDelay = `${(idx % 8) * 50}ms`;
+    card.addEventListener("animationend", () => {
+      card.classList.remove("card-animate-in");
+      card.style.animationDelay = "";
+      card.style.willChange = "auto";
+    }, { once: true });
+
     const fallbackAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=0284c7&color=fff&size=128&bold=true`;
     const avatarSrc = m.avatar && m.avatar.trim() !== ""
       ? (m.avatar.startsWith("http") || m.avatar.startsWith("foto/") ? m.avatar : `foto/${m.avatar}`)
@@ -984,18 +1005,31 @@ function renderTeam(filter) {
     container.appendChild(card);
   });
 
-
   observeNewElements(container);
 }
 
 function setupFilter() {
   const filterBtns = document.querySelectorAll(".filter-btn");
+  const container = document.getElementById("team-grid");
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) return;
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const target = btn.getAttribute("data-filter");
-      renderTeam(target);
+
+      if (container) {
+        container.style.opacity = "0.25";
+        container.style.transform = "translate3d(0, 4px, 0)";
+        container.style.transition = "opacity 0.14s ease, transform 0.14s ease";
+        setTimeout(() => {
+          renderTeam(target);
+          container.style.opacity = "1";
+          container.style.transform = "translate3d(0, 0, 0)";
+        }, 120);
+      } else {
+        renderTeam(target);
+      }
     });
   });
 }
@@ -1017,9 +1051,19 @@ function renderReflections() {
     const item = document.createElement("div");
     item.className = "reflection-item";
     item.setAttribute("data-reveal", "fade-up");
-    const delays = [0, 100, 200];
+    const delays = [0, 80, 160];
     const delayVal = delays[idx % 3];
     if (delayVal > 0) item.setAttribute("data-reveal-delay", String(delayVal));
+
+    // Animasi masuk kartu refleksi yang mulus
+    item.classList.add("card-animate-in");
+    item.style.animationDelay = `${(idx % 6) * 55}ms`;
+    item.addEventListener("animationend", () => {
+      item.classList.remove("card-animate-in");
+      item.style.animationDelay = "";
+      item.style.willChange = "auto";
+    }, { once: true });
+
     item.innerHTML = `
       <div class="reflection-quote">&ldquo;${m.reflection}&rdquo;</div>
       <div class="reflection-author">
@@ -1031,7 +1075,6 @@ function renderReflections() {
     `;
     container.appendChild(item);
   });
-
 
   observeNewElements(container);
 }
@@ -1109,14 +1152,26 @@ function setupPrepFilters() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) return;
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const filter = btn.getAttribute("data-prep-filter");
 
+      let visibleIdx = 0;
       mediaCards.forEach(card => {
         const type = card.getAttribute("data-type");
         if (filter === "all" || type === filter) {
           card.style.display = "";
+          card.classList.remove("card-animate-in");
+          void card.offsetWidth; // trigger reflow
+          card.classList.add("card-animate-in");
+          card.style.animationDelay = `${(visibleIdx % 6) * 45}ms`;
+          visibleIdx++;
+          card.addEventListener("animationend", () => {
+            card.classList.remove("card-animate-in");
+            card.style.animationDelay = "";
+            card.style.willChange = "auto";
+          }, { once: true });
         } else {
           card.style.display = "none";
         }
