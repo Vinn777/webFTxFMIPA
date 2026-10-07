@@ -483,11 +483,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlideshow();
 });
 
-// ============================================================================
-// SCROLL REVEAL — 3D PERSPECTIVE ENTRANCE ANIMATION
-// ============================================================================
-
-// Observer global agar bisa dipakai elemen yang dibuat dinamis (kartu anggota, refleksi)
 let _revealObserver = null;
 let _revealCounterFired = false;
 
@@ -500,7 +495,7 @@ function initScrollReveal() {
         entry.target.classList.add("revealed");
         entry.target.classList.remove("reveal-init");
 
-        // Trigger counter saat blok hero-stats mulai terlihat
+
         if (!_revealCounterFired && entry.target.closest(".hero-stats")) {
           _revealCounterFired = true;
           animateCounters();
@@ -514,22 +509,21 @@ function initScrollReveal() {
     rootMargin: "0px 0px -40px 0px"
   });
 
-  // Tandai dan observe elemen statis di HTML
   const elements = document.querySelectorAll("[data-reveal]");
   elements.forEach(el => {
     const rect = el.getBoundingClientRect();
-    // Elemen yang sudah terlihat di viewport — langsung revealed tanpa animasi
+
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       el.classList.add("revealed");
     } else {
-      // Elemen di bawah fold — tandai reveal-init (hidden) lalu observe
+
       el.classList.add("reveal-init");
       _revealObserver.observe(el);
     }
   });
 }
 
-// Helper: observe elemen baru yang dibuat secara dinamis setelah DOMContentLoaded
+
 function observeNewElements(container) {
   if (!container) return;
   const els = container.querySelectorAll("[data-reveal]");
@@ -550,9 +544,7 @@ function observeNewElements(container) {
   });
 }
 
-// ============================================================================
-// NUMBER COUNTER — easeOutExpo ANIMATION
-// ============================================================================
+
 function animateCounters() {
   const counters = document.querySelectorAll("[data-count]");
   counters.forEach(el => {
@@ -580,9 +572,6 @@ function animateCounters() {
   });
 }
 
-// ============================================================================
-// TIMELINE — SCROLL-DRIVEN PROGRESS FILL & NODE ACTIVATION
-// ============================================================================
 function initTimelineProgress() {
   const stream = document.getElementById("timeline-stream");
   if (!stream) return;
@@ -614,9 +603,7 @@ function initTimelineProgress() {
   updateTimeline();
 }
 
-// ============================================================================
-// PARALLAX — FLOATING BADGE MOUSE TRACKING
-// ============================================================================
+
 function initParallax() {
   const badge = document.getElementById("floating-badge");
   if (!badge) return;
@@ -638,10 +625,7 @@ function initParallax() {
   tick();
 }
 
-// ============================================================================
-// TESTIMONIAL SLIDER — KESAN & PESAN PANTI ASUHAN
-// Slider 2-per-view di desktop, 1-per-view di mobile, dengan dots & swipe.
-// ============================================================================
+
 function initTestimonialSlider() {
   const track = document.getElementById("testi-track");
   const dotsWrap = document.getElementById("testi-dots");
@@ -656,7 +640,7 @@ function initTestimonialSlider() {
   const sec = document.getElementById("testimonial");
   if (sec) sec.style.display = "";
 
-  // --- Render kartu ---
+
   testiData.forEach(t => {
     const card = document.createElement("div");
     card.className = "testimonial-card";
@@ -707,7 +691,7 @@ function initTestimonialSlider() {
   prevBtn.addEventListener("click", () => goTo(current - 1));
   nextBtn.addEventListener("click", () => goTo(current + 1));
 
-  // Auto-play — reset on manual interaction
+
   let autoplay = setInterval(() => goTo(current + 1), 5000);
   function resetAutoplay() {
     clearInterval(autoplay);
@@ -715,7 +699,7 @@ function initTestimonialSlider() {
   }
   [prevBtn, nextBtn].forEach(btn => btn.addEventListener("click", resetAutoplay));
 
-  // Touch / swipe support
+
   let touchStartX = 0;
   track.addEventListener("touchstart", e => {
     touchStartX = e.touches[0].clientX;
@@ -737,9 +721,7 @@ function initTestimonialSlider() {
   });
 }
 
-// ============================================================================
-// HERO SLIDESHOW — SWIPEABLE & CROSSFADE AUTO-ADVANCE
-// ============================================================================
+
 function initHeroSlideshow() {
   const container = document.getElementById("hero-slideshow");
   const dotsWrap = document.getElementById("hero-slide-dots");
@@ -750,7 +732,7 @@ function initHeroSlideshow() {
 
   if (!container || !heroSlides.length) return;
 
-  // Render semua slide (absolut bertumpuk, crossfade)
+
   heroSlides.forEach((slide, i) => {
     const el = document.createElement("div");
     el.className = "hero-slide" + (i === 0 ? " active" : "");
@@ -758,7 +740,7 @@ function initHeroSlideshow() {
     container.appendChild(el);
   });
 
-  // Render dots hanya jika ada > 1 slide
+
   if (heroSlides.length > 1 && dotsWrap) {
     heroSlides.forEach((_, i) => {
       const dot = document.createElement("button");
@@ -787,7 +769,7 @@ function initHeroSlideshow() {
     slides[current].classList.add("active");
     if (dots[current]) dots[current].classList.add("active");
 
-    // Fade caption saat ganti slide
+
     if (titleEl && subEl) {
       titleEl.style.transition = "opacity 0.2s ease";
       subEl.style.transition = "opacity 0.2s ease";
@@ -804,7 +786,7 @@ function initHeroSlideshow() {
     }
   }
 
-  // Tombol navigasi prev & next
+
   if (prevBtn) {
     prevBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -820,7 +802,7 @@ function initHeroSlideshow() {
     });
   }
 
-  // Pointer swipe support (touch & drag di HP dan Laptop)
+
   let startX = 0;
   let startY = 0;
   let currentX = 0;
@@ -844,7 +826,7 @@ function initHeroSlideshow() {
     const dx = currentX - startX;
     const dy = e.clientY - startY;
 
-    // Visual drag feedback jika horizontal
+
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 6) {
       if (slides[current]) {
         slides[current].style.transform = `translateX(${dx * 0.3}px) scale(0.985)`;
@@ -884,7 +866,7 @@ function initHeroSlideshow() {
   document.addEventListener("pointerup", onPointerEnd);
   document.addEventListener("pointercancel", onPointerEnd);
 
-  // Fallback Touch Events untuk layar HP
+
   let touchStartX = 0;
   let touchStartY = 0;
   container.addEventListener("touchstart", (e) => {
@@ -911,7 +893,7 @@ function initHeroSlideshow() {
     resetTimer();
   }, { passive: true });
 
-  // Auto-advance tiap 4 detik, pause saat kursor hover atau interaksi
+
   let timer = null;
   function resetTimer() {
     clearInterval(timer);
@@ -929,9 +911,7 @@ function initHeroSlideshow() {
   }
 }
 
-// ============================================================================
-// === FUNGSI LAMA YANG DIPERTAHANKAN ==========================================
-// ============================================================================
+
 
 function updateMemberCount() {
   const statEl = document.getElementById("stat-members");
@@ -980,7 +960,7 @@ function renderTeam(filter) {
   filtered.forEach((m, idx) => {
     const card = document.createElement("div");
     card.className = `member-card ${m.faculty}`;
-    // Tambahkan animasi reveal bertahap per kartu
+
     card.setAttribute("data-reveal", "fade-up");
     const delays = [0, 100, 200];
     const delayVal = delays[idx % 3];
@@ -1004,7 +984,7 @@ function renderTeam(filter) {
     container.appendChild(card);
   });
 
-  // Re-observe kartu baru agar animasi scroll reveal aktif
+
   observeNewElements(container);
 }
 
@@ -1052,7 +1032,7 @@ function renderReflections() {
     container.appendChild(item);
   });
 
-  // Re-observe item refleksi baru
+
   observeNewElements(container);
 }
 
@@ -1063,14 +1043,14 @@ function setupGallery() {
   const modalCap = document.getElementById("lightbox-caption");
   const closeBtn = document.getElementById("lightbox-close");
 
-  // Pastikan seluruh video preview tidak autoplay dan tidak bisa diklik langsung
+
   document.querySelectorAll("video").forEach(v => {
     v.removeAttribute("autoplay");
     v.pause();
     v.addEventListener("click", e => e.preventDefault());
   });
 
-  // Sambungkan semua elemen yang memiliki kelas lightbox-trigger atau gallery-card
+
   document.querySelectorAll(".gallery-card, .lightbox-trigger").forEach(card => {
     card.addEventListener("click", e => {
       e.preventDefault();
@@ -1122,9 +1102,7 @@ function setupGallery() {
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 }
 
-// ============================================================================
-// FILTER MEDIA KEGIATAN PERSIAPAN (ALL / FOTO / VIDEO)
-// ============================================================================
+
 function setupPrepFilters() {
   const filterBtns = document.querySelectorAll(".prep-filter-btn");
   const mediaCards = document.querySelectorAll("#prep-media-grid .timeline-media-card");
@@ -1171,9 +1149,7 @@ function setupNavigation() {
   }
 }
 
-// ============================================================================
-// VISUALISASI 3D HERO CANVAS — UNSUR BIOLOGI (DNA) & INFORMATIKA (CYBER CUBE)
-// ============================================================================
+
 function initCanvasVisualization() {
   const canvas = document.getElementById("hero-canvas");
   if (!canvas || typeof THREE === "undefined") return;
@@ -1188,7 +1164,7 @@ function initCanvasVisualization() {
   const mainGroup = new THREE.Group();
   scene.add(mainGroup);
 
-  // 1. Unsur Biologi: 3D DNA Double Helix (FMIPA)
+
   const dnaGroup = new THREE.Group();
   const dnaSteps = 28;
   const dnaRadius = 2.2;
@@ -1207,17 +1183,17 @@ function initCanvasVisualization() {
     const x2 = Math.cos(angle + Math.PI) * dnaRadius;
     const z2 = Math.sin(angle + Math.PI) * dnaRadius;
 
-    // Node untaian 1
+
     const s1 = new THREE.Mesh(sphereGeo, mipaMat);
     s1.position.set(x1, y, z1);
     dnaGroup.add(s1);
 
-    // Node untaian 2
+
     const s2 = new THREE.Mesh(sphereGeo, cyanMat);
     s2.position.set(x2, y, z2);
     dnaGroup.add(s2);
 
-    // Penghubung pasangan basa (rung)
+
     const rungGeo = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(x1, y, z1),
       new THREE.Vector3(x2, y, z2)
@@ -1227,7 +1203,7 @@ function initCanvasVisualization() {
   dnaGroup.rotation.z = 0.25;
   mainGroup.add(dnaGroup);
 
-  // 2. Unsur Informatika: 3D Cyber Data Cube & Gimbal Rings (FT)
+
   const cyberGroup = new THREE.Group();
   const boxGeo = new THREE.BoxGeometry(3.0, 3.0, 3.0);
   const edgesGeo = new THREE.EdgesGeometry(boxGeo);
@@ -1243,12 +1219,12 @@ function initCanvasVisualization() {
   ring2.rotation.x = Math.PI / 2;
   cyberGroup.add(ring2);
 
-  // Inti kristal neon dalam
+
   const coreMesh = new THREE.Mesh(new THREE.OctahedronGeometry(0.85, 0), new THREE.MeshBasicMaterial({ color: 0x00F0FF, wireframe: true, transparent: true, opacity: 0.9 }));
   cyberGroup.add(coreMesh);
   mainGroup.add(cyberGroup);
 
-  // 3. Jaringan Partikel Interkoneksi (Sinergi FT & FMIPA)
+
   const particleCount = 55;
   const particlePositions = new Float32Array(particleCount * 3);
   const particleColors = new Float32Array(particleCount * 3);
@@ -1283,7 +1259,7 @@ function initCanvasVisualization() {
   let curBaseDnaY = 0.4;
   let curBaseCyberY = 3.4;
 
-  // Responsivitas Dinamis Skena 3D terhadap Layar HP & Desktop
+
   function updateSceneLayout() {
     if (!canvas.parentElement) return;
     const w = canvas.parentElement.clientWidth || window.innerWidth;
@@ -1307,20 +1283,18 @@ function initCanvasVisualization() {
     }
     camera.updateProjectionMatrix();
 
-    // Hitung batas bidang ruang 3D yang terlihat pada z = 0
+
     const vFovRad = (camera.fov * Math.PI) / 180;
     const visibleH = 2 * Math.tan(vFovRad / 2) * camera.position.z;
     const visibleW = visibleH * aspect;
 
     if (isMobile) {
-      // TAMPILAN HP:
-      // DNA Helix di kiri-atas (di belakang judul hero, tampak jelas dan proporsional)
       dnaGroup.position.set(-visibleW * 0.27, visibleH * 0.27, 0);
       dnaGroup.scale.set(0.72, 0.72, 0.72);
       dnaGroup.rotation.z = 0.2;
       curBaseDnaY = visibleH * 0.27;
 
-      // Cyber Cube di kanan (melayang di area terbuka samping card/stats, tampak jelas)
+
       cyberGroup.position.set(visibleW * 0.26, -visibleH * 0.22, 0);
       cyberGroup.scale.set(0.75, 0.75, 0.75);
       curBaseCyberY = -visibleH * 0.22;
@@ -1334,20 +1308,19 @@ function initCanvasVisualization() {
       cyberGroup.scale.set(0.88, 0.88, 0.88);
       curBaseCyberY = -visibleH * 0.15;
     } else {
-      // TAMPILAN DESKTOP / LAPTOP:
-      // DNA Helix di sisi kiri hero (di samping teks)
+
       dnaGroup.position.set(-visibleW * 0.35, 0.4, 0);
       dnaGroup.scale.set(1.1, 1.1, 1.1);
       dnaGroup.rotation.z = 0.25;
       curBaseDnaY = 0.4;
 
-      // Cyber Cube melayang di kanan-atas (di atas card Dokumentasi Terkini, TIDAK KETUTUPAN!)
+
       cyberGroup.position.set(visibleW * 0.34, 3.4, 0.5);
       cyberGroup.scale.set(1.05, 1.05, 1.05);
       curBaseCyberY = 3.4;
     }
 
-    // Adaptasi posisi partikel ke seluruh batas layar terlihat
+
     for (let i = 0; i < particleCount; i++) {
       particlePositions[i * 3] = rawParticleNorm[i].nx * (visibleW * 0.48);
       particlePositions[i * 3 + 1] = rawParticleNorm[i].ny * (visibleH * 0.48);
@@ -1355,7 +1328,7 @@ function initCanvasVisualization() {
     }
     pGeo.attributes.position.needsUpdate = true;
 
-    // Perbarui garis koneksi antar partikel terdekat
+
     const connectLines = [];
     const maxDist = isMobile ? 2.8 : 3.6;
     for (let i = 0; i < particleCount; i++) {
@@ -1383,7 +1356,7 @@ function initCanvasVisualization() {
     mouseY = (e.clientY / window.innerHeight - 0.5) * 1.5;
   });
 
-  // Parallax sentuhan halus di resolusi layar HP
+
   window.addEventListener("touchmove", e => {
     if (e.touches && e.touches.length > 0) {
       mouseX = (e.touches[0].clientX / window.innerWidth - 0.5) * 1.6;
@@ -1399,7 +1372,7 @@ function initCanvasVisualization() {
     targetX += (mouseX - targetX) * 0.035;
     targetY += (mouseY - targetY) * 0.035;
 
-    // Rotasi mandiri unsur biologi & informatika
+
     dnaGroup.rotation.y += 0.013;
     cyberGroup.rotation.x += 0.009;
     cyberGroup.rotation.y += 0.014;
@@ -1407,11 +1380,11 @@ function initCanvasVisualization() {
     ring2.rotation.y -= 0.015;
     coreMesh.rotation.y += 0.024;
 
-    // Efek floating melayang lembut sinematik
+
     dnaGroup.position.y = curBaseDnaY + Math.sin(clock * 1.2) * 0.15;
     cyberGroup.position.y = curBaseCyberY + Math.cos(clock * 1.0) * 0.15;
 
-    // Parallaks responsif kursor & sentuhan
+
     mainGroup.rotation.y = targetX * 0.22;
     mainGroup.rotation.x = targetY * 0.18;
 
@@ -1419,9 +1392,7 @@ function initCanvasVisualization() {
   })();
 }
 
-// ============================================================================
-// SEKSI 3D INTERAKTIF LAB — EKSPLORASI MANDIRI UNSUR BIOLOGI & INFORMATIKA
-// ============================================================================
+
 function initInteractive3DLab() {
   const canvas = document.getElementById("interactive-3d-canvas");
   if (!canvas || typeof THREE === "undefined") return;
@@ -1458,23 +1429,21 @@ function initInteractive3DLab() {
   blueLight.position.set(6, 4, 6);
   scene.add(blueLight);
 
-  // Group Induk Visualisasi
+
   const worldGroup = new THREE.Group();
   scene.add(worldGroup);
 
-  // ─────────────────────────────────────────────────────────────
-  // A. UNSUR BIOLOGI (DNA DOUBLE HELIX & MOLEKUL HAYATI)
-  // ─────────────────────────────────────────────────────────────
+
   const bioGroup = new THREE.Group();
   const helixSteps = 36;
   const helixRadius = 1.9;
   const helixPitch = 0.38;
 
   const nucleotideColors = [
-    new THREE.Color(0x10B981), // Adenin (Hijau Zamrud)
-    new THREE.Color(0x06B6D4), // Timin (Sian Laut)
-    new THREE.Color(0x2563EB), // Guanin (Biru Terang)
-    new THREE.Color(0xF59E0B)  // Sitosin (Kuning Emas)
+    new THREE.Color(0x10B981),
+    new THREE.Color(0x06B6D4),
+    new THREE.Color(0x2563EB),
+    new THREE.Color(0xF59E0B),
   ];
 
   const nodeGeo = new THREE.SphereGeometry(0.18, 16, 16);
@@ -1495,7 +1464,7 @@ function initInteractive3DLab() {
     const mat1 = new THREE.MeshStandardMaterial({ color: c1, roughness: 0.3, metalness: 0.2 });
     const mat2 = new THREE.MeshStandardMaterial({ color: c2, roughness: 0.3, metalness: 0.2 });
 
-    // Node tulang punggung DNA
+
     const n1 = new THREE.Mesh(nodeGeo, mat1);
     n1.position.set(x1, y, z1);
     bioGroup.add(n1);
@@ -1504,14 +1473,14 @@ function initInteractive3DLab() {
     n2.position.set(x2, y, z2);
     bioGroup.add(n2);
 
-    // Titik tengah ikatan hidrogen
+
     const midX = (x1 + x2) / 2;
     const midZ = (z1 + z2) / 2;
     const midNode = new THREE.Mesh(baseCenterGeo, baseCenterMat);
     midNode.position.set(midX, y, midZ);
     bioGroup.add(midNode);
 
-    // Rung (batang penghubung dua warna)
+
     const lineGeo1 = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(x1, y, z1),
       new THREE.Vector3(midX, y, midZ)
@@ -1524,7 +1493,7 @@ function initInteractive3DLab() {
     bioGroup.add(new THREE.Line(lineGeo2, new THREE.LineBasicMaterial({ color: c2, linewidth: 2 })));
   }
 
-  // Floating biomolecule clusters (cincin organik)
+
   for (let b = 0; b < 6; b++) {
     const bioMol = new THREE.Mesh(
       new THREE.IcosahedronGeometry(0.35 + Math.random() * 0.2, 0),
@@ -1538,12 +1507,10 @@ function initInteractive3DLab() {
   bioGroup.position.set(-4.5, 0, 0);
   worldGroup.add(bioGroup);
 
-  // ─────────────────────────────────────────────────────────────
-  // B. UNSUR INFORMATIKA (CYBER DATA CORE, GIMBAL & MATRIX)
-  // ─────────────────────────────────────────────────────────────
+
   const infoGroup = new THREE.Group();
 
-  // 1. Kubus data matriks utama dengan kisi kawat
+
   const cyberCubeGeo = new THREE.BoxGeometry(3.6, 3.6, 3.6);
   const cubeWire = new THREE.LineSegments(
     new THREE.EdgesGeometry(cyberCubeGeo),
@@ -1551,7 +1518,7 @@ function initInteractive3DLab() {
   );
   infoGroup.add(cubeWire);
 
-  // Simpul sudut kubus (data vertices)
+
   const cornerGeo = new THREE.BoxGeometry(0.28, 0.28, 0.28);
   const cornerMat = new THREE.MeshStandardMaterial({ color: 0x60A5FA, roughness: 0.2, metalness: 0.8 });
   const half = 1.8;
@@ -1566,7 +1533,7 @@ function initInteractive3DLab() {
     });
   });
 
-  // 2. Gimbal Orbital Rings (3 cincin ortogonal konsentris)
+
   const gimbalRing1 = new THREE.Mesh(
     new THREE.TorusGeometry(3.0, 0.05, 12, 64),
     new THREE.MeshStandardMaterial({ color: 0x0EA5E9, roughness: 0.2, metalness: 0.7 })
@@ -1587,14 +1554,14 @@ function initInteractive3DLab() {
   gimbalRing3.rotation.y = Math.PI / 2;
   infoGroup.add(gimbalRing3);
 
-  // 3. Inti Kristal Komputasi (Octahedron Inti)
+
   const coreOcta = new THREE.Mesh(
     new THREE.OctahedronGeometry(1.2, 0),
     new THREE.MeshStandardMaterial({ color: 0x0284C7, roughness: 0.1, metalness: 0.9, transparent: true, opacity: 0.85 })
   );
   infoGroup.add(coreOcta);
 
-  // Titik partikel matriks biner
+
   const matrixPoints = [];
   for (let ix = -1; ix <= 1; ix++) {
     for (let iy = -1; iy <= 1; iy++) {
@@ -1610,9 +1577,7 @@ function initInteractive3DLab() {
   infoGroup.position.set(4.5, 0, 0);
   worldGroup.add(infoGroup);
 
-  // ─────────────────────────────────────────────────────────────
-  // C. SINERGI BRIDGING FILAMENT (ALIRAN DATA BIO-KOMPUTASI)
-  // ─────────────────────────────────────────────────────────────
+
   const synergyGroup = new THREE.Group();
   const bridgeLineCount = 6;
   const bridgeLines = [];
@@ -1637,7 +1602,7 @@ function initInteractive3DLab() {
     bridgeLines.push({ curve, cLine, tOffset: k * 0.15 });
   }
 
-  // Floating data packets di jembatan sinergi
+
   const packetGeo = new THREE.SphereGeometry(0.12, 10, 10);
   const packetMat = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
   const packets = [];
@@ -1649,9 +1614,7 @@ function initInteractive3DLab() {
 
   worldGroup.add(synergyGroup);
 
-  // ─────────────────────────────────────────────────────────────
-  // D. KONTROL INTERAKSI MOUSE / TOUCH / MODE SWITCHER
-  // ─────────────────────────────────────────────────────────────
+
   let isDragging = false;
   let prevMouseX = 0;
   let prevMouseY = 0;
@@ -1666,7 +1629,7 @@ function initInteractive3DLab() {
   let targetInfoScale = 1.0;
   let targetCamZ = 15;
 
-  // Drag interaction
+
   const viewport = canvas.parentElement;
   if (viewport) {
     viewport.addEventListener("mousedown", e => {
@@ -1689,7 +1652,7 @@ function initInteractive3DLab() {
       prevMouseY = e.clientY;
     });
 
-    // Touch support untuk HP / Tablet
+
     viewport.addEventListener("touchstart", e => {
       if (e.touches.length === 1) {
         isDragging = true;
@@ -1712,7 +1675,7 @@ function initInteractive3DLab() {
       prevMouseY = e.touches[0].clientY;
     }, { passive: true });
 
-    // Scroll zoom
+
     viewport.addEventListener("wheel", e => {
       e.preventDefault();
       targetCamZ += e.deltaY * 0.015;
@@ -1720,7 +1683,7 @@ function initInteractive3DLab() {
     }, { passive: false });
   }
 
-  // Tombol Toggle Rotasi
+
   const btnRotate = document.getElementById("btn-toggle-rotate");
   const rotateIcon = document.getElementById("rotate-icon");
   if (btnRotate) {
@@ -1732,7 +1695,7 @@ function initInteractive3DLab() {
     });
   }
 
-  // Tombol Reset Tampilan
+
   const btnReset = document.getElementById("btn-reset-view");
   if (btnReset) {
     btnReset.addEventListener("click", () => {
@@ -1745,7 +1708,7 @@ function initInteractive3DLab() {
     });
   }
 
-  // Mode Switcher Tabs
+
   const modeLabel = document.getElementById("three-mode-label");
   const modeBtns = document.querySelectorAll(".three-mode-btn");
 
@@ -1778,14 +1741,14 @@ function initInteractive3DLab() {
     });
   });
 
-  // IntersectionObserver agar animasi hanya render saat terlihat di layar
+
   let isVisible = true;
   const observer = new IntersectionObserver(entries => {
     isVisible = entries[0].isIntersecting;
   }, { threshold: 0.05 });
   if (viewport) observer.observe(viewport);
 
-  // Animation Loop 60 FPS
+
   let clock = 0;
   function animate() {
     requestAnimationFrame(animate);
@@ -1793,7 +1756,7 @@ function initInteractive3DLab() {
 
     clock += 0.015;
 
-    // Smooth inertia rotasi
+
     worldGroup.rotation.y += rotationVelocityY;
     worldGroup.rotation.x += rotationVelocityX;
     rotationVelocityY *= 0.92;
@@ -1803,7 +1766,7 @@ function initInteractive3DLab() {
       worldGroup.rotation.y += 0.005;
     }
 
-    // Rotasi lokal masing-masing model
+
     bioGroup.rotation.y += 0.015;
     infoGroup.rotation.x += 0.008;
     infoGroup.rotation.y += 0.012;
@@ -1812,7 +1775,7 @@ function initInteractive3DLab() {
     gimbalRing3.rotation.x += 0.016;
     coreOcta.rotation.y -= 0.025;
 
-    // Animasi paket data sinergi
+
     if (synergyGroup.visible) {
       packets.forEach(p => {
         p.progress += 0.006;
@@ -1825,7 +1788,7 @@ function initInteractive3DLab() {
       });
     }
 
-    // Lerp posisi & skala untuk transisi mode yang mulus
+
     bioGroup.position.lerp(targetBioPos, 0.08);
     infoGroup.position.lerp(targetInfoPos, 0.08);
 
@@ -1845,10 +1808,6 @@ function initInteractive3DLab() {
   animate();
 }
 
-// ============================================================================
-// DOC CAROUSEL — GALERI DOKUMENTASI TERKINI
-// Swipe: HP (touch), Laptop (touchpad drag / mouse drag) — Pointer Events API
-// ============================================================================
 function initDocCarousel() {
   const track = document.getElementById("doc-carousel-track");
   const dotsWrap = document.getElementById("doc-dots");
@@ -1866,7 +1825,7 @@ function initDocCarousel() {
   let autoTimer = null;
   const INTERVAL = 4000;
 
-  // ── Dots ────────────────────────────────────────────────────────────────────
+
   function renderDots() {
     if (!dotsWrap) return;
     dotsWrap.innerHTML = "";
@@ -1886,14 +1845,14 @@ function initDocCarousel() {
     );
   }
 
-  // ── Go to slide ─────────────────────────────────────────────────────────────
+
   function goTo(index) {
     current = ((index % total) + total) % total;
     track.style.transform = `translateX(-${current * slides[0].offsetWidth}px)`;
     updateDots();
   }
 
-  // ── Progress bar ────────────────────────────────────────────────────────────
+
   function startProgress() {
     if (!progBar) return;
     progBar.style.transition = "none";
@@ -1904,7 +1863,7 @@ function initDocCarousel() {
     });
   }
 
-  // ── Autoplay ────────────────────────────────────────────────────────────────
+
   function startAutoplay() {
     clearInterval(autoTimer);
     startProgress();
@@ -1918,17 +1877,16 @@ function initDocCarousel() {
 
   function resetAutoplay() { stopAutoplay(); startAutoplay(); }
 
-  // ── Arrow buttons ───────────────────────────────────────────────────────────
+
   if (prevBtn) prevBtn.addEventListener("click", () => { goTo(current - 1); resetAutoplay(); });
   if (nextBtn) nextBtn.addEventListener("click", () => { goTo(current + 1); resetAutoplay(); });
 
-  // ── SWIPE / DRAG — Pointer Events (tanpa setPointerCapture agar click child tetap jalan)
-  // touch-action: pan-y di CSS sudah mencegah scroll vertikal saat swipe horizontal.
+
   let pointerStartX = 0;
   let pointerStartY = 0;
   let pointerActive = false;
   let isDrag = false;
-  const SWIPE_MIN = 40; // px minimum untuk pindah slide
+  const SWIPE_MIN = 40;
 
   track.addEventListener("pointerdown", e => {
     if (!e.isPrimary) return;
@@ -1938,10 +1896,10 @@ function initDocCarousel() {
     isDrag = false;
     track.style.cursor = "grabbing";
     stopAutoplay();
-    // TIDAK pakai setPointerCapture — supaya click event tetap sampai ke child (gallery-card / video)
+
   });
 
-  // Pantau gerakan di document agar drag tetap terdeteksi walau pointer keluar area track
+
   document.addEventListener("pointermove", e => {
     if (!pointerActive || !e.isPrimary) return;
     const dx = Math.abs(e.clientX - pointerStartX);
@@ -1971,17 +1929,17 @@ function initDocCarousel() {
     resetAutoplay();
   });
 
-  // ── Pause on hover (desktop only — fine to keep) ────────────────────────────
+
   const wrap = track.closest(".doc-carousel-wrap");
   if (wrap) {
     wrap.addEventListener("mouseenter", stopAutoplay);
     wrap.addEventListener("mouseleave", () => { if (!pointerActive) startAutoplay(); });
   }
 
-  // ── Resize snap ─────────────────────────────────────────────────────────────
+
   window.addEventListener("resize", () => goTo(current));
 
-  // ── Init ────────────────────────────────────────────────────────────────────
+
   renderDots();
   goTo(0);
   startAutoplay();

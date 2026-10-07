@@ -32,56 +32,80 @@
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ============================================================================
-   SCROLL REVEAL ANIMATION SYSTEM
-   Hanya elemen dengan class 'reveal-init' yang disembunyikan (ditandai JS).
-   Elemen yang langsung terlihat di viewport tidak pernah diberi class ini.
-   ============================================================================ */
 
-/* State awal — hanya elemen yang menunggu animasi */
+
 [data-reveal].reveal-init {
   opacity: 0;
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-[data-reveal="fade-up"].reveal-init    { transform: translateY(28px); }
-[data-reveal="fade-down"].reveal-init  { transform: translateY(-28px); }
-[data-reveal="fade-left"].reveal-init  { transform: translateX(32px); }
-[data-reveal="fade-right"].reveal-init { transform: translateX(-32px); }
+[data-reveal="fade-up"].reveal-init {
+  transform: translateY(28px);
+}
 
-/* Delay helpers — berlaku saat reveal-init masih ada (sebelum & selama transisi) */
+[data-reveal="fade-down"].reveal-init {
+  transform: translateY(-28px);
+}
+
+[data-reveal="fade-left"].reveal-init {
+  transform: translateX(32px);
+}
+
+[data-reveal="fade-right"].reveal-init {
+  transform: translateX(-32px);
+}
+
+
 [data-reveal].reveal-init[data-reveal-delay="100"],
-[data-reveal].revealed[data-reveal-delay="100"]  { transition-delay: 0.10s; }
-[data-reveal].reveal-init[data-reveal-delay="150"],
-[data-reveal].revealed[data-reveal-delay="150"]  { transition-delay: 0.15s; }
-[data-reveal].reveal-init[data-reveal-delay="200"],
-[data-reveal].revealed[data-reveal-delay="200"]  { transition-delay: 0.20s; }
-[data-reveal].reveal-init[data-reveal-delay="250"],
-[data-reveal].revealed[data-reveal-delay="250"]  { transition-delay: 0.25s; }
-[data-reveal].reveal-init[data-reveal-delay="300"],
-[data-reveal].revealed[data-reveal-delay="300"]  { transition-delay: 0.30s; }
-[data-reveal].reveal-init[data-reveal-delay="400"],
-[data-reveal].revealed[data-reveal-delay="400"]  { transition-delay: 0.40s; }
-[data-reveal].reveal-init[data-reveal-delay="500"],
-[data-reveal].revealed[data-reveal-delay="500"]  { transition-delay: 0.50s; }
+[data-reveal].revealed[data-reveal-delay="100"] {
+  transition-delay: 0.10s;
+}
 
-/* State REVEALED — animasi selesai, tampil penuh */
+[data-reveal].reveal-init[data-reveal-delay="150"],
+[data-reveal].revealed[data-reveal-delay="150"] {
+  transition-delay: 0.15s;
+}
+
+[data-reveal].reveal-init[data-reveal-delay="200"],
+[data-reveal].revealed[data-reveal-delay="200"] {
+  transition-delay: 0.20s;
+}
+
+[data-reveal].reveal-init[data-reveal-delay="250"],
+[data-reveal].revealed[data-reveal-delay="250"] {
+  transition-delay: 0.25s;
+}
+
+[data-reveal].reveal-init[data-reveal-delay="300"],
+[data-reveal].revealed[data-reveal-delay="300"] {
+  transition-delay: 0.30s;
+}
+
+[data-reveal].reveal-init[data-reveal-delay="400"],
+[data-reveal].revealed[data-reveal-delay="400"] {
+  transition-delay: 0.40s;
+}
+
+[data-reveal].reveal-init[data-reveal-delay="500"],
+[data-reveal].revealed[data-reveal-delay="500"] {
+  transition-delay: 0.50s;
+}
+
+
 [data-reveal].revealed {
   opacity: 1 !important;
   transform: none !important;
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-reveal].reveal-init.revealed {
   transition-delay: inherit;
 }
 
-/* ============================================================================
-   END SCROLL REVEAL
-   ============================================================================ */
+
 
 *,
 *::before,
@@ -561,9 +585,7 @@ button {
   color: var(--text-muted);
 }
 
-/* ============================================
-   HERO SLIDESHOW
-   ============================================ */
+
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -665,8 +687,15 @@ button {
 }
 
 @keyframes swipeHintPulse {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(3px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(3px);
+  }
 }
 
 .hero-slide-dots {
@@ -701,8 +730,15 @@ button {
     height: 34px;
     font-size: 1.2rem;
   }
-  .hero-slide-prev { left: 8px; }
-  .hero-slide-next { right: 8px; }
+
+  .hero-slide-prev {
+    left: 8px;
+  }
+
+  .hero-slide-next {
+    right: 8px;
+  }
+
   .hero-swipe-pill {
     font-size: 0.68rem;
     padding: 0.25rem 0.55rem;
@@ -964,7 +1000,7 @@ button {
   letter-spacing: 0.03em;
 }
 
-/* ── NPM (alias identik dengan NIM, dipakai setelah rename) ── */
+
 .member-npm {
   display: inline-flex;
   align-items: center;
@@ -1148,7 +1184,6 @@ button {
   display: block;
 }
 
-/* ── PREPARATION MEDIA GALLERY & FILTERS ── */
 .prep-media-wrapper {
   margin-top: 1.5rem;
 }
@@ -1321,7 +1356,6 @@ button {
   background: rgba(220, 38, 38, 0.7);
 }
 
-/* ── RUNDOWN ACARA HARI-H (TABEL & TIMELINE) ── */
 .rundown-wrapper {
   margin-top: 1.5rem;
 }
@@ -1443,7 +1477,6 @@ button {
   box-shadow: 0 2px 6px rgba(229, 115, 47, 0.28);
 }
 
-/* ── TABLE VIEW (MATCHING THE ORIGINAL DOCUMENT WITH ELEVATED UI) ── */
 .rundown-table-container {
   overflow-x: auto;
   border-radius: var(--radius-md);
@@ -1512,7 +1545,6 @@ button {
   background-color: #FFEDD5;
 }
 
-/* Highlight row terakhir sesi dokumentasi (sesuai dokumen asli) */
 .rundown-table tbody tr.row-highlight-final {
   background: #E5732F !important;
   color: #FFFFFF;
@@ -1588,7 +1620,7 @@ button {
   text-align: center;
 }
 
-/* ── PJ BADGES (CHIPS) ── */
+
 .pj-chip {
   display: inline-flex;
   align-items: center;
@@ -1633,7 +1665,7 @@ button {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* ── TIMELINE CARD VIEW ── */
+
 .rundown-cards-container {
   display: flex;
   flex-direction: column;
@@ -1708,30 +1740,34 @@ button {
     flex-direction: column;
     align-items: stretch;
   }
+
   .rundown-view-toggle {
     align-self: flex-start;
   }
+
   .rundown-card-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
   }
+
   .rundown-card-pj {
     width: 100%;
     display: flex;
     justify-content: flex-start;
   }
-  .rundown-table th, .rundown-table td {
+
+  .rundown-table th,
+  .rundown-table td {
     padding: 0.75rem 0.85rem;
     font-size: 0.85rem;
   }
 }
 
-/* ── 3D LAB INTERAKTIF: UNSUR BIOLOGI & UNSUR INFORMATIKA ── */
 .section-3d-lab {
   background: radial-gradient(circle at 15% 25%, rgba(14, 165, 233, 0.12) 0%, transparent 45%),
-              radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
-              linear-gradient(180deg, #090E17 0%, #060911 100%);
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, #090E17 0%, #060911 100%);
   color: #F8FAFC;
   position: relative;
   overflow: hidden;
@@ -1842,8 +1878,17 @@ button {
 }
 
 @keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
 }
 
 .three-fps-badge {
@@ -1857,7 +1902,6 @@ button {
   color: #38BDF8;
 }
 
-/* Floating Controls Bar */
 .three-controls-bar {
   position: absolute;
   bottom: 2.75rem;
@@ -1957,7 +2001,6 @@ button {
   white-space: nowrap;
 }
 
-/* 3D Info Cards Grid */
 .three-info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2082,12 +2125,15 @@ button {
   .three-viewport-wrap {
     height: 380px;
   }
+
   .three-info-grid {
     grid-template-columns: 1fr;
   }
+
   .three-controls-bar {
     bottom: 2.2rem;
   }
+
   .three-mode-btn {
     padding: 0.4rem 0.65rem;
     font-size: 0.75rem;
@@ -2630,7 +2676,6 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Empty Placeholder Box Styling */
 .placeholder-box {
   background: var(--bg-surface);
   border: 2px dashed var(--border-light);
@@ -2774,14 +2819,11 @@ footer {
   }
 }
 
-/* =============================================
-   SCROLL REVEAL — 3D PERSPECTIVE ENTRANCE
-   ============================================= */
 [data-reveal] {
   opacity: 0;
   will-change: transform, opacity;
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-reveal="fade-up"] {
@@ -2810,18 +2852,39 @@ footer {
   transform: perspective(900px) translateY(0) translateX(0) translateZ(0) rotateX(0deg) rotateY(0deg) scale(1);
 }
 
-[data-reveal-delay="100"] { transition-delay: 0.1s; }
-[data-reveal-delay="150"] { transition-delay: 0.15s; }
-[data-reveal-delay="200"] { transition-delay: 0.2s; }
-[data-reveal-delay="250"] { transition-delay: 0.25s; }
-[data-reveal-delay="300"] { transition-delay: 0.3s; }
-[data-reveal-delay="350"] { transition-delay: 0.35s; }
-[data-reveal-delay="400"] { transition-delay: 0.4s; }
-[data-reveal-delay="500"] { transition-delay: 0.5s; }
+[data-reveal-delay="100"] {
+  transition-delay: 0.1s;
+}
 
-/* =============================================
-   TIMELINE — ANIMATED PROGRESS FILL
-   ============================================= */
+[data-reveal-delay="150"] {
+  transition-delay: 0.15s;
+}
+
+[data-reveal-delay="200"] {
+  transition-delay: 0.2s;
+}
+
+[data-reveal-delay="250"] {
+  transition-delay: 0.25s;
+}
+
+[data-reveal-delay="300"] {
+  transition-delay: 0.3s;
+}
+
+[data-reveal-delay="350"] {
+  transition-delay: 0.35s;
+}
+
+[data-reveal-delay="400"] {
+  transition-delay: 0.4s;
+}
+
+[data-reveal-delay="500"] {
+  transition-delay: 0.5s;
+}
+
+
 .timeline-stream {
   --timeline-progress: 0%;
 }
@@ -2844,7 +2907,7 @@ footer {
 
 .timeline-node {
   transition: border-color 0.4s ease, background 0.4s ease, color 0.4s ease,
-              box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .timeline-node.node-active {
@@ -2855,9 +2918,7 @@ footer {
   transform: scale(1.08);
 }
 
-/* =============================================
-   HERO — COUNTER ANIMATION
-   ============================================= */
+
 .stat-item h3 {
   display: inline-block;
 }
@@ -2866,17 +2927,13 @@ footer {
   color: var(--ft-blue);
 }
 
-/* =============================================
-   HERO — PARALLAX FLOATING BADGE
-   ============================================= */
+
 .floating-badge {
   transition: transform 0.08s linear;
   will-change: transform;
 }
 
-/* =============================================
-   TESTIMONIAL SLIDER — PANTI ASUHAN
-   ============================================= */
+
 #testimonial {
   background: linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0c1628 100%);
   position: relative;
@@ -3079,9 +3136,7 @@ footer {
   }
 }
 
-/* ============================================================================
-   THREE-INFO-SINGLE — kartu info tunggal (lebar penuh / terpusat)
-   ============================================================================ */
+
 .three-info-grid.three-info-single {
   grid-template-columns: 1fr;
   max-width: 680px;
@@ -3089,9 +3144,7 @@ footer {
   margin-right: auto;
 }
 
-/* ============================================================================
-   DOC CAROUSEL — Galeri Dokumentasi Terkini
-   ============================================================================ */
+
 .doc-carousel-wrap {
   position: relative;
   width: 100%;
@@ -3108,7 +3161,7 @@ footer {
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
   cursor: grab;
-  touch-action: pan-y; /* browser tangani scroll vertikal, JS tangani swipe horizontal */
+  touch-action: pan-y;
 }
 
 .doc-carousel-track:active {
@@ -3125,7 +3178,7 @@ footer {
   box-shadow: none;
 }
 
-/* Arrow buttons */
+
 .doc-carousel-arrow {
   position: absolute;
   top: 50%;
@@ -3147,15 +3200,20 @@ footer {
   line-height: 1;
 }
 
-.doc-carousel-prev { left: 1rem; }
-.doc-carousel-next { right: 1rem; }
+.doc-carousel-prev {
+  left: 1rem;
+}
+
+.doc-carousel-next {
+  right: 1rem;
+}
 
 .doc-carousel-arrow:hover {
   background: rgba(15, 23, 42, 0.85);
   transform: translateY(-50%) scale(1.08);
 }
 
-/* Dots */
+
 .doc-carousel-dots {
   position: absolute;
   bottom: 1rem;
@@ -3183,7 +3241,7 @@ footer {
   background: #FFFFFF;
 }
 
-/* Progress bar */
+
 .doc-carousel-progress {
   position: absolute;
   top: 0;
@@ -3201,7 +3259,7 @@ footer {
   border-radius: 0 2px 2px 0;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .doc-slide {
     aspect-ratio: 4 / 3;
@@ -3214,6 +3272,11 @@ footer {
     font-size: 0.9rem;
   }
 
-  .doc-carousel-prev { left: 0.5rem; }
-  .doc-carousel-next { right: 0.5rem; }
-}
+  .doc-carousel-prev {
+    left: 0.5rem;
+  }
+
+  .doc-carousel-next {
+    right: 0.5rem;
+  }
+}
