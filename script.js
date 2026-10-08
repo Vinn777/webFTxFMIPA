@@ -56,7 +56,7 @@ const teamMembers = [
     faculty: "FT",
     facultyName: "Fakultas Teknik",
     prodi: "Informatika",
-    avatar: "nay.jpg",
+    avatar: "nay.jpeg",
     quote: "pada akhirnya, kita akan sampai pada tempat yang selama ini kita doakan.",
     reflection: "Sinergi antara mahasiswa FT dan FMIPA membuktikan bahwa perbedaan disiplin ilmu bukan hambatan, melainkan kekuatan untuk menciptakan dampak sosial yang lebih besar."
   },
