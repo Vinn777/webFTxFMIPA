@@ -471,6 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFilter();
   setupGallery();
   setupPrepFilters();
+  setupRundownToggle();
   setupNavigation();
   initCanvasVisualization();
   initInteractive3DLab();
@@ -1176,6 +1177,33 @@ function setupPrepFilters() {
           card.style.display = "none";
         }
       });
+    });
+  });
+}
+
+function setupRundownToggle() {
+  const toggleBtns = document.querySelectorAll(".rundown-toggle-btn");
+  const timelineStream = document.getElementById("timeline-stream");
+  const tableWrap = document.getElementById("rundown-table-wrap");
+
+  if (!toggleBtns.length || !timelineStream || !tableWrap) return;
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) return;
+      const view = btn.getAttribute("data-view");
+      toggleBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      if (view === "table") {
+        timelineStream.style.display = "none";
+        tableWrap.style.display = "block";
+        tableWrap.classList.add("revealed");
+      } else {
+        timelineStream.style.display = "";
+        tableWrap.style.display = "none";
+        window.dispatchEvent(new Event("scroll"));
+      }
     });
   });
 }

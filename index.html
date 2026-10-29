@@ -320,363 +320,1349 @@
             kunjungan sosial pada <strong>Sabtu, 10 Oktober 2026</strong>.</p>
         </div>
 
+        <div class="rundown-view-controls" data-reveal="fade-up" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+          <div class="rundown-view-toggle">
+            <button type="button" class="rundown-toggle-btn active" data-view="timeline" id="btn-view-timeline">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Alur Timeline
+            </button>
+            <button type="button" class="rundown-toggle-btn" data-view="table" id="btn-view-table">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+              Tabel Rundown Resmi
+            </button>
+          </div>
+        </div>
+
         <div class="timeline-stream" id="timeline-stream">
+          <!-- NODE 01: FASE PERSIAPAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="0">01</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="100">
-              <div class="timeline-time-tag">Fase Persiapan &bull; 2 - 9 Oktober 2026 (H-7)</div>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">Fase Persiapan &bull; 2 - 9 Oktober 2026 (H-7)</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
               <h3 class="timeline-title">Penyusunan Proposal, Perizinan, Survei &amp; Belanja Kebutuhan</h3>
               <p class="timeline-desc">
-                Rangkaian persiapan intensif tim mahasiswa kolaborator Informatika (FT) dan Biologi (FMIPA) sebelum
-                pelaksanaan kegiatan:
+                Tahap awal inisiatif program mencakup perizinan resmi ke panti asuhan, observasi kebutuhan lapangan,
+                serta pengadaan logistik paket donasi dan sembako secara terencana.
               </p>
-              <ul class="timeline-prep-list">
-                <li><span>&check;</span> Penyusunan Proposal Kegiatan</li>
-                <li><span>&check;</span> Perizinan Resmi &amp; Silaturahmi Panti</li>
-                <li><span>&check;</span> Survei Lokasi &amp; Fasilitas</li>
-                <li><span>&check;</span> Belanja Sembako &amp; Snack Donasi</li>
-                <li><span>&check;</span> Persiapan Alat &amp; Perlengkapan Acara</li>
-              </ul>
-              <div class="prep-media-wrapper">
-                <div class="prep-filter-bar">
-                  <span class="prep-filter-label">Filter Media Persiapan:</span>
-                  <button class="prep-filter-btn active" data-prep-filter="all">Semua Media (12)</button>
-                  <button class="prep-filter-btn" data-prep-filter="photo">Foto Survei &amp; Izin (9)</button>
-                  <button class="prep-filter-btn" data-prep-filter="video">Video Lapangan (3)</button>
+
+              <div class="prep-filter-container">
+                <span class="prep-filter-label">Filter Dokumentasi:</span>
+                <div class="prep-filter-buttons">
+                  <button type="button" class="prep-filter-btn active" data-filter="all">Semua Momen (14)</button>
+                  <button type="button" class="prep-filter-btn" data-filter="survei">Survei &amp; Perizinan (12)</button>
+                  <button type="button" class="prep-filter-btn" data-filter="belanja">Belanja &amp; Logistik (2)</button>
                 </div>
+              </div>
 
-                <div class="timeline-media-grid" id="prep-media-grid">
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/ProsesMemintaizin.jpeg"
-                    data-title="Silaturahmi &amp; Permohonan Izin Resmi Bersama Pimpinan Panti Asuhan">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto</span>
-                      <span>Proses Meminta Izin</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/ProsesMemintaizin.jpeg"
-                        alt="Dokumentasi proses meminta izin kepada pimpinan Panti Asuhan Hasbi Rabbi" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Pertemuan resmi pengajuan proposal dan silaturahmi bersama
-                      pimpinan panti asuhan.</div>
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/ProsesMemintaizin.jpeg" data-title="Proses Meminta Izin &amp; Silaturahmi Bersama Pengurus Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Proses Perizinan</span>
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg"
-                    data-title="Peninjauan Pendopo Utama &amp; Koordinasi Tempat Kegiatan Bersama Tim">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Survei Pendopo Utama</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg"
-                        alt="Peninjauan pendopo utama Panti Asuhan Hasbi Rabbi" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Observasi pendopo terbuka panti asuhan untuk penempatan sesi
-                      mentoring dan kelas belajar.</div>
+                  <div class="timeline-photo">
+                    <img src="foto/ProsesMemintaizin.jpeg" alt="Proses meminta izin ke panti asuhan" loading="lazy">
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg"
-                    data-title="Observasi Area Lapangan Luar &amp; Rute Kegiatan Interaktif">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Peninjauan Halaman Luar</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg"
-                        alt="Observasi area luar dan halaman panti asuhan" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Pengamatan kondisi halaman untuk kegiatan games interaktif dan
-                      dinamika kelompok anak-anak.</div>
+                  <div class="timeline-photo-caption">Pertemuan awal silaturahmi bersama pimpinan Panti Asuhan Hasbi Rabbi untuk perizinan dan koordinasi teknis.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg" data-title="Survei Pendopo Utama &amp; Area Kegiatan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Survei Pendopo</span>
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
-                    data-title="Koordinasi Teknis Lapangan Mahasiswa FT (Informatika) &times; FMIPA (Biologi)">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Koordinasi Lapangan</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
-                        alt="Koordinasi teknis tim mahasiswa kolaborator di lokasi" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Diskusi sinkronisasi alur acara antara tim Informatika dan
-                      Biologi di pelataran panti.</div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg" alt="Survei aula pendopo" loading="lazy">
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (1).jpeg"
-                    data-title="Pemeriksaan Kondisi Gazebo Belajar &amp; Ketersediaan Titik Duduk">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Kesiapan Gazebo Belajar</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (1).jpeg"
-                        alt="Pemeriksaan gazebo belajar di panti asuhan" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Pengecekan fasilitas gazebo untuk memastikan kenyamanan belajar
-                      dan sirkulasi udara yang baik.</div>
+                  <div class="timeline-photo-caption">Peninjauan kelayakan ruang aula pendopo sebagai pusat interaksi dan perlombaan anak-anak panti.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg" data-title="Diskusi Teknis Bersama Pengasuh Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Diskusi Teknis</span>
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53 (1).jpeg"
-                    data-title="Survei Fasilitas Lingkungan &amp; Tata Letak Ruangan Panti Asuhan">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Survei Fasilitas Panti</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53 (1).jpeg"
-                        alt="Survei fasilitas lingkungan panti asuhan" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Peninjauan tata ruang dan fasilitas panti guna kelancaran
-                      mobilitas seluruh peserta.</div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg" alt="Diskusi teknis dengan pihak panti" loading="lazy">
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54 (1).jpeg"
-                    data-title="Briefing Rencana Teknis &amp; Pembagian Tugas Pelaksana Acara">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Briefing Pelaksanaan</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54 (1).jpeg"
-                        alt="Briefing rencana teknis dan pembagian peran mahasiswa" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Konsolidasi tugas per divisi meliputi perlengkapan, konsumsi
-                      donasi, dan materi pengajaran.</div>
+                  <div class="timeline-photo-caption">Dialog santun bersama pengasuh panti guna mendata jumlah anak asuh dan kebutuhan perlengkapan prioritas.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg" data-title="Pemetaan Tata Letak Acara &amp; Posisi Panggung">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pemetaan Lokasi</span>
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52.jpeg"
-                    data-title="Pengecekan Akses Keluar-Masuk Rombongan Mahasiswa &amp; Paket Donasi">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Pengecekan Akses Jalur</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52.jpeg"
-                        alt="Pengecekan akses jalur masuk ke area panti asuhan" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Memastikan jalur kedatangan aman, tertib, dan tidak mengganggu
-                      aktivitas harian warga panti.</div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg" alt="Pemetaan tata ruang kegiatan" loading="lazy">
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="photo"
-                    data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (2).jpeg"
-                    data-title="Observasi Titik Kumpul &amp; Diskusi Tim Mahasiswa di Area Panti">
-                    <div class="timeline-media-label">
-                      <span class="media-badge photo">Foto Baru</span>
-                      <span>Observasi Titik Kumpul</span>
-                    </div>
-                    <div class="timeline-photo">
-                      <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (2).jpeg"
-                        alt="Observasi titik kumpul mahasiswa di area panti" loading="lazy">
-                    </div>
-                    <div class="timeline-photo-caption">Finalisasi area kumpul panitia sebelum memasuki sesi perkenalan
-                      bersama adik-adik panti.</div>
+                  <div class="timeline-photo-caption">Pengukuran tata ruang untuk area duduk anak-anak, panggung MC, dan lorong games edukatif.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (1).jpeg" data-title="Peninjauan Fasilitas Pendukung &amp; Sanitasi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Survei Fasilitas</span>
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="video"
-                    data-video="foto/Survei Lokasi.mp4"
-                    data-title="Video Peninjauan Lapangan Menyeluruh di Panti Asuhan Hasbi Rabbi">
-                    <div class="timeline-media-label">
-                      <span class="media-badge video">Video</span>
-                      <span>Survei Lokasi Utama</span>
-                    </div>
-                    <div class="timeline-video-container">
-                      <video class="timeline-video" controls playsinline preload="metadata">
-                        <source src="foto/Survei Lokasi.mp4" type="video/mp4">
-                      </video>
-
-                    </div>
-                    <div class="timeline-photo-caption">Dokumentasi video peninjauan kondisi lapangan, halaman, dan
-                      pendopo utama panti asuhan.</div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (1).jpeg" alt="Pengecekan fasilitas pendukung" loading="lazy">
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="video"
-                    data-video="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4"
-                    data-title="Video Dokumentasi Suasana Diskusi Persiapan &amp; Peninjauan Lapangan (01)">
-                    <div class="timeline-media-label">
-                      <span class="media-badge video">Video Baru</span>
-                      <span>Suasana Survei 01</span>
-                    </div>
-                    <div class="timeline-video-container">
-                      <video class="timeline-video" controls playsinline preload="metadata">
-                        <source src="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4" type="video/mp4">
-                      </video>
-
-                    </div>
-                    <div class="timeline-photo-caption">Rekaman video aktivitas tim mahasiswa saat mengecek sudut
-                      pendopo dan gazebo panti asuhan.</div>
+                  <div class="timeline-photo-caption">Pengecekan ketersediaan air bersih, toilet, serta aksesibilitas logistik bagi kelancaran kegiatan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53 (1).jpeg" data-title="Koordinasi Terbuka dengan Pengurus Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Koordinasi Pengurus</span>
                   </div>
-
-
-                  <div class="timeline-media-card lightbox-trigger" data-type="video"
-                    data-video="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4"
-                    data-title="Video Dokumentasi Dinamika Lapangan &amp; Pemetaan Tempat Acara (02)">
-                    <div class="timeline-media-label">
-                      <span class="media-badge video">Video Baru</span>
-                      <span>Suasana Survei 02</span>
-                    </div>
-                    <div class="timeline-video-container">
-                      <video class="timeline-video" controls playsinline preload="metadata">
-                        <source src="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" type="video/mp4">
-                      </video>
-
-                    </div>
-                    <div class="timeline-photo-caption">Rekaman video interaksi diskusi mahasiswa merumuskan rencana
-                      kegiatan di panti asuhan.</div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53 (1).jpeg" alt="Koordinasi susunan acara" loading="lazy">
                   </div>
+                  <div class="timeline-photo-caption">Penyampaian draf rundown acara kepada pengurus panti guna menyelaraskan dengan jadwal harian anak.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54 (1).jpeg" data-title="Observasi Kondisi Ruang Belajar Anak">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Observasi Ruang</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54 (1).jpeg" alt="Peninjauan ruang belajar anak" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Meninjau fasilitas belajar dan membaca adik-adik panti sebagai referensi penyaluran bantuan buku edukatif.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52.jpeg" data-title="Rapat Koordinasi Lapangan Tim Mahasiswa">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Rapat Lapangan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52.jpeg" alt="Rapat koordinasi lapangan" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Evaluasi hasil survei langsung di lokasi oleh perwakilan mahasiswa FT dan FMIPA.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (2).jpeg" data-title="Observasi Titik Kumpul &amp; Parkir Mahasiswa">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Finalisasi Titik Kumpul</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/WhatsApp Image 2026-10-05 at 19.20.52 (2).jpeg" alt="Observasi titik kumpul" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Finalisasi area kumpul panitia sebelum memasuki sesi perkenalan bersama adik-adik panti.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6589.MOV" data-title="Video Survei Awal &amp; Peninjauan Lapangan Panti Asuhan (2 Oktober 2026)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Survei Awal (02 Okt)</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6589.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6589.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video survei awal saat tim mahasiswa pertama kali meninjau lokasi Panti Asuhan Hasbi Rabbi.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6836.MOV" data-title="Video Pengadaan &amp; Belanja Kebutuhan Sembako Donasi H-1 (9 Oktober 2026)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Belanja Donasi (09 Okt)</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6836.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6836.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Rekaman video tim panitia berbelanja logistik sembako, beras, minyak, susu, dan kebutuhan harian panti.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="foto/Survei Lokasi.mp4" data-title="Video Peninjauan Lapangan Menyeluruh di Panti Asuhan Hasbi Rabbi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Survei Lokasi Utama</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="foto/Survei Lokasi.mp4" type="video/mp4">
+                      <source src="foto/Survei Lokasi.mp4" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video peninjauan kondisi lapangan, halaman, dan pendopo utama panti asuhan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4" data-title="Video Dokumentasi Suasana Diskusi Persiapan (01)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Suasana Survei 01</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4" type="video/mp4">
+                      <source src="foto/WhatsApp Video 2026-10-05 at 19.20.53.mp4" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Rekaman video aktivitas tim mahasiswa saat mengecek sudut pendopo dan gazebo panti asuhan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" data-title="Video Dokumentasi Dinamika Lapangan &amp; Pemetaan Tempat Acara (02)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Suasana Survei 02</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" type="video/mp4">
+                      <source src="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Rekaman video interaksi diskusi mahasiswa merumuskan rencana kegiatan di panti asuhan.</div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- NODE 02: KEBERANGKATAN + PERSIAPAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="1">02</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="150">
-              <div class="timeline-time-tag">07.00 - 08.00</div>
-              <h3 class="timeline-title">Keberangkatan & Persiapan</h3>
-              <p class="timeline-desc">Kumpul di titik temu kampus, koordinasi barang logistik donasi, dan perjalanan
-                bersama menuju lokasi panti.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">07.30 - 09.00</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Keberangkatan + Persiapan</h3>
+              <p class="timeline-desc">Kumpul di titik temu kampus, koordinasi barang logistik donasi, perjalanan bersama menuju lokasi panti asuhan, dan penataan pendopo acara.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6863.JPG" data-title="Kumpul Titik Temu &amp; Briefing Keberangkatan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Briefing Keberangkatan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6863.JPG" alt="Kumpul titik temu dan briefing rombongan mahasiswa" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Kumpul di titik temu kampus dan briefing koordinasi keberangkatan seluruh tim mahasiswa.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6865.JPG" data-title="Kedatangan Rombongan Mahasiswa di Panti Asuhan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Tiba di Lokasi Panti</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6865.JPG" alt="Kedatangan rombongan mahasiswa di lokasi panti asuhan" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Rombongan mahasiswa FT &times; FMIPA tiba di lokasi panti asuhan dan bersiap menyelenggarakan acara.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6868.JPG" data-title="Penyiapan Barang Logistik &amp; Paket Donasi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Persiapan Logistik Donasi</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6868.JPG" alt="Penyiapan barang logistik dan paket donasi sembako" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Pengecekan perlengkapan acara dan penataan paket bantuan donasi sembako bersama panitia.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6870.JPG" data-title="Konsolidasi Akhir Panitia Sebelum Acara Dibuka">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Konsolidasi Panitia</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6870.JPG" alt="Konsolidasi akhir panitia mahasiswa sebelum acara dibuka" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Koordinasi pemantapan akhir seluruh divisi panitia sebelum menyambut adik-adik panti asuhan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6872.MOV" data-title="Video Persiapan &amp; Penataan Tempat di Panti Asuhan (08.25 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Persiapan Lokasi Panti</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6872.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6872.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video suasana persiapan panitia dan penataan pendopo panti sebelum acara dimulai.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 03: PEMBUKAAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="2">03</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="200">
-              <div class="timeline-time-tag">08.00 - 09.00</div>
-              <h3 class="timeline-title">Kegiatan Bersih-Bersih</h3>
-              <p class="timeline-desc">Kegiatan Bersih-Bersih Bersama Adik-Adik Panti: Berbagi Kebaikan, Menebar
-                Kebahagiaan, dan Mempererat Kebersamaan.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">09.00 - 09.05</div>
+                <span class="pj-chip mc">PJ: Pembawa Acara</span>
+              </div>
+              <h3 class="timeline-title">Pembukaan</h3>
+              <p class="timeline-desc">Pembukaan resmi seluruh rangkaian acara oleh Pembawa Acara (MC) serta sapaan hangat kepada seluruh adik-adik panti dan pengurus.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/original 2026-10-10 092226EFDF37C8704A.jpg" data-title="Pembukaan Acara oleh Pembawa Acara (MC)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pembukaan Resmi MC</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/original 2026-10-10 092226EFDF37C8704A.jpg" alt="Pembukaan acara resmi oleh pembawa acara di pendopo panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Pembawa acara memandu pembukaan dengan antusias menyapa seluruh adik-adik panti dan tamu undangan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 0922409E2F70B113DF.jpg" data-title="Suasana Pendopo Saat Pembukaan Dimulai">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Suasana Pembukaan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 0922409E2F70B113DF.jpg" alt="Suasana pendopo panti asuhan saat pembukaan acara" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik-adik panti berkumpul tertib dan antusias menyimak rangkaian pembukaan yang disampaikan MC.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6890.MOV" data-title="Video Pembukaan Resmi oleh Pembawa Acara (09.00 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Pembukaan MC</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6890.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6890.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video pembukaan resmi oleh MC menyapa adik-adik panti asuhan dengan penuh semangat.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 04: SAMBUTAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="3">04</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="250">
-              <div class="timeline-time-tag">09.00 - 09.10</div>
-              <h3 class="timeline-title">Pembukaan</h3>
-              <p class="timeline-desc">Pembukaan resmi acara oleh MC, sapaan hangat kepada adik-adik panti asuhan dan
-                pengurus.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">09.05 - 09.15</div>
+                <span class="pj-chip ketua">PJ: Ketua Pelaksana + Pengurus Panti</span>
+              </div>
+              <h3 class="timeline-title">Sambutan</h3>
+              <p class="timeline-desc">Sambutan dan kata pengantar dari Ketua Pelaksana kolaborasi FT &times; FMIPA serta perwakilan pengurus Panti Asuhan Hasbi Rabbi.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 092243D3E7F51541A6.jpg" data-title="Sambutan Ketua Pelaksana Kolaborasi FT &times; FMIPA">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Sambutan Ketua Pelaksana</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 092243D3E7F51541A6.jpg" alt="Sambutan Ketua Pelaksana kolaborasi mahasiswa" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Ketua pelaksana menyampaikan maksud, tujuan pengabdian, dan pesan silaturahmi penuh kehangatan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 0922493C148CDD6809.jpg" data-title="Sambutan &amp; Arahan Hangat Pimpinan Pengurus Panti Asuhan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Sambutan Pengurus Panti</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 0922493C148CDD6809.jpg" alt="Sambutan dan arahan dari pengurus panti asuhan" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Pengurus panti asuhan memberikan sambutan selamat datang serta doa restu bagi kelancaran kegiatan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6895.MOV" data-title="Video Sambutan Ketua Pelaksana Kolaborasi FT &times; FMIPA (09.06 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Sambutan Ketua</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6895.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6895.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video sambutan Ketua Pelaksana menyampaikan komitmen dan apresiasi kepada pihak panti asuhan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6899.MOV" data-title="Video Sambutan Hangat Pengurus Panti Asuhan Hasbi Rabbi (09.09 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Sambutan Pengurus</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6899.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6899.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video sambutan hangat dan untaian nasihat bijak dari perwakilan pengurus panti.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 05: PEMBACAAN DO'A -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="4">05</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="100">
-              <div class="timeline-time-tag">09.20 - 09.30</div>
-              <h3 class="timeline-title">Perkenalan + Ice Breaking</h3>
-              <p class="timeline-desc">Mencairkan suasana dengan yel-yel ceria, permainan interaktif, dan sapaan akrab
-                kakak mahasiswa ke adik panti.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">09.15 - 09.20</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Pembacaan Do'a</h3>
+              <p class="timeline-desc">Pembacaan do'a bersama secara khidmat memohon kelancaran, keberkahan, dan manfaat bagi seluruh peserta kegiatan.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6903.MOV" data-title="Video Pembacaan Do'a Awal Khidmat Bersama (09.15 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Do'a Khidmat (01)</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6903.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6903.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video lantunan do'a pembuka memohon kelancaran dan keberkahan seluruh rangkaian acara.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="foto/IMG_6904.MOV" data-title="Video Pembacaan Do'a Bersama Penuh Khidmat">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Do'a Khidmat (02)</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="foto/IMG_6904.MOV" type="video/mp4">
+                      <source src="foto/IMG_6904.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video pembacaan doa bersama memohon kelancaran dan keberkahan acara.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="foto/IMG_6906.MOV" data-title="Video Suasana Do'a Bersama Adik-Adik Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Do'a Khidmat (03)</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="foto/IMG_6906.MOV" type="video/mp4">
+                      <source src="foto/IMG_6906.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Momen kebersamaan khusyuk seluruh peserta dan adik panti menengadahkan tangan dalam doa.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6908.MOV" data-title="Video Suasana Khusyuk &amp; Penutup Do'a Bersama (09.18 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Do'a Khidmat (04)</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6908.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6908.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video penutup do'a bersama dipenuhi suasana haru dan ketenangan batin seluruh hadirin.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 06: PEMBAGIAN KELOMPOK + PERKENALAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="5">06</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="150">
-              <div class="timeline-time-tag">09.30 - 09.40</div>
-              <h3 class="timeline-title">Pembagian Kelompok</h3>
-              <p class="timeline-desc">Pembentukan tim kecil adik-adik panti yang didampingi oleh kakak asuh mahasiswa
-                Informatika &amp; Biologi.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">09.20 - 09.30</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Pembagian Kelompok + Perkenalan</h3>
+              <p class="timeline-desc">Pembentukan tim kelompok kecil adik-adik panti yang didampingi kakak asuh mahasiswa Informatika &amp; Biologi serta sesi perkenalan akrab dan ceria.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 09224227F6127A3B37.jpg" data-title="Pembagian Kelompok Kecil Adik-Adik Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pembentukan Kelompok</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 09224227F6127A3B37.jpg" alt="Pembentukan kelompok kecil bersama adik-adik panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik-adik panti dibagi menjadi regu kelompok yang didampingi mentor mahasiswa.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 09224505A6CC0EAF35.jpg" data-title="Perkenalan Akrab Antara Mahasiswa dan Adik Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Sesi Perkenalan Hangat</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 09224505A6CC0EAF35.jpg" alt="Sesi perkenalan akrab mahasiswa dan adik panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Mencairkan suasana dengan sapaan ramah dan saling mengenal nama satu sama lain.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6940.JPG" data-title="Yel-Yel &amp; Ice Breaking Kelompok Ceria">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Ice Breaking Ceria</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6940.JPG" alt="Yel-yel dan ice breaking ceria antarkelompok" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Setiap kelompok membuat yel-yel sederhana penuh tawa dan kekompakan tim.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6950.JPG" data-title="Pendampingan Mentor Informatika &amp; Biologi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Interaksi Kakak Asuh</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6950.JPG" alt="Kakak asuh mahasiswa membimbing adik-adik panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Kakak asuh mahasiswa berdialog santai dan memberi semangat sebelum memulai sesi pelatihan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6911.MOV" data-title="Video Pembagian Kelompok &amp; Yel-Yel Ceria (09.20 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Pembagian Regu</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6911.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6911.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video pembagian kelompok kecil anak panti dan interaksi awal membangun yel-yel kelompok.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6917.MOV" data-title="Video Perkenalan Akrab Kakak Asuh &amp; Adik Panti (09.21 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Perkenalan Akrab</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6917.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6917.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video kehangatan sesi perkenalan kakak mahasiswa pendamping bersama adik-adik panti.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 07: PELATIHAN KREATIVITAS -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="6">07</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="200">
-              <div class="timeline-time-tag">09.40 - 10.40</div>
-              <h3 class="timeline-title">Pelatihan Kreatifitas</h3>
-              <p class="timeline-desc">Sesi edukasi eksplorasi motorik dan imajinasi anak melalui karya seni, prakarya
-                tangan, dan kreasi visual.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">09.30 - 10.15</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Pelatihan Kreativitas</h3>
+              <p class="timeline-desc">Sesi edukasi eksplorasi daya kreasi dan motorik anak melalui karya seni, prakarya tangan, dan kreasi visual interaktif.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6965.JPG" data-title="Eksplorasi Seni &amp; Kerajinan Tangan Bersama">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Eksplorasi Prakarya</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6965.JPG" alt="Adik panti membuat kerajinan tangan kreatif" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik-adik panti diajak berkreasi membuat karya tangan menarik dengan panduan modul.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6970.JPG" data-title="Bimbingan Langkah Demi Langkah Oleh Mahasiswa">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Bimbingan Langkah Kreatif</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6970.JPG" alt="Bimbingan langkah karya seni oleh mahasiswa" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Mahasiswa mendampingi proses menggunting, melipat, dan menyusun material seni.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 094457DE6FDF9343C6.jpg" data-title="Fokus &amp; Antusiasme Anak-Anak Menghasilkan Karya">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Antusiasme Tinggi</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 094457DE6FDF9343C6.jpg" alt="Fokus adik-adik panti saat membuat prakarya" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Raut fokus dan senyum gembira terpancar saat mereka menyelesaikan bentuk karya masing-masing.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6990.JPG" data-title="Pengembangan Motorik Melalui Karya Seni Visual">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pelatihan Motorik Halus</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6990.JPG" alt="Pelatihan motorik halus anak lewat seni" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Stimulasi daya imajinasi dan ketangkasan tangan anak melalui kombinasi warna dan bentuk.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_6994.JPG" data-title="Hasil Kreasi Unik Karya Adik-Adik Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Karya Seni Anak</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_6994.JPG" alt="Hasil kreasi seni unik anak panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik-adik memperlihatkan hasil karya kreatif yang dibuat dengan rasa bangga.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 100240A1935746F4EE.jpg" data-title="Kebersamaan Tim Menyelesaikan Proyek Kreatif">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Kerja Sama Kreatif</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 100240A1935746F4EE.jpg" alt="Kerja sama tim menyelesaikan karya seni" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Saling membantu dan bertukar alat kreasi menumbuhkan nilai gotong royong Pancasila.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6960.MOV" data-title="Video Panduan &amp; Pemaparan Pelatihan Kreativitas (09.41 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Pelatihan Kreativitas</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6960.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6960.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video mahasiswa memberikan instruksi menyenangkan cara merangkai prakarya edukatif.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_6972.MOV" data-title="Video Praktik Pembuatan Prakarya &amp; Kreasi Tangan (09.44 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Praktik Prakarya</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_6972.MOV" type="video/mp4">
+                      <source src="vidio/IMG_6972.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video adik-adik panti dengan riang mempraktikkan keterampilan membuat karya tangan didampingi panitia.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 08: GAME 1 (CAP JARI) -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="7">08</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="250">
-              <div class="timeline-time-tag">10.40 - 11.00</div>
-              <h3 class="timeline-title">Pelatihan Kekompakan</h3>
-              <p class="timeline-desc">Latihan dinamika kelompok yang mengasah solidaritas, saling mendukung, dan
-                komunikasi kerja sama tim.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">10.15 - 10.35</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Game 1 (Cap Jari)</h3>
+              <p class="timeline-desc">Permainan interaktif cap jari kreasi warna yang mengasah imajinasi, kegembiraan, kreativitas seni, dan kebersamaan adik-adik panti.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7040.JPG" data-title="Menempelkan Cap Jari Warna di Lembar Pohon Harapan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pohon Jejak Harapan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7040.JPG" alt="Menempelkan cap jari di lembar pohon harapan" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Setiap cap jari menjadi simbol daun warna-warni yang merepresentasikan cita-cita anak.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7047.JPG" data-title="Keceriaan Anak-Anak Saat Memilih Warna Favorit">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Eksplorasi Warna</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7047.JPG" alt="Anak-anak memilih warna cat cap jari" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik-adik panti bebas memilih palet warna kegemaran mereka untuk diabadikan bersama.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7052.JPG" data-title="Interaksi Hangat Kakak Mahasiswa Membimbing Cap Jari">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Bimbingan Cap Jari</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7052.JPG" alt="Mahasiswa mendampingi cap jari adik panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Kakak mahasiswa turut membantu mengarahkan cap jari agar tersusun indah dan rapi.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7077.JPG" data-title="Menunjukkan Lembar Cap Jari Hasil Kolaborasi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Hasil Karya Cap Jari</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7077.JPG" alt="Adik panti menunjukkan hasil karya cap jari" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik panti dengan bangga memperlihatkan lembar cap jari penuh corak warna kebersamaan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7054.MOV" data-title="Video Suasana Mulai Game Cap Jari Interaktif (10.25 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Game Cap Jari 01</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7054.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7054.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video persiapan cat warna dan antusiasme adik-adik menyambut permainan cap jari pohon harapan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="foto/IMG_7063.MOV" data-title="Video Keseruan Menghias Pohon Cap Jari Penuh Warna">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Cap Jari Warna</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="foto/IMG_7063.MOV" type="video/mp4">
+                      <source src="foto/IMG_7063.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Rekaman video dinamika seru dan keceriaan anak-anak saat menempelkan warna cap jari.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7067.MOV" data-title="Video Adik-Adik Menempelkan Cap Jari Kenangan (10.27 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Game Cap Jari 02</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7067.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7067.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video momen hangat adik-adik membubuhkan cap jari kenangan di kanvas bersama kakak pendamping.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 09: GAME 2 (ESTAFET BOLA) -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="8">09</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="100">
-              <div class="timeline-time-tag">11.00 - 11.20</div>
-              <h3 class="timeline-title">Game 1 (Estafet Bola)</h3>
-              <p class="timeline-desc">Perlombaan estafet bola antarkelompok yang seru, melatih konsentrasi,
-                ketangkasan, dan sportivitas.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">10.35 - 10.55</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Game 2 (Estafet Bola)</h3>
+              <p class="timeline-desc">Perlombaan estafet bola antarkelompok yang seru dan penuh semangat, melatih konsentrasi, kekompakan, dan sportivitas tim.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7084.JPG" data-title="Penjelasan Aturan &amp; Garis Start Game Estafet Bola">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Briefing Perlombaan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7084.JPG" alt="Briefing aturan perlombaan estafet bola" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Panitia menjelaskan aturan estafet bola di halaman terbuka dan menyusun barisan regu.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 104744E512E23CD10E.jpg" data-title="Konsentrasi Memindahkan Bola Antar Anggota Tim">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Aksi Estafet Bola</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 104744E512E23CD10E.jpg" alt="Aksi konsentrasi memindahkan bola estafet" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Perlombaan berlangsung sengit dan heboh, melatih kesabaran, keseimbangan, dan komunikasi.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 1048041689E0181067.jpg" data-title="Kekompakan &amp; Kecepatan Regu Peserta Estafet">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Semangat Kompetisi Sehat</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 1048041689E0181067.jpg" alt="Semangat kompetisi sehat anak panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Sorak-sorai penonton dan teman satu tim menyemangati setiap putaran estafet bola.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7093.JPG" data-title="Selebrasi Kemenangan Tim Estafet Bola Penuh Tawa">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Sorak Selebrasi</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7093.JPG" alt="Sorak kemenangan tim estafet bola" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Ekspresi kegembiraan dan tawa ceria anak-anak saat regunya berhasil mencapai garis akhir.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7091.MOV" data-title="Video Perlombaan Sengit &amp; Seru Estafet Bola (10.49 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Estafet Bola 01</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7091.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7091.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video perlombaan estafet bola antarkelompok dengan semangat sportivitas dan tawa riang.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7092.MOV" data-title="Video Sorak-Sorai &amp; Kekompakan Tim Estafet Bola (10.49 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Estafet Bola 02</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7092.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7092.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video sorak-sorai penonton dan antusiasme para peserta mengejar garis finish bersama regunya.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 10: CHALLENGE + PEMBAGIAN REWARD + SNACK KONSUMSI -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="9">10</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="150">
-              <div class="timeline-time-tag">11.20 - 11.25</div>
-              <h3 class="timeline-title">Pembagian Reward ( +challenge)</h3>
-              <p class="timeline-desc">Penyerahan hadiah reward bagi kelompok pemenang dan peserta teraktif, serta mini
-                tantangan ceria berhadiah.</p>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">10.55 - 11.15</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
+              <h3 class="timeline-title">Challenge + Pembagian Reward + Snack Konsumsi</h3>
+              <p class="timeline-desc">Tantangan seru berhadiah, pembagian reward bagi pemenang dan peserta teraktif, serta pembagian snack konsumsi sehat bersama adik-adik panti.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7105.JPG" data-title="Sesi Mini Tantangan &amp; Tanya Jawab Seru Berhadiah">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Mini Challenge Interaktif</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7105.JPG" alt="Sesi mini tantangan berhadiah untuk anak panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Adik-adik panti unjuk keberanian maju ke depan menjawab kuis dan tantangan ceria.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7110.JPG" data-title="Penyerahan Hadiah Reward Bagi Pemenang &amp; Peserta Teraktif">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pembagian Hadiah Juara</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7110.JPG" alt="Penyerahan hadiah reward kepada peserta teraktif" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Apresiasi bingkisan reward diserahkan kepada regu pemenang serta peserta paling bersemangat.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7115.JPG" data-title="Pembagian Paket Snack Konsumsi Bergizi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pembagian Snack Sehat</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7115.JPG" alt="Pembagian paket snack konsumsi bergizi" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Panitia membagikan paket konsumsi snack sehat merata kepada seluruh anak panti.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7130.JPG" data-title="Momen Bahagia Bersama Menikmati Kudapan Sehat">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Kebersamaan Santap Snack</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7130.JPG" alt="Adik-adik panti menikmati kudapan bersama" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Senyum manis dan kehangatan terpancar saat anak-anak menikmati camilan bersama kakak asuh.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7101.MOV" data-title="Video Penyerahan Hadiah Reward &amp; Tantangan Juara (11.00 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Reward Hadiah</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7101.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7101.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video momen penuh tawa saat adik-adik menerima bingkisan hadiah reward atas keaktifan mereka.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7114.MOV" data-title="Video Pembagian Paket Snack Konsumsi Sehat (11.05 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Pembagian Snack</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7114.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7114.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video panitia membagikan bingkisan snack konsumsi bergizi kepada adik-adik panti secara tertib.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7127.MOV" data-title="Video Kebersamaan Santap Snack &amp; Canda Tawa (11.09 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Santap Kudapan Bersama</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7127.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7127.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video kebersamaan hangat adik-adik panti dan kakak mahasiswa menikmati kudapan sehat bersama.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 11: PESAN KESAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="10">11</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="200">
-              <div class="timeline-time-tag">11.25 - 11.30</div>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">11.15 - 11.30</div>
+                <span class="pj-chip panitia">PJ: Panitia</span>
+              </div>
               <h3 class="timeline-title">Pesan Kesan</h3>
-              <p class="timeline-desc">Penyampaian ungkapan kesan dan pesan dari perwakilan adik-adik panti, pengasuh,
-                dan mahasiswa kolaborator.</p>
+              <p class="timeline-desc">Penyampaian ungkapan kesan dan pesan dari perwakilan adik-adik panti, pengasuh panti, serta perwakilan mahasiswa kolaborator.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7134.JPG" data-title="Penyampaian Kesan &amp; Pesan Perwakilan Mahasiswa">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Kesan Perwakilan Mahasiswa</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7134.JPG" alt="Penyampaian pesan dan kesan oleh perwakilan mahasiswa" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Mahasiswa mengungkapkan rasa syukur, ketulusan, dan pengalaman berharga belajar nilai kehidupan dari adik panti.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7135.JPG" data-title="Ungkapan Pesan Doa Restu dari Pengurus Panti Asuhan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Ungkapan Pengurus Panti</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7135.JPG" alt="Pesan hangat dan doa restu dari pengurus panti asuhan" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Pengurus panti asuhan menyampaikan apresiasi mendalam dan doa sukses untuk masa depan studi mahasiswa.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7131.MOV" data-title="Video Penyampaian Kesan &amp; Pesan Perwakilan Adik Panti (11.11 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Kesan Adik Panti</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7131.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7131.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video kepolosan dan ketulusan adik panti menyampaikan rasa gembira dan terima kasih kepada kakak mahasiswa.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7138.MOV" data-title="Video Pesan Hangat &amp; Doa Restu Pengurus Panti Asuhan (11.12 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Doa Restu Pengurus</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7138.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7138.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video petuah penuh berkah dan doa tulus dari pimpinan panti asuhan bagi keberhasilan para mahasiswa.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 12: PENYALURAN BANTUAN -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="11">12</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="250">
-              <div class="timeline-time-tag">11.30 - 11.35</div>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">11.30 - 11.35</div>
+                <span class="pj-chip ketua">PJ: Ketua Pelaksana</span>
+              </div>
               <h3 class="timeline-title">Penyaluran Bantuan</h3>
-              <p class="timeline-desc">Penyerahan simbolis paket sembako kebutuhan pokok dan santunan logistik kepada
-                pimpinan panti asuhan.</p>
+              <p class="timeline-desc">Penyerahan simbolis paket donasi sembako kebutuhan pokok dan santunan logistik kepada pimpinan Panti Asuhan Hasbi Rabbi.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7144.JPG" data-title="Penyerahan Simbolis Paket Donasi Sembako oleh Ketua Pelaksana">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Penyerahan Donasi Sembako</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7144.JPG" alt="Penyerahan simbolis paket sembako kebutuhan pokok panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Penyerahan simbolis bantuan sembako beras, minyak, susu, dan kebutuhan harian panti asuhan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7145.JPG" data-title="Serah Terima Santunan &amp; Logistik Pengabdian Masyarakat">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Serah Terima Bantuan Panti</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7145.JPG" alt="Serah terima santunan dan paket donasi panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Simbolisasi penyerahan amanah donasi dari para donatur melalui tim kolaborasi FT &times; FMIPA.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 13: PENUTUP -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="12">13</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="100">
-              <div class="timeline-time-tag">11.35 - 11.40</div>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">11.35 - 11.40</div>
+                <span class="pj-chip mc">PJ: Pembawa Acara</span>
+              </div>
               <h3 class="timeline-title">Penutup</h3>
-              <p class="timeline-desc">Penutupan resmi seluruh rangkaian acara oleh MC disertai doa syukur bersama untuk
-                keberkahan masa depan.</p>
+              <p class="timeline-desc">Penutupan resmi seluruh rangkaian acara oleh Pembawa Acara disertai doa syukur bersama untuk keberkahan masa depan.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7150.JPG" data-title="Penutupan Rangkaian Acara Oleh Pembawa Acara">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Penutupan Acara MC</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7150.JPG" alt="Pembawa acara memandu penutupan seluruh kegiatan" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">MC menutup seluruh rangkaian kegiatan dengan ungkapan terima kasih hangat kepada semua pihak.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7154.JPG" data-title="Doa Penutup &amp; Rasa Syukur Kebersamaan">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Rasa Syukur &amp; Pamitan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7154.JPG" alt="Doa syukur penutup dan persiapan sesi foto bersama" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Momen haru penuh senyum saat mahasiswa dan adik-adik bersiap mengabadikan momen foto bersama.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7156.JPG" data-title="Pamitan Hangat Bersama Seluruh Adik-Adik Panti">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Salam Perpisahan Hangat</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7156.JPG" alt="Pamitan hangat bersama adik-adik panti" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Jabat tangan erat dan pelukan hangat mengakhiri seluruh prosesi acara dengan penuh kekeluargaan.</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- NODE 14: SESI DOKUMENTASI -->
           <div class="timeline-row">
             <div class="timeline-node" data-node="13">14</div>
             <div class="timeline-box" data-reveal="fade-right" data-reveal-delay="150">
-              <div class="timeline-time-tag">11.40 - 11.45</div>
+              <div class="timeline-header-meta">
+                <div class="timeline-time-tag">11.40 - 11.45</div>
+                <span class="pj-chip pdd">PJ: PDD</span>
+              </div>
               <h3 class="timeline-title">Sesi dokumentasi</h3>
-              <p class="timeline-desc">Foto bersama seluruh anak-anak panti, pengurus, dosen, dan mahasiswa kolaborator
-                FT &times; FMIPA.</p>
+              <p class="timeline-desc">Foto bersama seluruh anak-anak panti, pengurus, dosen pembimbing, dan mahasiswa kolaborator FT &times; FMIPA oleh tim PDD.</p>
+
+              <div class="timeline-media-grid">
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7162.JPG" data-title="Foto Akbar Bersama Seluruh Anak-Anak Panti, Pengurus &amp; Mahasiswa">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Foto Bersama Akbar</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7162.JPG" alt="Foto bersama akbar seluruh keluarga panti dan mahasiswa FT x FMIPA" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Foto bersama akbar seluruh adik panti asuhan, pengurus, dosen pembimbing, dan tim mahasiswa.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 114645FC0DE83BD633.jpg" data-title="Keceriaan Pose Bebas Memamerkan Karya Kreativitas">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Pose Penuh Ceria</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 114645FC0DE83BD633.jpg" alt="Pose bebas ceria memegang hasil karya seni cap jari" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Senyum lepas dan pose ceria adik-adik panti memegang hasil prakarya dan cap jari kenangan.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/instc 2026-10-10 114516F2506F0971D0.jpg" data-title="Foto Skuad Seluruh Panitia Mahasiswa FT &times; FMIPA di Lokasi">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Skuad Panitia Lapangan</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/instc 2026-10-10 114516F2506F0971D0.jpg" alt="Foto bersama skuad panitia mahasiswa kolaborasi FT x FMIPA" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Solidaritas dan dedikasi seluruh anggota panitia mahasiswa Informatika dan Biologi di lokasi acara.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="photo" data-src="foto/IMG_7176.JPG" data-title="Dokumentasi Panitia Divisi Pelaksana Pengabdian">
+                  <div class="timeline-media-label">
+                    <span class="media-badge photo">Foto</span>
+                    <span>Keluarga Kolaborasi FT &times; FMIPA</span>
+                  </div>
+                  <div class="timeline-photo">
+                    <img src="foto/IMG_7176.JPG" alt="Foto divisi panitia kolaborator pengabdian masyarakat" loading="lazy">
+                  </div>
+                  <div class="timeline-photo-caption">Momen penutupan yang hangat sebagai tanda suksesnya kegiatan pengabdian masyarakat lintas fakultas.</div>
+                </div>
+                <div class="timeline-media-card lightbox-trigger" data-type="video" data-video="vidio/IMG_7158.MOV" data-title="Video Arahan &amp; Suasana Foto Bersama Akbar (11.37 WIB)">
+                  <div class="timeline-media-label">
+                    <span class="media-badge video">Video</span>
+                    <span>Video Foto Bersama Akbar</span>
+                  </div>
+                  <div class="timeline-video-container">
+                    <video class="timeline-video" controls playsinline preload="metadata">
+                      <source src="vidio/IMG_7158.MOV" type="video/mp4">
+                      <source src="vidio/IMG_7158.MOV" type="video/quicktime">
+                    </video>
+                    <div class="timeline-video-play-hint">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Putar Video</span>
+                    </div>
+                  </div>
+                  <div class="timeline-photo-caption">Dokumentasi video tim PDD memberikan aba-aba dan merekam kegembiraan pose bersama seluruh keluarga besar panti.</div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+
+        <div class="rundown-table-container" id="rundown-table-wrap" style="display: none;" data-reveal="fade-up">
+          <table class="rundown-table">
+            <thead>
+              <tr>
+                <th class="col-waktu">WAKTU</th>
+                <th class="col-acara">ACARA</th>
+                <th class="col-pj">PENANGGUNG JAWAB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">07.30 - 09.00</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Keberangkatan + Persiapan</div>
+                  <div class="rundown-event-desc">Kumpul di titik temu kampus, koordinasi barang logistik donasi, dan perjalanan bersama menuju lokasi panti.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">09.00 - 09.05</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Pembukaan</div>
+                  <div class="rundown-event-desc">Pembukaan resmi seluruh rangkaian acara oleh Pembawa Acara (MC) serta sapaan hangat kepada adik-adik panti dan pengurus.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip mc">Pembawa Acara</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">09.05 - 09.15</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Sambutan</div>
+                  <div class="rundown-event-desc">Sambutan dari Ketua Pelaksana kolaborasi FT &times; FMIPA serta perwakilan pengurus panti asuhan.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip ketua">Ketua Pelaksana + Pengurus Panti</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">09.15 - 09.20</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Pembacaan Do'a</div>
+                  <div class="rundown-event-desc">Pembacaan do'a bersama secara khidmat memohon kelancaran dan keberkahan kegiatan.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">09.20 - 09.30</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Pembagian Kelompok + Perkenalan</div>
+                  <div class="rundown-event-desc">Pembentukan tim kelompok kecil dan sesi perkenalan akrab bersama kakak mahasiswa pendamping.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">09.30 - 10.15</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Pelatihan Kreativitas</div>
+                  <div class="rundown-event-desc">Sesi edukasi eksplorasi kreativitas dan motorik anak melalui karya seni dan kreasi tangan.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">10.15 - 10.35</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Game 1 (Cap Jari)</div>
+                  <div class="rundown-event-desc">Permainan kreatif interaktif seni cap jari kreasi warna bersama seluruh adik-adik panti.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">10.35 - 10.55</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Game 2 (Estafet Bola)</div>
+                  <div class="rundown-event-desc">Perlombaan estafet bola antarkelompok yang seru, melatih konsentrasi, kekompakan, dan sportivitas.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">10.55 - 11.15</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Challenge + Pembagian Reward + Snack Konsumsi</div>
+                  <div class="rundown-event-desc">Tantangan ceria berhadiah, penyerahan reward bagi pemenang &amp; peserta teraktif, serta pembagian snack konsumsi.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">11.15 - 11.30</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Pesan Kesan</div>
+                  <div class="rundown-event-desc">Penyampaian ungkapan kesan dan pesan dari perwakilan adik-adik panti, pengasuh, dan mahasiswa.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip panitia">Panitia</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">11.30 - 11.35</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Penyaluran Bantuan</div>
+                  <div class="rundown-event-desc">Penyerahan simbolis paket sembako kebutuhan pokok dan santunan logistik kepada pimpinan panti asuhan.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip ketua">Ketua Pelaksana</span></td>
+              </tr>
+              <tr>
+                <td class="cell-waktu"><span class="rundown-time-badge">11.35 - 11.40</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Penutup</div>
+                  <div class="rundown-event-desc">Penutupan resmi seluruh rangkaian kegiatan sosial oleh pembawa acara diiringi rasa syukur bersama.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip mc">Pembawa acara</span></td>
+              </tr>
+              <tr class="row-highlight-final">
+                <td class="cell-waktu"><span class="rundown-time-badge">11.40 - 11.45</span></td>
+                <td class="cell-acara">
+                  <div class="rundown-event-title">Sesi dokumentasi</div>
+                  <div class="rundown-event-desc">Foto bersama seluruh anak-anak panti, pengurus, dosen, dan mahasiswa kolaborator FT &times; FMIPA.</div>
+                </td>
+                <td class="cell-pj"><span class="pj-chip pdd">PDD</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -693,81 +1679,241 @@
 
         <div class="doc-carousel-wrap" data-reveal="fade-up" data-reveal-delay="100">
           <div class="doc-carousel-track" id="doc-carousel-track">
-
-
             <div class="doc-slide gallery-card video-card" data-video="foto/Survei Lokasi.mp4"
               data-title="Video Dokumentasi: Survei Lokasi Panti Asuhan Hasbi Rabbi">
               <video class="gallery-preview-video" controls playsinline preload="metadata">
                 <source src="foto/Survei Lokasi.mp4" type="video/mp4">
+                <source src="foto/Survei Lokasi.mp4" type="video/quicktime">
               </video>
               <div class="gallery-video-pill">
                 <span class="gallery-video-pill-dot"></span>
                 <span>VIDEO SURVEI</span>
               </div>
-
               <div class="gallery-overlay">
                 <div class="gallery-caption">Dokumentasi Survei Lokasi</div>
                 <div class="gallery-meta">Peninjauan Fasilitas Panti Asuhan (Klik untuk putar)</div>
               </div>
             </div>
-
-
             <div class="doc-slide gallery-card" data-src="foto/ProsesMemintaizin.jpeg"
               data-title="Proses Meminta Izin &amp; Silaturahmi Bersama Pengurus Panti Asuhan">
-              <img src="foto/ProsesMemintaizin.jpeg" alt="Proses meminta izin kepada pihak panti asuhan" loading="lazy">
+              <img src="foto/ProsesMemintaizin.jpeg" alt="Proses meminta izin pihak panti" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-caption">Proses Meminta Izin &amp; Silaturahmi</div>
                 <div class="gallery-meta">Pertemuan Awal Bersama Pimpinan Panti</div>
               </div>
             </div>
-
-
-            <div class="doc-slide gallery-card" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg"
-              data-title="Peninjauan Pendopo Utama &amp; Koordinasi Lapangan Bersama Tim Mahasiswa">
-              <img src="foto/WhatsApp Image 2026-10-05 at 19.20.53.jpeg" alt="Peninjauan pendopo utama panti asuhan"
-                loading="lazy">
-              <div class="gallery-overlay">
-                <div class="gallery-caption">Survei Pendopo Utama</div>
-                <div class="gallery-meta">Diskusi Lokasi Kegiatan Sesi Belajar &amp; Interaktif</div>
-              </div>
-            </div>
-
-
-            <div class="doc-slide gallery-card" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg"
-              data-title="Observasi Area Lapangan Luar Panti Asuhan Hasbi Rabbi">
-              <img src="foto/WhatsApp Image 2026-10-05 at 19.20.51.jpeg" alt="Observasi area luar panti asuhan"
-                loading="lazy">
-              <div class="gallery-overlay">
-                <div class="gallery-caption">Observasi Halaman &amp; Ruang Terbuka</div>
-                <div class="gallery-meta">Pemetaan Area Dinamika Kelompok dan Senam Sehat</div>
-              </div>
-            </div>
-
-
-            <div class="doc-slide gallery-card" data-src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
-              data-title="Sinergi Kolaborasi Mahasiswa Informatika &times; Biologi di Lapangan">
-              <img src="foto/WhatsApp Image 2026-10-05 at 19.20.54.jpeg"
-                alt="Koordinasi tim mahasiswa di pelataran panti" loading="lazy">
-              <div class="gallery-overlay">
-                <div class="gallery-caption">Koordinasi Tim FT &times; FMIPA</div>
-                <div class="gallery-meta">Sinkronisasi Pelaksanaan Teknis Pengabdian</div>
-              </div>
-            </div>
-
-
-            <div class="doc-slide gallery-card video-card" data-video="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4"
-              data-title="Video Dokumentasi Lapangan: Observasi Suasana Panti Asuhan">
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_6836.MOV"
+              data-title="Video Belanja Logistik &amp; Sembako Donasi H-1 (09 Oktober 2026)">
               <video class="gallery-preview-video" controls playsinline preload="metadata">
-                <source src="foto/WhatsApp Video 2026-10-05 at 19.20.54.mp4" type="video/mp4">
+                <source src="vidio/IMG_6836.MOV" type="video/mp4">
+                <source src="vidio/IMG_6836.MOV" type="video/quicktime">
               </video>
               <div class="gallery-video-pill">
                 <span class="gallery-video-pill-dot"></span>
-                <span>VIDEO DOKUMENTASI</span>
+                <span>VIDEO BELANJA</span>
               </div>
-
               <div class="gallery-overlay">
-                <div class="gallery-caption">Dinamika Survei Lapangan</div>
-                <div class="gallery-meta">Peninjauan Suasana Riil Panti Asuhan</div>
+                <div class="gallery-caption">Pengadaan Donasi Sembako</div>
+                <div class="gallery-meta">Belanja Kebutuhan Logistik Panti (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/IMG_6865.JPG"
+              data-title="Kedatangan Rombongan Mahasiswa FT &times; FMIPA di Lokasi Panti">
+              <img src="foto/IMG_6865.JPG" alt="Kedatangan rombongan mahasiswa" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Keberangkatan &amp; Kedatangan</div>
+                <div class="gallery-meta">Rombongan Tiba di Panti Asuhan Hasbi Rabbi</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_6890.MOV"
+              data-title="Video Dokumentasi: Pembukaan Resmi oleh Pembawa Acara (09.00 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_6890.MOV" type="video/mp4">
+                <source src="vidio/IMG_6890.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO PEMBUKAAN</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Pembukaan Resmi Acara</div>
+                <div class="gallery-meta">Sapaan Semangat Pembawa Acara (MC) (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_6895.MOV"
+              data-title="Video Sambutan Ketua Pelaksana Kolaborasi Mahasiswa (09.06 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_6895.MOV" type="video/mp4">
+                <source src="vidio/IMG_6895.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO SAMBUTAN</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Sambutan Ketua Pelaksana</div>
+                <div class="gallery-meta">Penyampaian Nilai Kepedulian Pancasila (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="foto/IMG_6904.MOV"
+              data-title="Video Khidmat: Pembacaan Do'a Bersama Adik-Adik Panti (09.15 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="foto/IMG_6904.MOV" type="video/mp4">
+                <source src="foto/IMG_6904.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO DO'A</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Pembacaan Do'a Bersama</div>
+                <div class="gallery-meta">Momen Khusyuk Memohon Kelancaran &amp; Keberkahan (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/IMG_6940.JPG"
+              data-title="Perkenalan Akrab &amp; Ice Breaking Ceria Antarkelompok">
+              <img src="foto/IMG_6940.JPG" alt="Ice breaking bersama anak panti" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Pembagian Kelompok &amp; Perkenalan</div>
+                <div class="gallery-meta">Yel-Yel &amp; Ice Breaking Ceria Penuh Kehangatan</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_6960.MOV"
+              data-title="Video Panduan &amp; Pemaparan Pelatihan Kreativitas (09.41 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_6960.MOV" type="video/mp4">
+                <source src="vidio/IMG_6960.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO KREATIVITAS</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Pelatihan Kreativitas Seni</div>
+                <div class="gallery-meta">Instruksi Pembuatan Prakarya &amp; Kreasi Tangan (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/instc 2026-10-10 094457DE6FDF9343C6.jpg"
+              data-title="Sesi Pelatihan Kreativitas &amp; Prakarya Kerajinan Tangan">
+              <img src="foto/instc 2026-10-10 094457DE6FDF9343C6.jpg" alt="Prakarya kreativitas" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Karya Seni Adik Panti</div>
+                <div class="gallery-meta">Eksplorasi Motorik &amp; Imajinasi Anak-Anak Panti</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="foto/IMG_7063.MOV"
+              data-title="Video Dokumentasi: Keseruan Game Cap Jari Warna (10.25 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="foto/IMG_7063.MOV" type="video/mp4">
+                <source src="foto/IMG_7063.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO GAME 1</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Keseruan Game Cap Jari</div>
+                <div class="gallery-meta">Menghias Pohon Jejak Harapan Bersama (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_7091.MOV"
+              data-title="Video Perlombaan Sengit &amp; Seru Estafet Bola (10.49 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_7091.MOV" type="video/mp4">
+                <source src="vidio/IMG_7091.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO GAME 2</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Kekompakan Estafet Bola</div>
+                <div class="gallery-meta">Perlombaan Seru &amp; Semangat Sportivitas Tim (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/instc 2026-10-10 1048041689E0181067.jpg"
+              data-title="Perlombaan Estafet Bola Penuh Semangat &amp; Kekompakan">
+              <img src="foto/instc 2026-10-10 1048041689E0181067.jpg" alt="Aksi perlombaan estafet bola" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Aksi Game Estafet Bola</div>
+                <div class="gallery-meta">Semangat Kerja Sama Tim yang Solid &amp; Ceria</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_7101.MOV"
+              data-title="Video Penyerahan Hadiah Reward &amp; Tantangan Juara (11.00 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_7101.MOV" type="video/mp4">
+                <source src="vidio/IMG_7101.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO REWARD</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Penyerahan Reward Juara</div>
+                <div class="gallery-meta">Apresiasi Bagi Regu &amp; Peserta Teraktif (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/IMG_7110.JPG"
+              data-title="Penyerahan Hadiah Reward &amp; Pembagian Paket Snack Konsumsi">
+              <img src="foto/IMG_7110.JPG" alt="Penyerahan hadiah reward" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Reward &amp; Pembagian Snack</div>
+                <div class="gallery-meta">Apresiasi Kebersamaan &amp; Kudapan Sehat Bergizi</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_7131.MOV"
+              data-title="Video Ungkapan Kesan &amp; Pesan Perwakilan Adik Panti (11.11 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_7131.MOV" type="video/mp4">
+                <source src="vidio/IMG_7131.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO KESAN PESAN</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Pesan Kesan Adik Panti</div>
+                <div class="gallery-meta">Ungkapan Rasa Syukur &amp; Kebahagiaan Anak Panti (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/IMG_7144.JPG"
+              data-title="Penyaluran Bantuan Donasi Sembako &amp; Kebutuhan Pokok Panti">
+              <img src="foto/IMG_7144.JPG" alt="Penyaluran sembako" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Penyaluran Bantuan Sosial</div>
+                <div class="gallery-meta">Penyerahan Simbolis Paket Sembako &amp; Donasi Logistik</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card video-card" data-video="vidio/IMG_7158.MOV"
+              data-title="Video Arahan &amp; Suasana Foto Bersama Akbar (11.37 WIB)">
+              <video class="gallery-preview-video" controls playsinline preload="metadata">
+                <source src="vidio/IMG_7158.MOV" type="video/mp4">
+                <source src="vidio/IMG_7158.MOV" type="video/quicktime">
+              </video>
+              <div class="gallery-video-pill">
+                <span class="gallery-video-pill-dot"></span>
+                <span>VIDEO FOTO BERSAMA</span>
+              </div>
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Sesi Foto Bersama Akbar</div>
+                <div class="gallery-meta">Persiapan Momen Abadi Keluarga Besar Panti (Klik untuk putar)</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/IMG_7162.JPG"
+              data-title="Foto Akbar Bersama Seluruh Keluarga Besar Panti Asuhan Hasbi Rabbi">
+              <img src="foto/IMG_7162.JPG" alt="Foto akbar bersama keluarga panti" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Foto Akbar Dokumentasi Bersama</div>
+                <div class="gallery-meta">Kenangan Indah Penuh Ketulusan &amp; Kebersamaan Abadi</div>
+              </div>
+            </div>
+            <div class="doc-slide gallery-card" data-src="foto/instc 2026-10-10 114645FC0DE83BD633.jpg"
+              data-title="Pose Ceria Adik-Adik Panti Memegang Hasil Karya Seni">
+              <img src="foto/instc 2026-10-10 114645FC0DE83BD633.jpg" alt="Pose ceria adik panti" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-caption">Senyum &amp; Karya Penuh Makna</div>
+                <div class="gallery-meta">Ekspresi Kebahagiaan Anak-Anak Panti Asuhan</div>
               </div>
             </div>
 
